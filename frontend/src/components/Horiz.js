@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import '../App.css';
 import './Horiz.css';
 
 function Horiz() {
-    const [age1, setAge1] = useState();
-    const [age2, setAge2] = useState();
-    const [age3, setAge3] = useState();
-    const [age4, setAge4] = useState();
+    const [age1, setAge1] = useState(0);
+    const [hor, setHor] = useState(0);
+    const [ver, setVer] = useState(1);
+    const [age4, setAge4] = useState(1);
 
 const handleChange1 = (e) => {
   const value = e.target.value.replace(/\D/g, "");
@@ -15,17 +15,29 @@ const handleChange1 = (e) => {
 
 const handleChange2 = (e) => {
     const value = e.target.value.replace(/\D/g, "");
-    setAge2(value);
+    setHor(value);
   };
 
 const handleChange3 = (e) => {
     const value = e.target.value.replace(/\D/g, "");
-    setAge3(value);
+    setVer(value);
   };
 
 const handleChange4 = (e) => {
     const value = e.target.value.replace(/\D/g, "");
     setAge4(value);
+  };
+
+  const getPriceCount = () => {
+    
+    if( ((240 < Number(hor)) && (Number(hor) < 340)) && ((24 < Number(ver)) && (Number(ver) < 350))){
+        return (293);
+    }else if( ((340 < Number(hor)) && (Number(hor) < 440)) && ((240 < Number(ver)) && (Number(ver) < 350))){
+        return(303);
+    }else if( ((440 < Number(hor)) && (Number(hor) < 550)) && ((240 < Number(ver)) && (Number(ver) < 350))){
+        return(314);
+    }
+    
   };
 
   return (
@@ -38,31 +50,31 @@ const handleChange4 = (e) => {
                         <span className="hodnota">
                             <textarea type="text" className="hodnota" defaultValue="1" value={age1} id="pocet"
                                    name="pocet" maxLength="4" onChange={handleChange1} 
-                                   onKeyDown="LUKY.prepocitejCenu()" autoComplete="off"/>
+                                    autoComplete="off"/>
                         </span>
                     </div>
                     <div className="sirka">
                         <span className="popis">Zadejte šířku</span>
                         <span className="hodnota">
-                            <textarea type="text" className="hodnota" defaultValue="0" value={age2} id="sirka" 
+                            <textarea type="text" className="hodnota" value={hor} id="sirka" 
                                    name="sirka" maxLength="4" onChange={handleChange2} 
-                                   onKeyDown="LUKY.prepocitejCenu()" autoComplete="off"/>
+                                    autoComplete="off"/>
                                 <span className="jednotka">mm</span>
                         </span>
                     </div>
                     <div className="vyska">
                         <span className="popis">Zadejte výšku</span>
                         <span className="hodnota">
-                            <textarea type="text" className="hodnota" defaultValue="0" value={age3} id="vyska" 
+                            <textarea type="text" className="hodnota"  value={ver} id="vyska" 
                                    name="vyska" maxLength="4" onChange={handleChange3}
-                                   onKeyDown="LUKY.prepocitejCenu()" autoComplete="off" />
+                                   autoComplete="off" />
                             <span className="jednotka">mm</span>
                         </span>
                     </div>
                     <div className="cenaRozmery">
                         <span className="popis">Cena základní</span>
                         <span className="hodnota">
-                            <span id="cenaRozmery"> 0 </span> 
+                            <span id="cenaRozmery"> {getPriceCount()} </span> 
                             CZK 
                         </span>
                     </div>
@@ -82,14 +94,13 @@ const handleChange4 = (e) => {
                             <span className="popis">Délka ovládání</span>
                             <span className="hodnota">
                                 <textarea type="text" className="hodnota" defaultValue="700" value={age4} name="delkaOvladani"
-                                    maxLength="4" onChange={handleChange4} onKeyDown="LUKY.prepocitejCenu()"/>
+                                    maxLength="4" onChange={handleChange4} />
                                 <span className="jednotka">mm</span>
                             </span>
                         </div>
 
                         <div className="brzda">
-                            <input type="checkbox" name="brzda" id="brzda" 
-                            onChange="LUKY.prepocitejCenu();"/>
+                            <input type="checkbox" name="brzda" id="brzda" />
                                 <label htmlFor="brzda" className="hodnota">
                                     <span className="nazev">
                                     Brzda (zastaví žaluzii v požadované poloze/zabrání samovolnému sjíždění)
@@ -134,29 +145,6 @@ const handleChange4 = (e) => {
                     </div> </div>
 
                 </div>
-
-                {/*-----------
-
-                <div className='pallete1'>                            
-                    <div className='subPallete1'>
-                        <div className='chosenPallete'>
-                            <h3>ZÁKLADNÍ BARVY</h3>
-                            <div className='chosenTop'></div>                            
-                            <div className='chosenBottom'></div>
-                        </div>
-                        <div className='palletes'></div>
-                    </div>
-                    <div className='subPallete2'>
-                        <div className='chosenPallete'>
-                            <h3>PŘÍPLATKOVÉ BARVY</h3>
-                            <div className='chosenTop'></div>                            
-                            <div className='chosenBottom'></div>
-                        </div>
-                        <div className='palletes'></div>
-                    </div>
-                </div>
-
-                -----------*/}
 
             </div>
         );
