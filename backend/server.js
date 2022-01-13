@@ -8,6 +8,8 @@ const connectDB = require("./config/db");
 const stripe = require("stripe")(process.env.S_KEY);
 
 const nodemailer = require('nodemailer')
+const path = require('path')
+
 
 connectDB();
 
@@ -151,6 +153,19 @@ app.post("/payment_card", (req,res) => {
   .catch(err => console.log(err))
 })
 
+//SERVE IF IN PRODUCTION
+
+if(process.env.NODE_ENV === 'production'){
+
+  app.use(express.static('../frontend/build'));
+
+  app.get('*', (req, res) =>{
+
+    res.sendFile(path.resolve(__dirname, 'frontend','build', 'index.html'));
+
+
+  })
+}
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
