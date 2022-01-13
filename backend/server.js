@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({path: "./config.env"});
 
 const express = require("express");
 const cors = require("cors")
@@ -19,9 +19,6 @@ app.use(express.json());
 app.use(cors());
 
 
-app.get("/", (req, res) => {
-  res.json({ message: "API running..." });
-});
 
 
 //SENDING EMAIL
@@ -157,7 +154,7 @@ app.post("/payment_card", (req,res) => {
 
 if(process.env.NODE_ENV === 'production'){
 
-  app.use(express.static('../frontend/build'));
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
 
   app.get('*', (req, res) =>{
 
@@ -165,6 +162,10 @@ if(process.env.NODE_ENV === 'production'){
 
 
   })
+}else{
+  app.get("/", (req, res) => {
+    res.json({ message: "API running..." });
+  });
 }
 
 const PORT = process.env.PORT || 5000;
