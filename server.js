@@ -3,8 +3,8 @@ require("dotenv").config({path: "./config.env"});
 const express = require("express");
 const cors = require("cors")
 
-const productRoutes = require("./routes/productRoutes");
-const connectDB = require("./config/db");
+const productRoutes = require("./backend/routes/productRoutes");
+const connectDB = require("./backend/config/db");
 const stripe = require("stripe")(process.env.S_KEY);
 
 const nodemailer = require('nodemailer')
