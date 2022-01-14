@@ -13,39 +13,39 @@ function Cards() {
               src='images/1.jpg'
               text='Žaluzie'
               text1='Horizontální, vertikální, ISOdesign, venkovní, dřevěné a atypické'
-              label='Mystery'
+              label='Služba'
             />
             <CardItem
               src='images/3.jpg'
               text='Rolety'
               text1='Látkové a venkovní'
-              label='Adventure'
+              label='Služba'
             /></ul>      
             <ul className='cards__items'>
             <CardItem
               src='images/2.jpg'
               text='Markýzy'
               text1='Balkóny, terasy a komerční prostory'
-              label='Adrenaline'
+              label='Služba'
             />  
             <CardItem
               src='images/4.jpg'
               text='Zastínění zimních zahrad'
               text1='Vnitřní a venkovní'
-              label='Mystery'
+              label='Služba'
             /></ul>      
             <ul className='cards__items'>
             <CardItem
               src='images/5.jpg'
               text='Sítě proti hmyzu'
               text1='Pevné, otočné a svinovací'
-              label='Adventure'
+              label='Služba'
             />
             <CardItem
               src='images/6.jpg'
               text='Brány a pohony'
               text1='Křídlové a posuvné'
-              label='Adrenaline'
+              label='Služba'
             />  </ul>  
         </div>
       </div>
