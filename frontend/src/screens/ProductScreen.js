@@ -1,7 +1,7 @@
 import "./ProductScreen.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams,useNavigate } from 'react-router-dom';
 
 
 // Actions
@@ -16,6 +16,8 @@ const ProductScreen = ({ match, history }) => {
   const productDetails = useSelector((state) => state.getProductDetails);
   const { loading, error, product } = productDetails;
 
+  const navigate = useNavigate();
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -26,6 +28,7 @@ const ProductScreen = ({ match, history }) => {
 
   const addToCartHandler = () => {
     dispatch(addToCart(product._id, qty));
+    navigate("/cart")
   };
 
   return (
