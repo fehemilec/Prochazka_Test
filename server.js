@@ -35,7 +35,7 @@ app.post('/api/forma', (req,res) => {
       port:465,
       auth:{
           user:'fehemifemo@gmail.com',
-          pass:'FhBa169B'
+          pass:''
       },
       tls: {
           rejectUnauthorized: false
