@@ -2,7 +2,7 @@ const products = [
     {
       name: "FIXAČNÍ LANKO 0,8 MM (SILON)",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/100_v2.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/100.jpg",
       sku:900343,
       price: 3.89,
       countInStock: 15,
