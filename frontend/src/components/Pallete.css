@@ -10,10 +10,32 @@
 }
 
 .pallete1 {
-    width: 98%; 
+    width: 99%; 
     height:auto;
     display: flex;
     flex-direction: column;
+}
+
+.titleBar_1{
+    background-color: #a21313;
+    border-radius:  30px;
+    width: 95%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.titleBar_1 > .palleteTitle{
+    margin-left: 4%;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Montserrat', 'Arial', 'Tahoma', 'Helvetica CE', 'Helvetica';
+    color: white;
+}
+
+.subPallete1 > .palletes{
+    width:100%
 }
 
 .chosenPallete > h3{
@@ -32,7 +54,7 @@
 display: flex;
 flex-direction: row;
 width: auto;
-height: 50%;
+/*height: 50%;*/
 margin: 5px;    
 overflow: hidden;
 }
@@ -66,16 +88,27 @@ option{ font-size: 15px;
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;}
 
 .pallete1 > .subPallete2, .pallete2{margin-top: 50px;}
-
+/*
 .amountLabel{
     margin-right: 10%;
     margin-left: 4%;  
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-}
+}*/
 
+.titleBar_1 > .amount {
+    margin-right: 2%;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Montserrat', 'Arial', 'Tahoma', 'Helvetica CE', 'Helvetica';
+    color: white;
+    display: block;
+    position: absolute;
+    right: 3%;
+}
+/*
 .amount > span, .amount{ 
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-weight: 700;}
+    font-weight: 700;}*/
 
 .chosenPallete{
 display: block;
@@ -106,41 +139,59 @@ overflow: hidden;
     border-bottom-right-radius: 10px;
 }
 
-.palletes{
-width: 70%;
-height: auto;
-margin: 5px;    
+/*.palletes,*/
+.palleteshh1,.palleteshh{margin-bottom: 4%;}
+.palleteshh1,
+.palleteshh2{
+width: auto;/*
+margin: 5px;    */
 overflow: hidden;
-margin-left: 50px;
+margin-left: 4%;
 color: #434343;
 cursor: default;
 font-size: 15px;
 line-height: 24px;
-   
-display: block;
-float: left;
-width: calc(100% - 340px);
+display: block;/*
+float: left;*/
+}
+
+.palleteshh{
+width: auto;/*
+margin: 5px;    */
+overflow: hidden;
+margin-left: 4%;
+color: #434343;
+cursor: default;
+font-size: 15px;
+line-height: 24px;
+display: block;/*
+float: left;*/
+}
+
+.palleteshh,
+.palleteshh1, 
+.palleteshh2{
+    height: 80%;
+    flex-wrap: wrap;
 }
 
 .pallete2 {background-color: rgb(248, 244, 244);}
 
-.palletes > input[type='radio']{
+/*.palletes > input[type='radio']{
     display: none;
 }
 
 .palletes > label {
     display: inline-block;
-   /* background-color: #0e71b8;
-   background-repeat: no-repeat;*/
    background-size:100% 100%;
     padding: 4px 11px;
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 10px;
     cursor: pointer;
     margin-right: 2px;
-    border-radius: 5px;
+    border-radius: 50%;
     color: white;
-    width: 167px;
+    width: 90px;
     height: 90px;
     margin: 2px;
     overflow:hidden;
@@ -148,25 +199,130 @@ width: calc(100% - 340px);
 }
 
 .palletes > input[type='radio']:checked+label{
-    border: 2px solid red;
+    border: 1px solid red;
   }
 
   .palletes > label > span {
-      background-color: #1f98f4;
       font-family: inherit;
-      color: white;
+      color: black;
       display: inline-block;
-      width: 100%;
-      margin-top: 39.5%;
-      margin-left: -8%;
       height: 28px;
       overflow:hidden ;
       width: 100%;
+      text-align: center;
+      margin-top: 40%;
+  }*/
+ 
+    .label_class_41,
+    .label_class_42,
+    .label_class_43,
+    .label_class_44,
+    .label_class_45,
+    .label_class_46,
+    .label_class_47,
+    .label_class_48,
+    .label_class_49,
+    .label_class_50,
+    .label_class_51,
+    .label_class_52,
+    .label_class_53,
+    .label_class_54,
+    .label_class_55,
+    .label_class_56,
+    .label_class_57,
+    .label_class_58,
+    .label_class_59,
+    .label_class_60,
+    .label_class_61,
+    .label_class_62,
+    .label_class_71,
+    .label_class_72,
+    .label_class_73,
+    .label_class_74,
+    .label_class_75,
+    .label_class_76,
+    .label_class_77,
+    .label_class_78,
+    .label_class_79,
+    .label_class_80,
+    .label_class_81,
+    .label_class_82,
+    .label_class_83,
+    .label_class_84,
+    .label_class_85,
+    .label_class_86,
+    .label_class_87,
+    .label_class_88,
+    .label_class_89,
+    .label_class_1,
+    .label_class_2,
+    .label_class_3,
+    .label_class_4,
+    .label_class_5,
+    .label_class_6,
+    .label_class_7,
+    .label_class_8,
+    .label_class_9,
+    .label_class_10,
+    .label_class_11,
+    .label_class_12,
+    .label_class_13,
+    .label_class_14,
+    .label_class_15,
+    .label_class_16,
+    .label_class_17,
+    .label_class_18,
+    .label_class_19,
+    .label_class_20,
+    .label_class_21,
+    .label_class_22,
+    .label_class_23,
+    .label_class_24,
+    .label_class_25,
+    .label_class_26,
+    .label_class_27,
+    .label_class_28,
+    .label_class_29,
+    .label_class_30,
+    .label_class_31,
+    .label_class_32,
+    .label_class_33,
+    .label_class_34,
+    .label_class_35,
+    .label_class_36,
+    .label_class_37,
+    .label_class_38 {
+        height:90px;
+        width:90px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position:center;
+        background-repeat:no-repeat;
+    }
+    
+    .palleteshh,
+    .palleteshh1,
+    .palleteshh2{
+        display:flex;
+	    flex-direction:row;
+    }
+
+    .palleteshh > div,
+    .palleteshh1 > div,
+    .palleteshh2 > div {
+        margin-right: 15px;
+        margin-top: 15px;
+    }
+
+    .hh{
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        width:92px;
+        margin-top: 5px;
+        align-items: center;
         text-align: center;
-        vertical-align: middle;
-        line-height: 15px;
-        border-bottom-left-radius: 4px;
-  }
+        }
 
   .priceandsubmit{margin-top: 1%;}
   .ps{ margin: 2%; display: block; text-align: center; font-size: 20px;}
@@ -194,7 +350,10 @@ width: calc(100% - 340px);
       
   }
 
-  
+  /*@media screen and (max-width: 510px) { 
+    .titleBar_1{ height: 70px;;}  
+    .titleBar_1 > .palleteTitle {word-break: break-all;} }*/
+
   @media screen and (max-width: 590px) { .palletes > label {margin-left: 8%;} }
   
   @media screen and (max-width: 424px) { .palletes > label {margin-left: 25%;} }
@@ -229,88 +388,88 @@ width: calc(100% - 340px);
         .btnSubmit {font-size: 12px; width: 130px; height: 25px;}
     }
   
-  .palletes > .label_class_1 {background-image: url('/public/images/palletes01_small/1.jpg');}
-  .palletes > .label_class_2 {background-image: url('/public/images/palletes01_small/2.jpg');}
-  .palletes > .label_class_3 {background-image: url('/public/images/palletes01_small/3.jpg');}
-  .palletes > .label_class_4 {background-image: url('/public/images/palletes01_small/4.jpg');}
-  .palletes > .label_class_5 {background-image: url('/public/images/palletes01_small/5.jpg');}
-  .palletes > .label_class_6 {background-image: url('/public/images/palletes01_small/6.jpg');}
-  .palletes > .label_class_7 {background-image: url('/public/images/palletes01_small/7.jpg');}
-  .palletes > .label_class_8 {background-image: url('/public/images/palletes01_small/8.jpg');}
-  .palletes > .label_class_9 {background-image: url('/public/images/palletes01_small/9.jpg');}
-  .palletes > .label_class_10 {background-image: url('/public/images/palletes01_small/10.jpg');}
-  .palletes > .label_class_11 {background-image: url('/public/images/palletes01_small/11.jpg');}
-  .palletes > .label_class_12 {background-image: url('/public/images/palletes01_small/12.jpg');}
-  .palletes > .label_class_13 {background-image: url('/public/images/palletes01_small/13.jpg');}
-  .palletes > .label_class_14 {background-image: url('/public/images/palletes01_small/14.jpg');}
-  .palletes > .label_class_15 {background-image: url('/public/images/palletes01_small/15.jpg');}
-  .palletes > .label_class_16 {background-image: url('/public/images/palletes01_small/16.jpg');}
-  .palletes > .label_class_17 {background-image: url('/public/images/palletes01_small/17.jpg');}
-  .palletes > .label_class_18 {background-image: url('/public/images/palletes01_small/18.jpg');}
-  .palletes > .label_class_19 {background-image: url('/public/images/palletes01_small/19.jpg');}
-  .palletes > .label_class_20 {background-image: url('/public/images/palletes01_small/20.jpg');}
-  .palletes > .label_class_21 {background-image: url('/public/images/palletes01_small/21.jpg');}
-  .palletes > .label_class_22 {background-image: url('/public/images/palletes01_small/22.jpg');}
-  .palletes > .label_class_23 {background-image: url('/public/images/palletes01_small/23.jpg');}
-  .palletes > .label_class_24 {background-image: url('/public/images/palletes01_small/24.jpg');}
-  .palletes > .label_class_25 {background-image: url('/public/images/palletes01_small/25.jpg');}
-  .palletes > .label_class_26 {background-image: url('/public/images/palletes01_small/26.jpg');}
-  .palletes > .label_class_27{background-image: url('/public/images/palletes01_small/27.jpg');}
-  .palletes > .label_class_28 {background-image: url('/public/images/palletes01_small/28.jpg');}
-  .palletes > .label_class_29 {background-image: url('/public/images/palletes01_small/29.jpg');}
-  .palletes > .label_class_30 {background-image: url('/public/images/palletes01_small/30.jpg');}
-  .palletes > .label_class_31 {background-image: url('/public/images/palletes01_small/31.jpg');}
-  .palletes > .label_class_32 {background-image: url('/public/images/palletes01_small/32.jpg');}
-  .palletes > .label_class_33 {background-image: url('/public/images/palletes01_small/33.jpg');}
-  .palletes > .label_class_34 {background-image: url('/public/images/palletes01_small/34.jpg');}
-  .palletes > .label_class_35 {background-image: url('/public/images/palletes01_small/35.jpg');}
-  .palletes > .label_class_36 {background-image: url('/public/images/palletes01_small/36.jpg');}
-  .palletes > .label_class_37 {background-image: url('/public/images/palletes01_small/37.jpg');}
-  .palletes > .label_class_38 {background-image: url('/public/images/palletes01_small/38.jpg');}
+   .label_class_1 {background-image: url('/public/images/palletes01_small/1.jpg');}
+   .label_class_2 {background-image: url('/public/images/palletes01_small/2.jpg');}
+   .label_class_3 {background-image: url('/public/images/palletes01_small/3.jpg');}
+   .label_class_4 {background-image: url('/public/images/palletes01_small/4.jpg');}
+   .label_class_5 {background-image: url('/public/images/palletes01_small/5.jpg');}
+   .label_class_6 {background-image: url('/public/images/palletes01_small/6.jpg');}
+   .label_class_7 {background-image: url('/public/images/palletes01_small/7.jpg');}
+   .label_class_8 {background-image: url('/public/images/palletes01_small/8.jpg');}
+   .label_class_9 {background-image: url('/public/images/palletes01_small/9.jpg');}
+   .label_class_10 {background-image: url('/public/images/palletes01_small/10.jpg');}
+   .label_class_11 {background-image: url('/public/images/palletes01_small/11.jpg');}
+   .label_class_12 {background-image: url('/public/images/palletes01_small/12.jpg');}
+   .label_class_13 {background-image: url('/public/images/palletes01_small/13.jpg');}
+   .label_class_14 {background-image: url('/public/images/palletes01_small/14.jpg');}
+   .label_class_15 {background-image: url('/public/images/palletes01_small/15.jpg');}
+   .label_class_16 {background-image: url('/public/images/palletes01_small/16.jpg');}
+   .label_class_17 {background-image: url('/public/images/palletes01_small/17.jpg');}
+   .label_class_18 {background-image: url('/public/images/palletes01_small/18.jpg');}
+   .label_class_19 {background-image: url('/public/images/palletes01_small/19.jpg');}
+   .label_class_20 {background-image: url('/public/images/palletes01_small/20.jpg');}
+   .label_class_21 {background-image: url('/public/images/palletes01_small/21.jpg');}
+   .label_class_22 {background-image: url('/public/images/palletes01_small/22.jpg');}
+   .label_class_23 {background-image: url('/public/images/palletes01_small/23.jpg');}
+   .label_class_24 {background-image: url('/public/images/palletes01_small/24.jpg');}
+   .label_class_25 {background-image: url('/public/images/palletes01_small/25.jpg');}
+   .label_class_26 {background-image: url('/public/images/palletes01_small/26.jpg');}
+   .label_class_27{background-image: url('/public/images/palletes01_small/27.jpg');}
+   .label_class_28 {background-image: url('/public/images/palletes01_small/28.jpg');}
+   .label_class_29 {background-image: url('/public/images/palletes01_small/29.jpg');}
+   .label_class_30 {background-image: url('/public/images/palletes01_small/30.jpg');}
+   .label_class_31 {background-image: url('/public/images/palletes01_small/31.jpg');}
+   .label_class_32 {background-image: url('/public/images/palletes01_small/32.jpg');}
+   .label_class_33 {background-image: url('/public/images/palletes01_small/33.jpg');}
+   .label_class_34 {background-image: url('/public/images/palletes01_small/34.jpg');}
+   .label_class_35 {background-image: url('/public/images/palletes01_small/35.jpg');}
+   .label_class_36 {background-image: url('/public/images/palletes01_small/36.jpg');}
+   .label_class_37 {background-image: url('/public/images/palletes01_small/37.jpg');}
+   .label_class_38 {background-image: url('/public/images/palletes01_small/38.jpg');}
 
   /*----------------------------------------------*//*---------------------------------------*/
 
-  .palletes > .label_class_41 {background-image: url('/public/images/palletes02_small/1.jpg');}
-  .palletes > .label_class_42 {background-image: url('/public/images/palletes02_small/2.jpg');}
-  .palletes > .label_class_43 {background-image: url('/public/images/palletes02_small/3.jpg');}
-  .palletes > .label_class_44 {background-image: url('/public/images/palletes02_small/4.jpg');}
-  .palletes > .label_class_45 {background-image: url('/public/images/palletes02_small/5.jpg');}
-  .palletes > .label_class_46 {background-image: url('/public/images/palletes02_small/6.jpg');}
-  .palletes > .label_class_47 {background-image: url('/public/images/palletes02_small/7.jpg');}
-  .palletes > .label_class_48 {background-image: url('/public/images/palletes02_small/8.jpg');}
-  .palletes > .label_class_49 {background-image: url('/public/images/palletes02_small/9.jpg');}
-  .palletes > .label_class_50 {background-image: url('/public/images/palletes02_small/10.jpg');}
-  .palletes > .label_class_51 {background-image: url('/public/images/palletes02_small/11.jpg');}
-  .palletes > .label_class_52 {background-image: url('/public/images/palletes02_small/12.jpg');}
-  .palletes > .label_class_53 {background-image: url('/public/images/palletes02_small/13.jpg');}
-  .palletes > .label_class_54 {background-image: url('/public/images/palletes02_small/14.jpg');}
-  .palletes > .label_class_55 {background-image: url('/public/images/palletes02_small/15.jpg');}
-  .palletes > .label_class_56 {background-image: url('/public/images/palletes02_small/16.jpg');}
-  .palletes > .label_class_57 {background-image: url('/public/images/palletes02_small/17.jpg');}
-  .palletes > .label_class_58 {background-image: url('/public/images/palletes02_small/18.jpg');}
-  .palletes > .label_class_59 {background-image: url('/public/images/palletes02_small/19.jpg');}
-  .palletes > .label_class_60 {background-image: url('/public/images/palletes02_small/20.jpg');}
-  .palletes > .label_class_61 {background-image: url('/public/images/palletes02_small/21.jpg');}
-  .palletes > .label_class_62 {background-image: url('/public/images/palletes02_small/22.jpg');}
+   .label_class_41 {background-image: url('/public/images/palletes02_small/1.jpg');}
+   .label_class_42 {background-image: url('/public/images/palletes02_small/2.jpg');}
+   .label_class_43 {background-image: url('/public/images/palletes02_small/3.jpg');}
+   .label_class_44 {background-image: url('/public/images/palletes02_small/4.jpg');}
+   .label_class_45 {background-image: url('/public/images/palletes02_small/5.jpg');}
+   .label_class_46 {background-image: url('/public/images/palletes02_small/6.jpg');}
+   .label_class_47 {background-image: url('/public/images/palletes02_small/7.jpg');}
+   .label_class_48 {background-image: url('/public/images/palletes02_small/8.jpg');}
+   .label_class_49 {background-image: url('/public/images/palletes02_small/9.jpg');}
+   .label_class_50 {background-image: url('/public/images/palletes02_small/10.jpg');}
+   .label_class_51 {background-image: url('/public/images/palletes02_small/11.jpg');}
+   .label_class_52 {background-image: url('/public/images/palletes02_small/12.jpg');}
+   .label_class_53 {background-image: url('/public/images/palletes02_small/13.jpg');}
+   .label_class_54 {background-image: url('/public/images/palletes02_small/14.jpg');}
+   .label_class_55 {background-image: url('/public/images/palletes02_small/15.jpg');}
+   .label_class_56 {background-image: url('/public/images/palletes02_small/16.jpg');}
+   .label_class_57 {background-image: url('/public/images/palletes02_small/17.jpg');}
+   .label_class_58 {background-image: url('/public/images/palletes02_small/18.jpg');}
+   .label_class_59 {background-image: url('/public/images/palletes02_small/19.jpg');}
+   .label_class_60 {background-image: url('/public/images/palletes02_small/20.jpg');}
+   .label_class_61 {background-image: url('/public/images/palletes02_small/21.jpg');}
+   .label_class_62 {background-image: url('/public/images/palletes02_small/22.jpg');}
 
   /*----------------------------------------------*//*---------------------------------------*/
 
-  .palletes > .label_class_71 {background-image: url('/public/images/palletes03_small/1.jpg');}
-  .palletes > .label_class_72 {background-image: url('/public/images/palletes03_small/2.jpg');}
-  .palletes > .label_class_73 {background-image: url('/public/images/palletes03_small/3.jpg');}
-  .palletes > .label_class_74 {background-image: url('/public/images/palletes03_small/4.jpg');}
-  .palletes > .label_class_75 {background-image: url('/public/images/palletes03_small/5.jpg');}
-  .palletes > .label_class_76 {background-image: url('/public/images/palletes03_small/6.jpg');}
-  .palletes > .label_class_77 {background-image: url('/public/images/palletes03_small/7.jpg');}
-  .palletes > .label_class_78 {background-image: url('/public/images/palletes03_small/8.jpg');}
-  .palletes > .label_class_79 {background-image: url('/public/images/palletes03_small/9.jpg');}
-  .palletes > .label_class_80 {background-image: url('/public/images/palletes03_small/10.jpg');}
-  .palletes > .label_class_81 {background-image: url('/public/images/palletes03_small/11.jpg');}
-  .palletes > .label_class_82 {background-image: url('/public/images/palletes03_small/12.jpg');}
-  .palletes > .label_class_83 {background-image: url('/public/images/palletes03_small/13.jpg');}
-  .palletes > .label_class_84 {background-image: url('/public/images/palletes03_small/14.jpg');}
-  .palletes > .label_class_85 {background-image: url('/public/images/palletes03_small/15.jpg');}
-  .palletes > .label_class_86 {background-image: url('/public/images/palletes03_small/16.jpg');}
-  .palletes > .label_class_87 {background-image: url('/public/images/palletes03_small/17.jpg');}
-  .palletes > .label_class_88 {background-image: url('/public/images/palletes03_small/18.jpg');}
-  .palletes > .label_class_89 {background-image: url('/public/images/palletes03_small/19.jpg');}
+   .label_class_71 {background-image: url('/public/images/palletes03_small/1.jpg');}
+   .label_class_72 {background-image: url('/public/images/palletes03_small/2.jpg');}
+   .label_class_73 {background-image: url('/public/images/palletes03_small/3.jpg');}
+   .label_class_74 {background-image: url('/public/images/palletes03_small/4.jpg');}
+   .label_class_75 {background-image: url('/public/images/palletes03_small/5.jpg');}
+   .label_class_76 {background-image: url('/public/images/palletes03_small/6.jpg');}
+   .label_class_77 {background-image: url('/public/images/palletes03_small/7.jpg');}
+   .label_class_78 {background-image: url('/public/images/palletes03_small/8.jpg');}
+   .label_class_79 {background-image: url('/public/images/palletes03_small/9.jpg');}
+   .label_class_80 {background-image: url('/public/images/palletes03_small/10.jpg');}
+   .label_class_81 {background-image: url('/public/images/palletes03_small/11.jpg');}
+   .label_class_82 {background-image: url('/public/images/palletes03_small/12.jpg');}
+   .label_class_83 {background-image: url('/public/images/palletes03_small/13.jpg');}
+   .label_class_84 {background-image: url('/public/images/palletes03_small/14.jpg');}
+   .label_class_85 {background-image: url('/public/images/palletes03_small/15.jpg');}
+   .label_class_86 {background-image: url('/public/images/palletes03_small/16.jpg');}
+   .label_class_87 {background-image: url('/public/images/palletes03_small/17.jpg');}
+   .label_class_88 {background-image: url('/public/images/palletes03_small/18.jpg');}
+   .label_class_89 {background-image: url('/public/images/palletes03_small/19.jpg');}

@@ -11,15 +11,6 @@ function HeroSection() {
       
       <h1>Žaluzie Procházka</h1>
       <p>Využijte naší jedinečné nabídky</p>
-      <div className='hero-btns'>
-        <Button
-          className='btns'
-          buttonStyle='btn--outline'
-          buttonSize='btn--large'
-        >
-          Shop Now
-        </Button>
-      </div>
     </div>
   );
 }

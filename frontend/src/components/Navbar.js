@@ -1,22 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import {useSelector} from 'react-redux'
-
 
 function Navbar() {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-
-  
-  const cart = useSelector(state => state.cart);
-  const { cartItems } = cart;
-
-  const getCartCount = () => {
-    return cartItems.reduce((qty, item) => qty + Number(item.qty), 0);
-  }
 
   return (
     <>
@@ -41,17 +31,12 @@ function Navbar() {
                 className='nav-services'
                 onClick={closeMobileMenu}
               >
-                Services
+                Products                
               </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                to='/aboutus'
-                className='nav-aboutus'
-                onClick={closeMobileMenu}
-              >
-                About Us
-              </Link>
+              <div class="dropdown-content"> 
+                <a href="/#">Horizontální žaluzie</a>
+                <a href="/#">Náhradní díly</a>
+              </div>
             </li>
 
             <li className='nav-item'>
@@ -69,7 +54,7 @@ function Navbar() {
                 to='/cart'
                 className='nav-cart'
                 onClick={closeMobileMenu}
-              ><i className='fas fa-shopping-cart' /> Cart <span className='cartlogo'>{getCartCount()}</span>
+              ><i className='fas fa-shopping-cart' />  <span className='cartlogo'>0</span>
               </Link>
             </li>
           </ul>

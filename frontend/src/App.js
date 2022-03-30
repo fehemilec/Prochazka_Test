@@ -11,7 +11,6 @@ import Footer from './components/Footer';
 
 import Home from './components/pages/Home';
 import Services from './components/pages/Services';
-import AboutUs from './components/pages/AboutUs';
 import Contact from './components/pages/Contact';
 import Horizontal from './components/pages/Horizontal';
 
@@ -38,7 +37,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/services' element={<Services />} />
-          <Route path='/aboutus' element={<AboutUs />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/horizontal' element={<Horizontal />} />   
           <Route exact path="/products" element={<HomeScreen/>} />
