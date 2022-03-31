@@ -19,6 +19,26 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
   localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
 };
 
+export const addToCart_hor = (hor, ver) => async (dispatch, getState) => {
+
+  dispatch({
+    type: actionTypes.ADD_TO_CART_HOR,
+    payload: {
+      width: hor, //syrka
+      height: ver, //vyska
+      //control: data.imageUrl,
+      //control_length: data.price,
+     // lamella_color: data.countInStock, //barva lamely
+     // profile_color: data.countInStock, //barva profilu
+      //design: data.countInStock,
+     // design: data.countInStock,
+     // qty,
+    },
+  });
+
+  localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems_hor));
+};
+
 export const removeFromCart = (id) => (dispatch, getState) => {
   dispatch({
     type: actionTypes.REMOVE_FROM_CART,

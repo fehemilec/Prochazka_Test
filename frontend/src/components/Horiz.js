@@ -1,4 +1,8 @@
 import {React, useState, useEffect} from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useParams,useNavigate } from 'react-router-dom';
+import { addToCart_hor } from "../redux/actions/cartActions";
+
 import '../App.css';
 import './Horiz.css';
 
@@ -7,6 +11,9 @@ function Horiz() {
     const [hor, setHor] = useState(0);
     const [ver, setVer] = useState(1);
     const [age4, setAge4] = useState(1);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
 const handleChange1 = (e) => {
   const value = e.target.value.replace(/\D/g, "");
@@ -27,6 +34,7 @@ const handleChange4 = (e) => {
     const value = e.target.value.replace(/\D/g, "");
     setAge4(value);
   };
+
 
   const getPriceCount = () => {
     
@@ -1382,7 +1390,7 @@ const handleChange4 = (e) => {
             <div className="cenaRozmery">
                 <span className="popis">Cena základní</span>
                 <span className="hodnota">
-                    <span id="cenaRozmery"> 0 </span> 
+                    <span id="cenaRozmery"> {getPriceCount()} </span> 
                     CZK 
                 </span>
             </div>

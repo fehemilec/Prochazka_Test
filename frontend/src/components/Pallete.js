@@ -1,9 +1,24 @@
 import React from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useParams,useNavigate } from 'react-router-dom';
+import { addToCart_hor } from "../redux/actions/cartActions";
 import '../App.css';
 import './Pallete.css';
 /*import Select from 'react-select'*/
 
 function Pallete() {
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const cart = useSelector((state) => state.cart)
+    const { cartItems_hor } = cart;
+
+    const addToCartHandler_hor = () => {
+        dispatch(addToCart_hor(cartItems_hor.hor,cartItems_hor.ver));
+        console.log("Horiz: " + cartItems_hor.hor)
+        navigate("/cart")
+      };
 
     const form1 = () => {       
         document.getElementById('amount_sp').innerText ='0'
@@ -1337,10 +1352,9 @@ function Pallete() {
                 <span className="psPrice">
                     <span className="total" id="total"> 0 </span> Kč vč. DPH
                 </span>
-                <input type="submit" value="cart" id="btnSubmit" name="cart"/>
-                <label htmlFor="btnSubmit" className="btnSubmit">                   
-                    <span className="addToCart">VLOŽIT DO KOŠÍKU</span>
-                </label>
+                <button type="button" onClick={addToCartHandler_hor}>
+                  Add To Cart
+                </button>
                 </div>
             </div>
       </div>
