@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux'
 import './Navbar.css';
 
 function Navbar() {
@@ -7,6 +8,13 @@ function Navbar() {
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  const cart = useSelector(state => state.cart);
+  const { cartItems } = cart;
+
+  const getCartCount = () => {
+    return cartItems.reduce((qty, item) => qty + Number(item.qty), 0);
+  }
 
   return (
     <>
@@ -54,7 +62,7 @@ function Navbar() {
                 to='/cart'
                 className='nav-cart'
                 onClick={closeMobileMenu}
-              ><i className='fas fa-shopping-cart' />  <span className='cartlogo'>0</span>
+              ><i className='fas fa-shopping-cart' />  <span className='cartlogo'>{getCartCount()}</span>
               </Link>
             </li>
           </ul>
