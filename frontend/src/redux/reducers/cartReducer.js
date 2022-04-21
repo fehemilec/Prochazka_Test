@@ -38,6 +38,11 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
         ...state,
         cartItems: state.cartItems.filter((x) => x.product !== action.payload),
       };
+      case actionTypes.REMOVE_FROM_CART_HOR:
+      return {
+        ...state,
+        cartItems_hor: state.cartItems_hor.filter((x) => x.product !== action.payload),
+      };
       case actionTypes.CART_SAVE_BILLING_ADDRESS:
         return{
           ...state,

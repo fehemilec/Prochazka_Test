@@ -1,15 +1,10 @@
 import React, {useState} from 'react'
 import CheckoutSteps from '../components/CheckoutSteps'
-import { cartReducer } from '../redux/reducers/cartReducer'
 import { useSelector } from 'react-redux'
-import CartItem from "../components/CartItemOrder";
 import CartItemOrder from "../components/CartItemOrder";
 import "./CartScreen.css";
 import StripeCheckout from 'react-stripe-checkout'
-
-
 import { Link , useNavigate} from 'react-router-dom';
-import Footer from '../components/Footer';
 
 import  './PlaceOrderScreen.css'
 

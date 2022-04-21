@@ -7,7 +7,6 @@ function Horizontal() {
   return (
     <>
       <Horiz />
-      <Pallete/>
     </>
   );
 }

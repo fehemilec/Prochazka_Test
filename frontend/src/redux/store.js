@@ -16,6 +16,7 @@ const reducer = combineReducers({
 const middleware = [thunk];
 
 const cartFromLocalStorage = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
+const cart_Hor_FromLocalStorage = localStorage.getItem("cart_hor") ? JSON.parse(localStorage.getItem("cart_hor")) : []
 const addressFromLocalStorage = localStorage.getItem("billingAddress") ? JSON.parse(localStorage.getItem("billingAddress")) : {}
 const shipaddressFromLocalStorage = localStorage.getItem("shippingAddress") ? JSON.parse(localStorage.getItem("shippingAddress")) : {}
 
@@ -25,6 +26,7 @@ const INITIAL_STATE = {
  
     cart: {
         cartItems: cartFromLocalStorage,
+        cartItems_hor: cart_Hor_FromLocalStorage,
         billingAddress: addressFromLocalStorage,
         shippingAddress: shipaddressFromLocalStorage,
     }

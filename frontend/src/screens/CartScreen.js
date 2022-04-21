@@ -5,12 +5,12 @@ import { Link, useNavigate } from "react-router-dom";
 
 // Components
 import CartItem from "../components/CartItem";
-import Footer from '../components/Footer';
+import CartItemHor from "../components/CartItemHor";
 
 // Actions
-import { addToCart, removeFromCart } from "../redux/actions/cartActions";
+import { addToCart, removeFromCart, removeFromCart_Hor } from "../redux/actions/cartActions";
 
-  
+
 const CartScreen = () => {
 
   
@@ -19,6 +19,8 @@ const CartScreen = () => {
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+  const { cartItems_hor } = cart;
+
 
   useEffect(() => {}, []);
 
@@ -28,6 +30,10 @@ const CartScreen = () => {
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
+  };
+
+  const removeFromCartHandlerHor = (id) => {
+    dispatch(removeFromCart_Hor(id));
   };
 
   const getCartCount = () => {
@@ -52,11 +58,12 @@ const CartScreen = () => {
        
         <div className="cartscreen__left">
 
-          {cartItems.length === 0 ? (
+          {cartItems.length === 0  && cartItems_hor.length === 0 ? (
             <div>
               Your Cart Is Empty <Link to="/services">Go Back</Link>
             </div>
           ) : (
+
             cartItems.map((item) => (
               <CartItem
                 key={item.product}
@@ -65,7 +72,25 @@ const CartScreen = () => {
                 removeHandler={removeFromCartHandler}
               />
             ))
+
+
           )}
+        </div>
+
+        <div className="cartscreen__left_bottom">
+
+        {(
+            cartItems_hor.map((item) => (
+              <CartItemHor
+                key={item.product}
+                item={item}
+                removeHandler={removeFromCartHandlerHor}
+              />
+            ))
+
+
+          )}
+
         </div>
 
         <div className="cartscreen__right">

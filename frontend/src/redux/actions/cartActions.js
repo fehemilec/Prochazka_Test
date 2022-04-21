@@ -19,24 +19,28 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
   localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
 };
 
-export const addToCart_hor = (hor, ver) => async (dispatch, getState) => {
+export const addToCart_hor = (hor, ver,idCounter, control_dir, control_len, lamellaColor, profileColor) => async (dispatch, getState) => {
 
   dispatch({
     type: actionTypes.ADD_TO_CART_HOR,
     payload: {
+      product: idCounter,
       width: hor, //syrka
       height: ver, //vyska
-      //control: data.imageUrl,
-      //control_length: data.price,
-     // lamella_color: data.countInStock, //barva lamely
-     // profile_color: data.countInStock, //barva profilu
-      //design: data.countInStock,
-     // design: data.countInStock,
+      price: 15,
+      control: control_dir,
+      control_length: control_len,
+      lamella_color: lamellaColor, //barva lamely
+      profile_color: profileColor , //barva profilu
+     //design: ,
+     //color: ,
+     //material window: ,
+     //washers: ,
      // qty,
     },
   });
 
-  localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems_hor));
+  localStorage.setItem("cart_hor", JSON.stringify(getState().cart.cartItems_hor));
 };
 
 export const removeFromCart = (id) => (dispatch, getState) => {
@@ -46,6 +50,15 @@ export const removeFromCart = (id) => (dispatch, getState) => {
   });
 
   localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
+};
+
+export const removeFromCart_Hor = (id) => (dispatch, getState) => {
+  dispatch({
+    type: actionTypes.REMOVE_FROM_CART_HOR,
+    payload: id,
+  });
+
+  localStorage.setItem("cart_hor", JSON.stringify(getState().cart.cartItems_hor));
 };
 
 export const emptyCart = () => (dispatch, getState) => {
