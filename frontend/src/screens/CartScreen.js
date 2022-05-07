@@ -8,7 +8,7 @@ import CartItem from "../components/CartItem";
 import CartItemHor from "../components/CartItemHor";
 
 // Actions
-import { addToCart, removeFromCart, removeFromCart_Hor } from "../redux/actions/cartActions";
+import { addToCart, addToCart_hor, removeFromCart, removeFromCart_Hor } from "../redux/actions/cartActions";
 
 
 const CartScreen = () => {
@@ -28,6 +28,10 @@ const CartScreen = () => {
     dispatch(addToCart(id, qty));
   };
 
+  const qtyChangeHandlerHor = (id, qty) => {
+    dispatch(addToCart_hor(id, qty));
+  };
+
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
   };
@@ -37,14 +41,14 @@ const CartScreen = () => {
   };
 
   const getCartCount = () => {
-    console.log(cartItems.qty);
-    return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+    return (cartItems.reduce((qty, item) => Number(item.qty) + qty, 0) + cartItems_hor.reduce((qty,item) => Number(item.qty) + qty, 0));
   };
 
   const getCartSubTotal = () => {
-    return cartItems
+    return Number(cartItems
       .reduce((price, item) => price + item.price * item.qty, 0)
-      .toFixed(2);
+      .toFixed(2)) + Number(cartItems_hor
+        .reduce((price, item) => price + item.price * item.qty, 0));
   };
 
   const checkoutHandler = () => {
@@ -84,6 +88,7 @@ const CartScreen = () => {
               <CartItemHor
                 key={item.product}
                 item={item}
+                qtyChangeHandler={qtyChangeHandlerHor}
                 removeHandler={removeFromCartHandlerHor}
               />
             ))

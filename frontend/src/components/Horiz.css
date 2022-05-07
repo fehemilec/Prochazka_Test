@@ -1,6 +1,6 @@
 .horizontal_blinds{
     width: 100%; 
-    border-color: #a21313;
+    border-color: #F72585;
 }
 .horiz-container {
     height: 100%;
@@ -264,7 +264,7 @@ span > .jednotka {
 }
 
 .info > div > a:hover{
-    background-color: #a21313;
+    background-color: #F72585;
     color: white;
 }
 

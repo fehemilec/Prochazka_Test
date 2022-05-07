@@ -17,6 +17,7 @@ const CartItemHor = ({ item, qtyChangeHandler, removeHandler }) => {
       <p className="cartitem_hor__price">Barva profilu: {item.profile_color}</p>
 
 
+
       <select
         value={item.qty}
         onChange={(e) => qtyChangeHandler(item.product, e.target.value)}

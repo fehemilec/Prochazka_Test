@@ -10,10 +10,10 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
 
   const cart = useSelector(state => state.cart);
-  const { cartItems } = cart;
+  const { cartItems,cartItems_hor } = cart;
 
   const getCartCount = () => {
-    return cartItems.reduce((qty, item) => qty + Number(item.qty), 0);
+    return (cartItems.reduce((qty, item) => qty + Number(item.qty), 0) + cartItems_hor.reduce((qty,item) => qty +Number(item.qty),0));
   }
 
   return (

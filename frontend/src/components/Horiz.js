@@ -8,13 +8,15 @@ import './Horiz.css';
 
 export default function Horiz() {
 
-    const [age1, setAge1] = useState(0);
+    const [amount, setAmount] = useState(1);
     const [hor, setHor] = useState(0);
     const [ver, setVer] = useState(1);
     const [control_len, setControllen] = useState(1);
     const [control_dir, setControl_dir] = useState("vlevo");
     const [lamella_color, setLamellaColor] = useState();
     const [profile_color, setProfileColor] = useState();
+    const [priceLam, setPriceLamella] = useState(0);
+    const [priceProf, setPriceProfile] = useState(0);
 
     
     const dispatch = useDispatch();
@@ -32,12 +34,17 @@ export default function Horiz() {
     const addToCartHandler_hor = () => {
 
        
-        dispatch(addToCart_hor(hor, ver, increment(), control_dir, control_len, lamella_color, profile_color));
+        dispatch(addToCart_hor(hor, ver, increment(), getFinalPrice(), control_dir, control_len, lamella_color, profile_color,amount));
 
         console.log("Horiz: " + hor)
        //console.log("Counter: " + this.idCounter)
         navigate("/cart")
       };
+
+      const getFinalPrice = () => {
+
+        return (getPriceCount() + Number(priceProf) + Number(priceLam))*amount;
+     }
 
 const control_lr =(e) =>{
    const value = e.target.value;
@@ -56,7 +63,7 @@ const handleLamellaColor =(e) =>{
  }
 const handleChange1 = (e) => {
   const value = e.target.value.replace(/\D/g, "");
-  setAge1(value);
+  setAmount(value);
 };
 
 const handleChange2 = (e) => {
@@ -75,85 +82,85 @@ const handleChange4 = (e) => {
   };
 
 
-const form1 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form2 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form3 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form4 = () => {document.getElementById('amount_sp').innerText ='0' }
-const form5 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form6 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form7 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form8 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form9 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form10 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form11 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form12 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form13 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form14 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form15 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form16 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form17 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form18 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form19 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form20 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form21 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form22 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form23 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form24 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form25 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form26 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form27 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form28 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form29 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form30 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form31 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form32 = () => {document.getElementById('amount_sp').innerText ='0' }
-const form33 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form34 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form35 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form36 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form37 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form38 = () => {document.getElementById('amount_sp').innerText ='0'}
-const form41 = () => {document.getElementById('amount_sp').innerText ='325'}
-const form42 = () => {document.getElementById('amount_sp').innerText ='325'}
-const form43 = () => {document.getElementById('amount_sp').innerText ='325'}
-const form44 = () => {document.getElementById('amount_sp').innerText ='325'}
-const form45 = () => {document.getElementById('amount_sp').innerText ='325'}
-const form46 = () => {document.getElementById('amount_sp').innerText ='325'}
-const form47 = () => {document.getElementById('amount_sp').innerText ='325'}
-const form48 = () => {document.getElementById('amount_sp').innerText ='325'}
-const form49 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form50 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form51 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form52 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form53 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form54 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form55 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form56 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form57 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form58 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form59 = () => {document.getElementById('amount_sp').innerText ='215'}    
-const form60 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form61 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form62 = () => {document.getElementById('amount_sp').innerText ='215'}
-const form71 = () => {document.getElementById('amount_2').innerText ='0'}
-const form72 = () => {document.getElementById('amount_2').innerText ='0'}
-const form73 = () => {document.getElementById('amount_2').innerText ='0'}   
-const form74 = () => {document.getElementById('amount_2').innerText ='0'}
-const form75 = () => {document.getElementById('amount_2').innerText ='0'}
-const form76 = () => {document.getElementById('amount_2').innerText ='0'}   
-const form77 = () => {document.getElementById('amount_2').innerText ='0'}
-const form78 = () => {document.getElementById('amount_2').innerText ='0'}    
-const form79 = () => {document.getElementById('amount_2').innerText ='0'}   
-const form80 = () => {document.getElementById('amount_2').innerText ='0'}    
-const form81 = () => {document.getElementById('amount_2').innerText ='215'}  
-const form82 = () => {document.getElementById('amount_2').innerText ='215'}   
-const form83 = () => {document.getElementById('amount_2').innerText ='215'}
-const form84 = () => {document.getElementById('amount_2').innerText ='215'}
-const form85 = () => {document.getElementById('amount_2').innerText ='215'}
-const form86 = () => {document.getElementById('amount_2').innerText ='215'}
-const form87 = () => {document.getElementById('amount_2').innerText ='215'}
-const form88 = () => {document.getElementById('amount_2').innerText ='215'}
-const form89 = () => {document.getElementById('amount_2').innerText ='215'}
+const form1 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form2 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form3 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form4 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form5 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form6 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form7 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form8 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form9 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form10 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form11 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form12 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form13 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form14 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form15 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form16 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form17 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form18 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form19 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form20 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form21 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form22 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form23 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form24 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form25 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form26 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form27 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form28 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form29 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form30 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form31 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form32 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form33 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form34 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form35 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form36 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form37 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form38 = () => {document.getElementById('amount_sp').innerText ='0'; setPriceLamella(0)}
+const form41 = () => {document.getElementById('amount_sp').innerText ='325'; setPriceLamella(325)}
+const form42 = () => {document.getElementById('amount_sp').innerText ='325'; setPriceLamella(325)}
+const form43 = () => {document.getElementById('amount_sp').innerText ='325'; setPriceLamella(325)}
+const form44 = () => {document.getElementById('amount_sp').innerText ='325'; setPriceLamella(325)}
+const form45 = () => {document.getElementById('amount_sp').innerText ='325'; setPriceLamella(325)}
+const form46 = () => {document.getElementById('amount_sp').innerText ='325'; setPriceLamella(325)}
+const form47 = () => {document.getElementById('amount_sp').innerText ='325'; setPriceLamella(325)}
+const form48 = () => {document.getElementById('amount_sp').innerText ='325'; setPriceLamella(325)}
+const form49 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form50 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form51 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form52 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form53 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form54 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form55 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form56 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form57 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form58 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form59 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}    
+const form60 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form61 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form62 = () => {document.getElementById('amount_sp').innerText ='215'; setPriceLamella(215)}
+const form71 = () => {document.getElementById('amount_2').innerText ='0'; setPriceProfile(0)}
+const form72 = () => {document.getElementById('amount_2').innerText ='0'; setPriceProfile(0)}
+const form73 = () => {document.getElementById('amount_2').innerText ='0'; setPriceProfile(0)}   
+const form74 = () => {document.getElementById('amount_2').innerText ='0'; setPriceProfile(0)}
+const form75 = () => {document.getElementById('amount_2').innerText ='0'; setPriceProfile(0)}
+const form76 = () => {document.getElementById('amount_2').innerText ='0'; setPriceProfile(0)}   
+const form77 = () => {document.getElementById('amount_2').innerText ='0'; setPriceProfile(0)}
+const form78 = () => {document.getElementById('amount_2').innerText ='0'; setPriceProfile(0)}    
+const form79 = () => {document.getElementById('amount_2').innerText ='0'; setPriceProfile(0)}   
+const form80 = () => {document.getElementById('amount_2').innerText ='0'; setPriceProfile(0)}    
+const form81 = () => {document.getElementById('amount_2').innerText ='215'; setPriceProfile(215)}  
+const form82 = () => {document.getElementById('amount_2').innerText ='215'; setPriceProfile(215)}   
+const form83 = () => {document.getElementById('amount_2').innerText ='215'; setPriceProfile(215)}
+const form84 = () => {document.getElementById('amount_2').innerText ='215'; setPriceProfile(215)}
+const form85 = () => {document.getElementById('amount_2').innerText ='215'; setPriceProfile(215)}
+const form86 = () => {document.getElementById('amount_2').innerText ='215'; setPriceProfile(215)}
+const form87 = () => {document.getElementById('amount_2').innerText ='215'; setPriceProfile(215)}
+const form88 = () => {document.getElementById('amount_2').innerText ='215'; setPriceProfile(215)}
+const form89 = () => {document.getElementById('amount_2').innerText ='215'; setPriceProfile(215)}
 
   const getPriceCount = () => {
     
@@ -162,6 +169,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'}
     }else if( ((350 <= Number(hor)) && (Number(hor) < 450)) && ((250 <= Number(ver)) && (Number(ver) < 350))){
         return(303);
     }else if( ((450 <= Number(hor)) && (Number(hor) < 550)) && ((250 <= Number(ver)) && (Number(ver) < 350))){
+        //setPrice(314);
         return(314);
     }
     else if( ((550 <= Number(hor)) && (Number(hor) < 650)) && ((250 <= Number(ver)) && (Number(ver) < 350))){
@@ -1473,7 +1481,6 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'}
         return(1370);
     }
 
-
   };
   return (
 
@@ -1485,7 +1492,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'}
             <div className="pocet">
                 <span className="popis">Zadejte počet</span>
                 <span className="hodnota">
-                    <textarea type="text" className="hodnota" defaultValue="1" value={age1} id="pocet"
+                    <textarea type="text" className="hodnota" defaultValue="1" value={amount} id="pocet"
                            name="pocet" maxLength="4" onChange={handleChange1} 
                            onKeyDown="LUKY.prepocitejCenu()" autoComplete="off"/>
                 </span>
@@ -1602,7 +1609,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'}
         </div>
     </div>
 
-    <div className='pallete_container'>
+  <div className='pallete_container'>
             <div className='pallete1' onChange={handleLamellaColor}>
                 <div className='titleBar_1'>
                         <span className="palleteTitle">ZÁKLADNÍ BARVY</span> </div>
@@ -1610,7 +1617,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'}
                     
                     <div className='palleteshh'>
             {/*------------------------------------------------------------------------------------*/}
-                    <div>                        
+            <div>                        
 			            <label>
                             <div class = 'label_class_1'/>
                             <div class = 'hh'>
@@ -2474,9 +2481,9 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'}
                 <div className='ps'>
                 <span className="psLabel">CELKOVÁ CENA:</span>
                 <span className="psPrice">
-                    <span className="total" id="total"> 0 </span> Kč vč. DPH
+                    <span className="total" id="total"> {getFinalPrice()} </span> Kč vč. DPH
                 </span>
-                <button type="button" onClick={ () => {addToCartHandler_hor()}} >
+                <button type="button" onClick={addToCartHandler_hor} >
                   Add To Cart
                 </button>
                 </div>

@@ -3,11 +3,9 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams,useNavigate } from 'react-router-dom';
 
-
 // Actions
 import { getProductDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
-import Footer from '../components/Footer';
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);

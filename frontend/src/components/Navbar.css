@@ -73,12 +73,12 @@
 .nav-aboutus:hover,
 .nav-contact:hover,
 .nav-cart:hover {
-  border-bottom: 4px solid red;
+  border-bottom: 4px #F72585;
   transition: all 0.2s ease-out;
-  color: red;
+  color: #F72585;
 }
 
-.nav-cart:hover .cartlogo{color: red;}
+.nav-cart:hover .cartlogo{color: #F72585;}
 
 .fa-bars {  color: black;  }
 

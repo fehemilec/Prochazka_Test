@@ -19,7 +19,8 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
   localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
 };
 
-export const addToCart_hor = (hor, ver,idCounter, control_dir, control_len, lamellaColor, profileColor) => async (dispatch, getState) => {
+export const addToCart_hor = (
+  hor, ver, idCounter, price, control_dir, control_len, lamellaColor, profileColor, qty) => async (dispatch, getState) => {
 
   dispatch({
     type: actionTypes.ADD_TO_CART_HOR,
@@ -27,7 +28,7 @@ export const addToCart_hor = (hor, ver,idCounter, control_dir, control_len, lame
       product: idCounter,
       width: hor, //syrka
       height: ver, //vyska
-      price: 15,
+      price: price,
       control: control_dir,
       control_length: control_len,
       lamella_color: lamellaColor, //barva lamely
@@ -36,7 +37,7 @@ export const addToCart_hor = (hor, ver,idCounter, control_dir, control_len, lame
      //color: ,
      //material window: ,
      //washers: ,
-     // qty,
+     qty,
     },
   });
 
