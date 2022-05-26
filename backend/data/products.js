@@ -10,7 +10,7 @@ const products = [
     {
       name: "FIXAČNÍ KOLÍK 2,6 MM UNIVERSAL",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/101.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/101_v2.png",
       sku:900340,
       price: 3.87,
       countInStock: 10,
