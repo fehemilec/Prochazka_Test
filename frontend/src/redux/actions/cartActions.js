@@ -26,6 +26,7 @@ export const addToCart_hor = (
     type: actionTypes.ADD_TO_CART_HOR,
     payload: {
       product: idCounter,
+      name: "Horizontalni Zaluzie",
       width: hor, //syrka
       height: ver, //vyska
       price: price,

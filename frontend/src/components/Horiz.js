@@ -28,7 +28,7 @@ export default function Horiz() {
 
     //return id of last item in horizontal cart
     function increment (){
-        return cartItems_hor.reduce((product, item) => Number(item.product) + 1, 0);
+        return cartItems_hor.reduce((product, item) => Number(item.product) + 1, 1);
     };
 
     const addToCartHandler_hor = () => {

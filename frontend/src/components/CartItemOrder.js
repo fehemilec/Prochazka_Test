@@ -11,7 +11,7 @@ const CartItemOrder = ({ item }) => {
         <img src={item.imageUrl} alt={item.name} />
       </div>
         <p className="name">{item.name}</p>
-      <p className="cartitem__price">{item.qty}x{item.price} = Kč {item.qty * item.price}</p>
+      <p className="cartitem__price">{item.qty}x{item.price} = Kč {Number(item.qty * item.price).toFixed(2)}</p>
     </div>
   );
 };

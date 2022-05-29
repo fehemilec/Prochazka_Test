@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import CheckoutSteps from '../components/CheckoutSteps'
 import { useSelector } from 'react-redux'
 import CartItemOrder from "../components/CartItemOrder";
+import CartItemOrderHor from "../components/CartItemOrderHor";
 import "./CartScreen.css";
 import StripeCheckout from 'react-stripe-checkout'
 import { Link , useNavigate} from 'react-router-dom';
@@ -13,6 +14,7 @@ export default function PlaceOrderScreen() {
 
     const cart = useSelector((state) => state.cart)
     const { cartItems } = cart;
+    const { cartItems_hor } = cart;
 
     const navigate = useNavigate();
 
@@ -22,21 +24,21 @@ export default function PlaceOrderScreen() {
         lastname:"leci",
         email:"femo@live.it",
 });
+    const [final_price, setFinalPrice] = useState(0);
 
-    const getCartSubTotal = () => {
+const getCartSubTotal = () => {
 
-        return cartItems
-          .reduce((price, item) => price + item.price * item.qty, 0)
-          .toFixed(2);
+  return Number(cartItems
+    .reduce((price, item) => price + item.price * item.qty, 0)
+    .toFixed(2)) + Number(cartItems_hor
+      .reduce((price, item) => price + item.price * item.qty, 0));
+};
 
-      };
 
- 
 
-      const getCartCount = () => {
-        console.log(cartItems.qty);
-        return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
-      };
+const getCartCount = () => {
+  return (cartItems.reduce((qty, item) => Number(item.qty) + qty, 0) + cartItems_hor.reduce((qty,item) => Number(item.qty) + qty, 0));
+};
 
 
       const makePayment = token => {
@@ -44,12 +46,12 @@ export default function PlaceOrderScreen() {
 
         const body_1 = {
 
-            ema, cartItems
+            ema, cartItems, cartItems_hor
           }
 
         const body = {
     
-          token, cartItems, cart
+          token, cart, cartItems, cartItems_hor
         }
 
         const headers = {
@@ -147,6 +149,21 @@ export default function PlaceOrderScreen() {
 
 
                             </div>
+
+                            <div className="cartscreen__left_bottom">
+
+        {(
+            cartItems_hor.map((item) => (
+              <CartItemOrderHor
+                key={item.product}
+                item={item}
+              />
+            ))
+
+
+          )}
+
+        </div>
                         
                         </ul>
                     <div className="col-1">
@@ -165,10 +182,8 @@ export default function PlaceOrderScreen() {
           <StripeCheckout 
         stripeKey="pk_test_51KG4qlEJlYE6AglXN3kXqFDvEPL5B9PZDxeZX6JmgsXYzHtxI8olvw9rZhbVqwvWD4CUsJLn79CaH14mwenxsqSe00cd34mY1y" 
         token= {makePayment}
-        name="Buy React"
-        amount={cartItems
-            .reduce((price, item) => price + item.price * item.qty, 0)
-            .toFixed(2) * 100}
+        name="Purchase Order"
+        amount={getCartSubTotal()*100}
         >
           <button className="btn-large blue">Pay now with Card</button>
         </StripeCheckout>

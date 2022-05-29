@@ -25,7 +25,7 @@ app.use(cors());
 app.post('/api/forma', (req,res) => {
 
 
-  const {ema, cartItems} = req.body;
+  const {ema, cartItems,cartItems_hor} = req.body;
   console.log(ema.email)
 
   //console.log("PRICE PAID MAIL", cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
@@ -35,7 +35,7 @@ app.post('/api/forma', (req,res) => {
       port:465,
       auth:{
           user:'fehemifemo@gmail.com',
-          pass:''
+          pass:'FhBa169B'
       },
       tls: {
           rejectUnauthorized: false
@@ -65,28 +65,44 @@ app.post('/api/forma', (req,res) => {
         <tr>
         <td>${item.name}</td>
         <td align="center">${item.qty}</td>
-        <td align="right"> $${item.price.toFixed(2)}</td>
+        <td align="right"> Kc ${item.price.toFixed(2)}</td>
         </tr>
       `
         )
         .join('\n')}
+
+        ${cartItems_hor
+          .map(
+            (item) => `
+          <tr>
+          <td>${item.name}</td>
+          <td align="center">${item.qty}</td>
+          <td align="right"> Kc ${item.price.toFixed(2)}</td>
+          </tr>
+        `
+          )
+          .join('\n')}
       </tbody>
       <tfoot>
       <tr>
       <td colspan="2">Items Price:</td>
-      <td align="right"> €${cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2)}</td>
+      <td align="right"> Kc ${(cartItems
+        .reduce((price, item) => price + item.price * item.qty, 0) + 
+        (cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0))).toFixed(2)}</td>
       </tr>
       <tr>
       <td colspan="2">Tax Price:</td>
-      <td align="right"> €</td>
+      <td align="right"> Kc</td>
       </tr>
       <tr>
       <td colspan="2">Shipping Price:</td>
-      <td align="right"> €</td>
+      <td align="right"> Kc</td>
       </tr>
       <tr>
       <td colspan="2"><strong>Total Price:</strong></td>
-      <td align="right"><strong> €</strong></td>
+      <td align="right"><strong> Kc ${(cartItems
+        .reduce((price, item) => price + item.price * item.qty, 0) + 
+        (cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0))).toFixed(2)}</strong></td>
       </tr>
       
       </table>
@@ -117,12 +133,18 @@ app.use("/api/products", productRoutes);
 
 app.post("/payment_card", (req,res) => {
 
-  const {cartItems, token, cart} = req.body;
+  const {token, cart, cartItems, cartItems_hor} = req.body;
   //console.log("PRODUCT ", product);
-  console.log("PRICE", cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
+  console.log("PRICE", cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
 
   //const idempotencyKey = uuid()
 
+  const getCartSubTotall = () => {
+
+    return (cartItems
+      .reduce((price, item) => price + item.price * item.qty, 0) + 
+      (cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0))).toFixed(2) *100
+  };
  
   return stripe.customers.create({
 
@@ -130,10 +152,11 @@ app.post("/payment_card", (req,res) => {
       source: token.id
   }).then(customer => {
 
+
       stripe.charges.create({
 
-          amount: cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2) * 100,
-          currency: 'eur',
+          amount: getCartSubTotall(),
+          currency: 'czk',
           customer: customer.id,
           receipt_email: token.email,
           shipping:{
