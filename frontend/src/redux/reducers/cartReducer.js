@@ -27,12 +27,21 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
       }
       case actionTypes.ADD_TO_CART_HOR:
       const item_hor = action.payload;
+      const existItemHor = state.cartItems_hor.find((x) => x.product === item_hor.product);
 
+      if (existItemHor) {
+        return {
+          ...state,
+          cartItems_hor: state.cartItems_hor.map((x) =>
+            x.product === existItemHor.product ? item_hor : x
+          ),
+        };
+      } else {
         return {
           ...state,
           cartItems_hor: [...state.cartItems_hor, item_hor],
         };
-      
+      }
     case actionTypes.REMOVE_FROM_CART:
       return {
         ...state,
@@ -54,7 +63,7 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
           shippingAddress: action.payload
         };
         case actionTypes.CART_EMPTY:
-      return { ...state, error: '', cartItems: [] };
+      return { ...state, error: '', cartItems: [] , cartItems_hor: []};
         
     default:
       return state;

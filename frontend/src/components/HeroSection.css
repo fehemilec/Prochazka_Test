@@ -1,92 +1,172 @@
-video {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-}
-
 .hero-container {
-  /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: auto;
+  width: 100%; 
   align-items: center;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
-  object-fit: contain;
+  overflow: hidden;
 }
 
 .hero-container > h1 {
-  color: #fff;
-  font-size: 100px;
-  margin-top: -100px;
-}
-
-.hero-container > p {
-  margin-top: 8px;
-  color: #fff;
-  font-size: 32px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  color: #4361aa;
+  font-size: 50px;
+  margin-bottom: 5%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: center;
 }
 
-.hero-btns {
-  margin-top: 32px;
+.front_cards {
+  display: flex; 
+  flex-direction: column; 
+  width: 90%; 
+  height: auto;
+  margin-top: 20px; 
+  margin: 0 auto;
 }
 
-.hero-btns .btn {
-  margin: 6px;
-  width: auto;
+.front_cards_1, 
+.front_cards_2 { 
+  display: flex; flex-direction: row; 
+  margin-bottom: 5%; /*
+  justify-content: center;
+  align-items: center;*/
+  align-items: stretch; /*stretches all cards same height*/
+  justify-content: space-around; /*some space between cards*/
 }
 
-.fa-play-circle {
-  margin-left: 4px;
+.firstCard,
+.secondCard,
+.thirdCard,
+.fourthCard,
+.fifthCard,
+.sixthCard{ 
+  width: 25%;/*
+  height: 40vh;*/
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  overflow: hidden;
 }
 
-@media screen and (max-width: 960px) {
-  .hero-container > h1 {
-    font-size: 70px;
-    margin-top: -150px;
-  }
+.firstCard,.secondCard,.fourthCard,.fifthCard{margin-right: 8%;}
 
-  .btn-mobile {
-    display: block;
-    text-decoration: none;
-  }
+.firstCard:hover .first_div_icon,
+.secondCard:hover .second_div_icon,
+.thirdCard:hover .third_div_icon,
+.fourthCard:hover .fourth_div_icon,
+.fifthCard:hover .fifth_div_icon,
+.sixthCard:hover .sixth_div_icon{ 
+  background: #4361aa; 
 }
 
-@media screen and (max-width: 768px) {
-  .hero-container > h1 {
-    font-size: 50px;
-    margin-top: -100px;
-  }
+.firstCard:hover .fa-user-tie,
+.secondCard:hover .fa-sort-amount-up,
+.thirdCard:hover .fa-user-cog,
+.fourthCard:hover .fa-building,
+.fifthCard:hover .fa-bullseye,
+.sixthCard:hover .fa-shipping-fast{ 
+  color: white; 
+}
 
-  .hero-container > p {
-    font-size: 30px;
-  }
+.firstCard,.fourthCard{margin-left: 5%;}
 
-  .btn-mobile {
-    display: block;
-    text-decoration: none;
-  }
+.first_div_icon,
+.second_div_icon,
+.third_div_icon,
+.fourth_div_icon,
+.fifth_div_icon,
+.sixth_div_icon{
+  width: 90px;
+  height: 90px;
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(244, 244, 244);
+}
 
-  .btn {
-    width: 100%;
-    margin: auto;
+.fa-user-tie,
+.fa-sort-amount-up,
+.fa-user-cog,
+.fa-building,
+.fa-bullseye,
+.fa-shipping-fast {font-size: 2.5rem; color: #4361aa;}
+
+.first_div_text, .second_div_text, .third_div_text,.fourth_div_text,.fifth_div_text,.sixth_div_text{
+  font-size: 22px; 
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  height: 35%;
+  word-wrap: break-word;
+  color: rgb(160, 12, 12);
+  margin-left: 5%;
+  margin-top: 10%;
+}
+.first_div_text > span, .second_div_text > span, .third_div_text > span,.fourth_div_text > span,.fifth_div_text > span,.sixth_div_text > span{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 10%;
+}
+
+@media screen and (max-width: 960px) {.hero-container > h1 {font-size: 55px; }}
+@media screen and (max-width: 768px) {.hero-container > h1 {font-size: 45px; }}
+@media screen and (max-width: 600px) {.hero-container > h1 {font-size: 35px; }}
+@media screen and (max-width: 440px) {
+  .hero-container > h1 {font-size: 25px; }
+  .first_div_text > span, 
+  .second_div_text > span, 
+  .third_div_text > span,
+  .fourth_div_text > span,
+  .fifth_div_text > span,
+  .sixth_div_text > span{
+    font-size: 18px;
   }
+}
+@media screen and (max-width: 330px) {.hero-container > h1 {font-size: 20px; }}
+
+@media screen and (max-width: 800px) {
+
+.front_cards_1, .front_cards_2 { 
+  flex-direction: column; 
+  margin-bottom: 5%; 
+  width: 100%;
+}
+
+.front_cards { flex-direction: row; }  
+
+.firstCard, .secondCard, .thirdCard, .fourthCard, .fifthCard, .sixthCard{ width: 90%; margin: auto;}
+
+.secondCard, .fifthCard{margin-top: 5%; margin-bottom: 5%;}
+
 }
 
 @media screen and (max-width: 600px) {
-  video {display: none;}
-  image {
-    background-image: url('/public/images/blind-pic.jpg');
-    background-size: cover;
-    background-position:center;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;}
+
+  .front_cards { flex-direction: column; }  
+
+  .firstCard, .secondCard, .thirdCard, .fourthCard, .fifthCard, .sixthCard{ width: 70%; margin: auto;}
+
+  .secondCard, .fifthCard{margin-top: 5%; margin-bottom: 5%;}
+
 }
+
+@media screen and (max-width: 370px){
+  .firstCard, .secondCard, .thirdCard, .fourthCard, .fifthCard, .sixthCard{ width: 85%;}
+}
+/*
+@media screen and (min-height: 550px){
+  
+.firstCard,
+.secondCard,
+.thirdCard,
+.fourthCard,
+.fifthCard,
+.sixthCard{ 
+  height: 30vh;
+}
+}*/

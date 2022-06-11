@@ -2,7 +2,7 @@ const products = [
     {
       name: "FIXAČNÍ LANKO 0,8 MM (SILON)",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/100_v2.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/100.v2_1.jpg",
       sku:900343,
       price: 3.89,
       countInStock: 15,
@@ -10,7 +10,7 @@ const products = [
     {
       name: "FIXAČNÍ KOLÍK 2,6 MM UNIVERSAL",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/101_v2.png",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/101.2_1.png",
       sku:900340,
       price: 3.87,
       countInStock: 10,
@@ -18,7 +18,7 @@ const products = [
     {
       name: "ÁSKA VYTAHOVACÍ UNIVERSAL 5 X 0,14 MM",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/102.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/102.v2_1.jpg",
       sku:900360,
       price: 14.86,
       countInStock: 10,
@@ -26,7 +26,7 @@ const products = [
     {
       name: "DRŽÁK ŘETÍZKU",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/103.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/103.v2_1.jpg",
       sku:900339,
       price: 9.39,
       countInStock: 5,
@@ -34,7 +34,7 @@ const products = [
     {
       name: "FIXAČNÍ KOLÍK 3,2 MM",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/104.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/104.v2_1.jpg",
       sku:900341,
       price: 	3.98,
       countInStock: 0,
@@ -42,7 +42,7 @@ const products = [
     {
       name: "SPOJKA ŘETÍZKU KLASICKÁ",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/105.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/105.v2_1.jpg",
       sku:900363,
       price: 	4.65,
       countInStock: 4,
@@ -50,7 +50,7 @@ const products = [
     {
       name: "OVLÁDACÍ ŘETÍZEK 3,2 MM UNIVERSAL",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/106.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/106.v2_1.jpg",
       sku:900357,
       price: 9.54,
       countInStock: 4,
@@ -58,7 +58,7 @@ const products = [
     {
       name: "RAMÍNKO STANDARD 127 MM",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/107.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/107.v2_1.jpg",
       sku:900314,
       price: 	5.50,
       countInStock: 10,
@@ -66,7 +66,7 @@ const products = [
     {
       name: "KRYTKA ISOLINE PRAVÁ",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/108.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/108.v2_1.jpg",
       sku:900354,
       price: 12.23,
       countInStock: 10,
@@ -74,7 +74,7 @@ const products = [
     {
       name: "KRYTKA ISOLINE LEVÁ",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/109.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/109.v2_1.jpg",
       sku:900353,
       price: 12.23,
       countInStock: 10,
@@ -82,7 +82,7 @@ const products = [
     {
       name: "ZÁVAŽÍ LÁTKY 127 MM",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/110.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/110.v2_1.jpg",
       sku:900327,
       price: 	11.80,
       countInStock: 10,
@@ -90,7 +90,7 @@ const products = [
     {
       name: "DRŽÁK TEXTILNÍ PÁSKY V DOLNÍM PROFILU",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/111.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/111.v2_1.jpg",
       sku:900338,
       price: 8.26,
       countInStock: 10,
@@ -98,7 +98,7 @@ const products = [
     {
       name: "BOČNÍ KRYT DOLNÍHO PROFILU UNIVERSAL",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/112.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/112.v2_1.jpg",
       sku:900330,
       price: 	6.26,
       countInStock: 10,
@@ -106,7 +106,7 @@ const products = [
     {
       name: "SPOJKA ŘETÍZKU KLEC",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/113.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/113.v2_1.jpg",
       sku:900364,
       price: 4.96,
       countInStock: 10,
@@ -114,7 +114,7 @@ const products = [
     {
       name: "PRŮCHODKA FIXACE V HORNÍM PROFILU",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/114.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/114.v2_1.jpg",
       sku:900361,
       price: 	2.63,
       countInStock: 10,
@@ -122,7 +122,7 @@ const products = [
     {
       name: "ŘETÍZEK SPODNÍ SPOJOVACÍ 127 MM",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/115.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/115.v2_1.jpg",
       sku:900318,
       price: 	10.00,
       countInStock: 10,
@@ -130,7 +130,7 @@ const products = [
     {
       name: "SPOJKA ŘETÍZKU",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/116.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/116.v2_1.jpg",
       sku:900321,
       price: 4.88,
       countInStock: 10,
@@ -138,7 +138,7 @@ const products = [
     {
       name: "ŽEBŘÍČEK, NOSIČ LAMEL UNIVERSAL",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/117.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/117.v2_1.jpg",
       sku:900367,
       price: 11.36,
       countInStock: 10,
@@ -146,7 +146,7 @@ const products = [
     {
       name: "DRŽÁK PŘEVODOVKY ISOLINE PRAVÁ",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/118.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/118.v2_1.jpg",
       sku:900426,
       price: 18.48,
       countInStock: 10,
@@ -154,7 +154,7 @@ const products = [
     {
       name: "DRŽÁK PŘEVODOVKY ISOLINE LEVÝ",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/119.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/119.v2_1.jpg",
       sku:900428,
       price: 18.48,
       countInStock: 10,
@@ -162,7 +162,7 @@ const products = [
     {
       name: "RAMÍNKO STANDARD 89 MM",
       imageUrl:
-      "https://infinite-headland-77957.herokuapp.com/images/nahradni/120.jpg",
+      "https://infinite-headland-77957.herokuapp.com/images/nahradni/120.v2_1.jpg",
       sku:900313,
       price: 5.00,
       countInStock: 10,
@@ -170,7 +170,7 @@ const products = [
     {
       name: "OZUBENÉ KOLEČKO PŘEVODOVKY ISOLINE",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/121.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/121.v2_1.jpg",
       sku:900359,
       price: 	11.68,
       countInStock: 10,
@@ -178,7 +178,7 @@ const products = [
     {
       name: "ZÁVAŽÍ LÁTKY 89 MM",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/122.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/122.v2_1.jpg",
       sku:900326,
       price: 10.00,
       countInStock: 10,
@@ -186,7 +186,7 @@ const products = [
     {
       name: "SPOJKA ŽEBŘÍČKU",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/123.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/123.v2_1.jpg",
       sku:900365,
       price: 	5.85,
       countInStock: 10,
@@ -194,7 +194,7 @@ const products = [
     {
       name: "DISTANČNÍ PODLOŽKA ISOLINE",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/124.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/124.v2_1.jpg",
       sku:900331,
       price: 8.47,
       countInStock: 10,
@@ -202,7 +202,7 @@ const products = [
     {
       name: "PROVÁZEK OVLÁDACÍ BÍLÝ",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/125.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/125.v2_1.jpg",
       sku:900301,
       price: 9.68,
       countInStock: 10,
@@ -210,7 +210,7 @@ const products = [
     {
       name: "KLEC ŘETÍZKU ISOLINE",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/126.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/126.v2_1.jpg",
       sku:900352,
       price: 10.68,
       countInStock: 10,
@@ -218,7 +218,7 @@ const products = [
     {
       name: "ŘETÍZEK SPODNÍ SPOJOVACÍ 89 MM",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/127.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/127.v2_1.jpg",
       sku:900317,
       price: 	9.68,
       countInStock: 10,
@@ -226,7 +226,7 @@ const products = [
     {
       name: "FIXAČNÍ KROUŽEK POHYBU TŘÍBOKÉHO DRÁTU",
       imageUrl:
-        "https://infinite-headland-77957.herokuapp.com/images/nahradni/128.jpg",
+        "https://infinite-headland-77957.herokuapp.com/images/nahradni/128.v2_1.jpg",
       sku:900342,
       price: 4.84,
       countInStock: 10,

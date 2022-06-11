@@ -56,6 +56,10 @@
 .cartscreen__right div button:hover {
   opacity: 0.9;
 }
+.btnCheckout { display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer; border-radius: 5px; color: black; font-size: 20px;
+  overflow:hidden;  background-color: rgb(190, 227, 250); width: 200px; height: 38px; background-color:#F72585; color:white
+}
 
 @media (max-width: 1320px) {
   .cartscreen {

@@ -3,7 +3,7 @@ import './AboutUs.css';
 
 export default function AboutUs() {
   return (
-    <div className='about__container'>
+    <div className='aboutcontainer'>
         <div className='aboutText'> 
           <div className='titleOne'><h1> O Nás </h1></div>
           <div className='titleTwo'><h1> Žaluzie Procházka </h1></div>
@@ -12,7 +12,7 @@ export default function AboutUs() {
             </span>
           </div>
           </div>
-        <div className='about__Pic'> <img src='/images/backg_1.png' alt=""/> </div>
+        <div className='aboutPic'> <img src='/images/backg_1.png' alt=""/> </div>
     </div>
   );
 }

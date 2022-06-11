@@ -103,8 +103,11 @@ const CartScreen = () => {
             <p>Subtotal ({getCartCount()}) items</p>
             <p>Kč {getCartSubTotal()}</p>
           </div>
-          <div>
-            <button onClick={checkoutHandler}>Proceed To Checkout</button>
+          <div className="checkout">
+          <input type="submit" value="btnCheckout" id="btnCheckout" name="cart"/>
+          <label htmlFor="btnCheckout" className="btnCheckout">                   
+                    <span className="btnCheckout" onClick={checkoutHandler}>VLOŽIT DO KOŠÍKU</span>
+                </label>
           </div>
         </div>
 

@@ -7,9 +7,6 @@ const CartItemOrder = ({ item }) => {
 
   return (
     <div className="cartitem1">
-      <div className="cartitem__image1">
-        <img src={item.imageUrl} alt={item.name} />
-      </div>
         <p className="name">width: {item.width}</p>
         <p className="name1">height: {item.height}</p>
         <p className="name2">control: {item.control}</p>

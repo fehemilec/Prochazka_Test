@@ -22,11 +22,11 @@ app.use(cors());
 
 
 //SENDING EMAIL
-app.post('/api/forma', (req,res) => {
+app.post('/api/sendmail', (req,res) => {
 
 
-  const {ema, cartItems,cartItems_hor} = req.body;
-  console.log(ema.email)
+  const {ema, cartItems,cartItems_hor,token} = req.body;
+  console.log("email form token " + token.email)
 
   //console.log("PRICE PAID MAIL", cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
 
@@ -35,7 +35,7 @@ app.post('/api/forma', (req,res) => {
       port:465,
       auth:{
           user:'fehemifemo@gmail.com',
-          pass:'FhBa169B'
+          pass:'uhpxynwrlzjckrlw'
       },
       tls: {
           rejectUnauthorized: false
@@ -44,7 +44,7 @@ app.post('/api/forma', (req,res) => {
 
   let mailOptions = {
       from:"fehemifemo@gmail.com",
-      to:ema.email,
+      to:token.email,
       subject:"New order",
       html:
       `<h1>Thanks for shopping with us</h1>

@@ -1,19 +1,37 @@
-.threepic_container > div > img {
-    object-fit: cover;
-    width: 33.3333%;
-    height: 50vh;
-    position: absolute;
-    z-index: -1;
-  }
-.threepic_container{
-  height: 50vh;
-  width: 100%;
+.threepiccontainer{
   display: flex;
   flex-direction: row;
+  height: auto;
+  width: 100%;  
+  margin-top: 2%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.firstPic,
-.secondPic,
-.thirdPic{
-   width: 33.3333%;
+.threepiccontainer > div > img {
+  object-fit: cover;
+  width: 100%;
+  height: 50vh;
 }
+
+.firstPic, .secondPic, .thirdPic { width: 33.3333%; }
+
+@media only screen and (max-width: 912px) {
+
+  .threepiccontainer{ flex-direction: column; margin-top: 10%;}
+
+  .firstPic, .secondPic, .thirdPic { 
+    display: flex; 
+    width: 90%; 
+    justify-content: center; 
+    margin-bottom: 3%;
+  }
+  
+  .threepiccontainer > div > img {
+    width: 75%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 500px) { .threepiccontainer > div > img { width: 90%; } }

@@ -26,13 +26,26 @@
     margin-left: 3%;
     margin-right: 3%;
 }
-.titleBar_1 > .palleteTitle{
+.titleBar_1 > .palleteTitle {
     margin-left: 4%;
     font-size: large;
     font-weight: bold;
     font-family: 'Montserrat', 'Arial', 'Tahoma', 'Helvetica CE', 'Helvetica';
     color: white;
+    word-break: break-word;
 }
+
+.p_title > .palleteTitle {
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Montserrat', 'Arial', 'Tahoma', 'Helvetica CE', 'Helvetica';
+    color: white;
+    word-wrap: break-word;
+}
+
+.p_title{width: 60%; margin-left: 4%;}
+
+.fa-paint-roller{color: white; font-size:23px;  margin-right: 10px;}
 
 .subPallete1 > .palletes{
     width:100%
@@ -332,7 +345,7 @@ float: left;*/
   .addToCart, .psPrice, .psLabel, .total{font-family: Helvetica Neue,Helvetica,Arial,sans-serif;}
   .btnSubmit { display: inline-flex; align-items: center; justify-content: center;
                 cursor: pointer; border-radius: 5px; color: black; font-size: 20px;
-                overflow:hidden;  background-color: rgb(190, 227, 250); width: 200px; height: 38px;
+                overflow:hidden;  background-color: rgb(190, 227, 250); width: 200px; height: 38px; background-color:#F72585; color:white
             }
   .btnSubmit:hover { background-color:lightskyblue; border: 1px solid cyan;}
 

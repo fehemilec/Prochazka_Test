@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 const CartItemHor = ({ item, qtyChangeHandler, removeHandler }) => {
   return (
     <div className="cartitem_hor">
-      <div className="cartitem_hor__image">
-        <img src={""} alt={""}/>
-      </div>
       <p>width: {item.width}</p>
       <p>height: {item.height}</p>
 

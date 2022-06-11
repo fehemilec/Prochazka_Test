@@ -20,11 +20,12 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
 };
 
 export const addToCart_hor = (
-  hor, ver, idCounter, price, control_dir, control_len, lamellaColor, profileColor, qty) => async (dispatch, getState) => {
+  amount, hor, ver, idCounter, price, control_dir, control_len, lamellaColor, profileColor, qty) => async (dispatch, getState) => {
 
   dispatch({
     type: actionTypes.ADD_TO_CART_HOR,
     payload: {
+      amount:amount,
       product: idCounter,
       name: "Horizontalni Zaluzie",
       width: hor, //syrka

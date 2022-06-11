@@ -46,7 +46,7 @@ const getCartCount = () => {
 
         const body_1 = {
 
-            ema, cartItems, cartItems_hor
+            ema, cartItems, cartItems_hor, token
           }
 
         const body = {
@@ -71,8 +71,9 @@ const getCartCount = () => {
             navigate('/confirmation');
             console.log("You paid fucker, Status ", status)
             console.log("Token ", token.id)
+            console.log("Token mail", token.email)
 
-            return fetch('http://localhost:5000/api/forma' , {
+            return fetch('http://localhost:5000/api/sendmail' , {
 
           method: "POST",
       headers,
@@ -80,6 +81,7 @@ const getCartCount = () => {
         }).then(response => {
           
           console.log(response)
+          console.log(token.email)
         }).catch(error => console.log(error))
 
 
