@@ -6,15 +6,16 @@ const CartItemOrder = ({ item }) => {
 
 
   return (
-    <div className="cartitem1">
-        <p className="name">width: {item.width}</p>
-        <p className="name1">height: {item.height}</p>
-        <p className="name2">control: {item.control}</p>
-        <p className="name3">control lenght: {item.control_length}</p>
-        <p className="name4">lamella color: {item.lamella_color}</p>
-        <p className="name5">profile color: {item.profile_color}</p>
-
-      <p className="cartitem__price">{item.qty}x{item.price} = Kč {item.qty * item.price}</p>
+    <div className="cart_Item_Order_Hor">
+      <div className="cart_product_info">
+        <div className="cart_lamella">lamella color: {item.lamella_color}</div>
+        <div className="cart_profile">profile color: {item.profile_color}</div>
+        <div className="cart_length">control length: {item.control_length}</div>
+        <div className="cart_control">control: {item.control}</div>
+        <div className="cart_width">width: {item.width}</div>
+        <div className="cart_height">height: {item.height}</div>
+      </div>
+      <div className="cartitem__price">{item.qty}x{item.price} = Kč {item.qty * item.price}</div>
     </div>
   );
 };

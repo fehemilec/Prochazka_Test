@@ -31,18 +31,10 @@ export default function ShippingAddressScreen() {
 
     const dispatch = useDispatch();
 
-    const validateForm = (e) => {
-
-        var a = document.forms["form"]["fullname"].value;
-        var b = document.forms["form"]["address"].value;
-        var c = document.forms["form"]["city"].value;
-        var d = document.forms["form"]["postalCode"].value;
-
-        if(document.getElementById("fullname").value == "")
-        {
-            alert("empty")
-        }
-}
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`The name you entered was: `);
+      }
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -60,27 +52,26 @@ export default function ShippingAddressScreen() {
         <div>
             <CheckoutSteps step1 ></CheckoutSteps>
         <div className="address_forms">
-            <form className="form">
+            <form className="form" onSubmit={handleSubmit}>
                <div className= "formDiv"> <div>
                     <h2 className="title">Billing Address</h2>
                 </div>
                 <div>
                     <label htmlFor="fullName">Full Name</label>
-                    <input required
+                    <input 
                     type="text" 
-                    name="fullname"
                     id="fullName" 
                     placeholder="Enter full name" 
                     value={fullName} 
                     onChange={(e) => setFullName(e.target.value)} 
-                    ></input>
+                    required
+                    />
                 </div>
 
                 <div>
                     <label htmlFor="address">Address</label>
                     <input 
                     type="text" 
-                    name="address"
                     id="address" 
                     placeholder="Enter Address" 
                     value={address} 
@@ -93,7 +84,6 @@ export default function ShippingAddressScreen() {
                     <label htmlFor="city">City</label>
                     <input 
                     type="text" 
-                    name="city"
                     id="city" 
                     placeholder="Enter City" 
                     value={city} 
@@ -105,8 +95,7 @@ export default function ShippingAddressScreen() {
                 <div>
                     <label htmlFor="postalCode">Postal Code</label>
                     <input 
-                    type="text"
-                    name="postalCode" 
+                    type="text" 
                     id="postalCode" 
                     placeholder="Enter postal Code" 
                     value={postalCode} 
@@ -118,8 +107,7 @@ export default function ShippingAddressScreen() {
                 <div>
                     <label htmlFor="country">Country</label>
                     <input 
-                    type="text"
-                    name="country" 
+                    type="text" 
                     id="country" 
                     placeholder="Enter Country" 
                     value={country} 
@@ -200,16 +188,13 @@ export default function ShippingAddressScreen() {
                 </div>
 
                  </div>
-
             </form>
             
         </div>
             
         <div className="contin">
                     <label/>
-                    <button className="primary" type="submit" onClick={() => {
-                  validateForm()
-                }}>Continue</button> 
+                    <button className="primary" type="submit" onClick={submitHandler}>Continue</button> 
                 </div> 
 
             

@@ -25,6 +25,312 @@ export default function Horiz() {
     const cart = useSelector((state) => state.cart);
     const { cartItems_hor } = cart;
 
+    function pop_up_bila_leskla() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/bílá_lesklá.jpg') ;
+        
+    }
+
+    function pop_up_bila_matna() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/bílá_mat.jpg') ;
+        
+    } 
+
+    function pop_up_stříbrná_hladká() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/stříbrná_hladká.jpg') ;
+        
+    }
+
+    function pop_up_perleťová_stříbrná() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/perleťová_stříbrná.jpg') ;
+        
+    }
+
+    function pop_up_metalická_stříbrná() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/metalická_stříbrná.jpg') ;
+        
+    }
+
+    function pop_up_matná_slonová_kost() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/matná_slonová_kost.jpg') ;
+        
+    }
+
+    function pop_up_lesklá_slonová_kost() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/lesklá_slonová_kost.jpg') ;
+        
+    }
+
+    function pop_up_matná_bílé_kafe() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/matná_bílé_kafe.jpg') ;        
+    }
+
+    function pop_up_lesklá_bílé_kafe() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/lesklá_bílé_kafe.jpg') ;        
+    }
+
+    function pop_up_matná_béžová() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/matná_béžová.jpg') ;        
+    }
+
+    function pop_up_matná_světle_béžová() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/matná_světle_béžová.jpg') ;        
+    }
+
+    function pop_up_šedá_matná() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/šedá_matná.jpg') ;        
+    }
+
+    function pop_up_W91() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/W91.jpg') ;        
+    }
+
+    function pop_up_W92() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/W92.jpg') ;        
+    }
+
+    function pop_up_W93() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/W93.jpg') ;        
+    }
+
+    function pop_up_W94() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/W94.jpg') ;        
+    }
+
+    function pop_up_W95() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/W95.jpg') ;        
+    }
+
+    function pop_up_W96() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/W96.jpg') ;        
+    }
+
+    function pop_up_W97() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/W97.jpg') ;        
+    }
+
+    function pop_up_W98() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/W98.jpg') ;        
+    }
+
+    function pop_up_performovaná_bílá() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/performovaná_bílá.jpg') ;        
+    }
+
+    function pop_up_performovaná_šedá() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/performovaná_šedá.jpg') ;        
+    }
+
+    function pop_up_performovaná_slonová_kost() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/performovaná_slonová_kost.jpg') ;        
+    }
+
+    function pop_up_performovaná_béžová() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/performovaná_béžová.jpg') ;        
+    }
+
+    function pop_up_performovaná_stříbrná() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/performovaná_stříbrná.jpg') ;        
+    }
+
+    function pop_up_tělová_matná() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/tělová_matná.jpg') ;        
+    }
+
+    function pop_up_lesklá_světle_modrá() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/lesklá_světle_modrá.jpg') ;        
+    }
+
+    function pop_up_perletově_světla_modrá() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/perletově_světla_modrá.jpg') ;        
+    }
+
+    function pop_up_lesklá_modrá() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/lesklá_modrá.jpg') ;        
+    }
+
+    function pop_up_metalická_modrá() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/metalická_modrá.jpg') ;        
+    }
+
+    function pop_up_lesklá_růžová() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/lesklá_růžová.jpg') ;        
+    }
+
+    function pop_up_metalická_růžová() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/metalická_růžová.jpg') ;        
+    }
+
+    function pop_up_perletově_růžová() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/perletově_růžová.jpg') ;        
+    }
+
+    function pop_up_lesklá_červená() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/lesklá_červená.jpg') ;        
+    }
+
+    function pop_up_metalická_zelenomodrá() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/metalická_zelenomodrá.jpg') ;        
+    }
+
+    function pop_up_lesklá_pastelová_zelená_hrášková() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/lesklá_pastelová_zelená_hrášková.jpg') ;        
+    }
+
+    function pop_up_lesklá_zelená() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/lesklá_zelená.jpg') ;        
+    }
+
+    function pop_up_lesklá_žlutá() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/lesklá_žlutá.jpg') ;        
+    }
+
+    function pop_up_lesklá_světle_hnědá() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/lesklá_světle_hnědá.jpg') ;        
+    }
+
+    function pop_up_metalická_šedohnědá() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/metalická_šedohnědá.jpg') ;        
+    }
+
+    function pop_up_perletová_šedohnědá_světlá() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/perletová_šedohnědá_světlá.jpg') ;        
+    }
+
+    function pop_up_černá_lesk() {
+        var modal = document.getElementsByClassName("modal")[0];
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "block"; 
+        modalImg.src =require('../images/černá_lesk.jpg') ;        
+    }
+
+    function close() {
+        var modal = document.getElementsByClassName("modal")[0];
+        modal.style.display = "none";           
+    }  
+
 
     //return id of last item in horizontal cart
     function increment (){
@@ -1627,6 +1933,10 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
         </div>
 
   <div className='pallete_container'>
+  <div id="myModal" className="modal">
+                <span className="close" onClick={close}>&times;</span>
+                <img id="modal-img" className="modal-content" alt='pop-up'/>  
+            </div>
             <div className='pallete1' onChange={handleLamellaColor}>
                 <div className='titleBar_1'>
                 <span className="palleteTitle"> <i className='fas fa-paint-roller'></i>ZÁKLADNÍ BARVY</span> 
@@ -1637,9 +1947,9 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
             {/*------------------------------------------------------------------------------------*/}
             <div>                        
 			            <label>
-                            <div className = 'label_class_1'/>
+                            <div className = 'label_class_1' onClick={pop_up_bila_leskla}/>
                             <div className = 'hh'>
-                                <input type="radio" name="palleteInput" id="1" value="bílá lesklá" onClick={form1}/>
+                                <input type="radio" name="palleteInput" id="1" value="0001-bílá lesklá" onClick={form1}/>
                                 <span>bílá lesklá</span>      
                             </div>                      
                         </label>
@@ -1647,9 +1957,9 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
                         
                     <div>                        
 			            <label>
-                            <div className = 'label_class_2'/>
+                            <div className = 'label_class_2' onClick={pop_up_bila_matna}/>
                             <div className = 'hh'>
-                                <input type="radio" name="palleteInput" id="2" value="bílá matná" onClick={form2}/>
+                                <input type="radio" name="palleteInput" id="2" value="0001-bílá matná" onClick={form2}/>
                                 <span>bílá matná</span>      
                             </div>                      
                         </label>
@@ -1657,9 +1967,9 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className = 'label_class_3'/>
+                            <div className = 'label_class_3' onClick={pop_up_stříbrná_hladká}/>
                             <div className = 'hh'>
-                                <input type="radio" name="palleteInput" id="3" value="stříbrná hladká" onClick={form3}/>
+                                <input type="radio" name="palleteInput" id="3"  value="0001-stříbrná hladká" onClick={form3}/>
                                 <span>stříbrná hladká</span>      
                             </div>                      
                         </label>
@@ -1667,9 +1977,9 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_4'/>
+                            <div className= 'label_class_4'  onClick={pop_up_perleťová_stříbrná}/>
                             <div className= 'hh'>
-                                <input type="radio" name="palleteInput" id="4" value="perleťová stříbrná" onClick={form4}/>
+                                <input type="radio" name="palleteInput" id="4" value="0001-perleťová stříbrná" onClick={form4}/>
                                 <span>perleťová stříbrná</span>      
                             </div>                      
                         </label>
@@ -1677,9 +1987,9 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_5'/>
+                            <div className= 'label_class_5' onClick={pop_up_metalická_stříbrná}/>
                             <div className= 'hh'>
-                                <input type="radio" name="palleteInput" id="5" value="metalická stříbrná" onClick={form5}/>
+                                <input type="radio" name="palleteInput" id="5" value="0001-metalická stříbrná" onClick={form5}/>
                                 <span>metalická stříbrná</span>      
                             </div>                      
                         </label>
@@ -1687,9 +1997,9 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_6'/>
+                            <div className= 'label_class_6'onClick={pop_up_matná_slonová_kost}/>
                             <div className= 'hh'>
-                                <input type="radio" name="palleteInput" id="6" value="matná slonová kost" onClick={form6}/>
+                                <input type="radio" name="palleteInput" id="6" value="0001-matná slonová kost" onClick={form6}/>
                                 <span>matná slonová kost</span>      
                             </div>                      
                         </label>
@@ -1697,7 +2007,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_7'/>
+                            <div className= 'label_class_7'onClick={pop_up_lesklá_slonová_kost}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="7" value="lesklá slonová kost" onClick={form7}/>
                                 <span>lesklá slonová kost</span>      
@@ -1707,7 +2017,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_8'/>
+                            <div className= 'label_class_8'onClick={pop_up_matná_bílé_kafe}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="8" value="matná bílé kafe" onClick={form8}/>
                                 <span>matná bílé kafe</span>      
@@ -1717,7 +2027,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_9'/>
+                            <div className= 'label_class_9'onClick={pop_up_lesklá_bílé_kafe}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="9" value="lesklá bílé kafe" onClick={form9}/>
                                 <span>lesklá bílé kafe</span>      
@@ -1727,7 +2037,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_10'/>
+                            <div className= 'label_class_10'onClick={pop_up_matná_béžová}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="10" value="matná béžová" onClick={form10}/>
                                 <span>matná béžová</span>      
@@ -1737,7 +2047,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_11'/>
+                            <div className= 'label_class_11'onClick={pop_up_matná_světle_béžová}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="11" value="matná světle béžová" onClick={form11}/>
                                 <span>matná světle béžová</span>      
@@ -1807,7 +2117,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_18'/>
+                            <div className= 'label_class_18' onClick={pop_up_lesklá_světle_modrá}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="18" value="lesklá světle modrá" onClick={form18}/>
                                 <span>lesklá světle modrá</span>      
@@ -1817,7 +2127,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_19'/>
+                            <div className= 'label_class_19' onClick={pop_up_perletově_světla_modrá}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="19" value="perleťová světle modrá" onClick={form19}/>
                                 <span>perleťová světle modrá</span>      
@@ -1837,7 +2147,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_21'/>
+                            <div className= 'label_class_21'onClick={pop_up_metalická_modrá}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="21" value="lesklá modrá" onClick={form21}/>
                                 <span>lesklá modrá</span>      
@@ -1847,7 +2157,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_22'/>
+                            <div className= 'label_class_22' onClick={pop_up_lesklá_modrá}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="22" value="lesklá růžová" onClick={form22}/>
                                 <span>lesklá růžová</span>      
@@ -1857,7 +2167,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_23'/>
+                            <div className= 'label_class_23'onClick={pop_up_lesklá_růžová}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="23" value="metalická růžová" onClick={form23}/>
                                 <span>metalická růžová</span>      
@@ -1867,7 +2177,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_24'/>
+                            <div className= 'label_class_24'onClick={pop_up_perletově_růžová}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="24" value="perleťová růžová" onClick={form24}/>
                                 <span>perleťová růžová</span>      
@@ -1877,7 +2187,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_25'/>
+                            <div className= 'label_class_25' onClick={pop_up_lesklá_červená}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="25" value="lesklá červená" onClick={form25}/>
                                 <span>lesklá červená</span>      
@@ -1887,7 +2197,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_26'/>
+                            <div className= 'label_class_26'onClick={pop_up_metalická_zelenomodrá}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="26" value="metalická zelenomodrá" onClick={form26}/>
                                 <span>metalická zelenomodrá</span>      
@@ -1897,7 +2207,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_27'/>
+                            <div className= 'label_class_27' onClick={pop_up_lesklá_pastelová_zelená_hrášková}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="27" value="lesklá pastelová zelená/hrášková" onClick={form27}/>
                                 <span>lesklá pastelová zelená/hrášková</span>      
@@ -1907,7 +2217,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_28'/>
+                            <div className= 'label_class_28' onClick={pop_up_lesklá_zelená}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="28" value="lesklá zelená" onClick={form28}/>
                                 <span>lesklá zelená</span>      
@@ -1917,7 +2227,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_29'/>
+                            <div className= 'label_class_29' onClick={pop_up_lesklá_žlutá}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="29" value="lesklá žlutá" onClick={form29}/>
                                 <span>lesklá žlutá</span>      
@@ -1927,7 +2237,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_30'/>
+                            <div className= 'label_class_30'  onClick={pop_up_lesklá_světle_hnědá}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="30" value="lesklá světle hnědá" onClick={form30}/>
                                 <span>lesklá světle hnědá</span>      
@@ -1947,7 +2257,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_32'/>
+                            <div className= 'label_class_32' onClick={pop_up_metalická_šedohnědá}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="32" value="metalická šedohnědá" onClick={form32}/>
                                 <span>metalická šedohnědá</span>      
@@ -1957,7 +2267,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_33'/>
+                            <div className= 'label_class_33' onClick={pop_up_perletová_šedohnědá_světlá}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="33" value="perleťová šedohnědá světlá" onClick={form33}/>
                                 <span>perleťová šedohnědá světlá</span>      
@@ -2032,7 +2342,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
                         
                     <div>                        
 			            <label>
-                            <div className= 'label_class_41'/>
+                            <div className= 'label_class_41' onClick={pop_up_W91}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="41" value="W91 IMITACE DŘEVA" onClick={form41}/>
                                 <span>W91 IMITACE DŘEVA</span>      
@@ -2042,7 +2352,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_42'/>
+                            <div className= 'label_class_42' onClick={pop_up_W92}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="42" value="W92 IMITACE DŘEVA" onClick={form42}/>
                                 <span>W92 IMITACE DŘEVA</span>      
@@ -2052,7 +2362,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_43'/>
+                            <div className= 'label_class_43' onClick={pop_up_W93}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="43" value="W93 IMITACE DŘEVA" onClick={form43}/>
                                 <span>W93 IMITACE DŘEVA</span>      
@@ -2062,7 +2372,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
                        
                     <div>                        
 			            <label>
-                            <div className= 'label_class_44'/>
+                            <div className= 'label_class_44' onClick={pop_up_W94}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="44" value="W94 IMITACE DŘEVA" onClick={form44}/>
                                 <span>W94 IMITACE DŘEVA</span>      
@@ -2072,7 +2382,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_45'/>
+                            <div className= 'label_class_45'  onClick={pop_up_W95}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="45" value="W95 IMITACE DŘEVA" onClick={form45}/>
                                 <span>W95 IMITACE DŘEVA</span>      
@@ -2082,7 +2392,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_46'/>
+                            <div className= 'label_class_46'onClick={pop_up_W96}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="46" value="W96 IMITACE DŘEVA" onClick={form46}/>
                                 <span>W96 IMITACE DŘEVA</span>      
@@ -2092,7 +2402,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_47'/>
+                            <div className= 'label_class_47' onClick={pop_up_W97}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="47" value="W97 IMITACE DŘEVA" onClick={form47}/>
                                 <span>W97 IMITACE DŘEVA</span>      
@@ -2102,7 +2412,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_48'/>
+                            <div className= 'label_class_48' onClick={pop_up_W98}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="48" value="W98 IMITACE DŘEVA" onClick={form48}/>
                                 <span>W98 IMITACE DŘEVA</span>      
@@ -2112,7 +2422,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_49'/>
+                            <div className= 'label_class_49' onClick={pop_up_performovaná_bílá}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="49" value="perforovaná bílá" onClick={form49}/>
                                 <span>perforovaná bílá</span>      
@@ -2122,7 +2432,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_50'/>
+                            <div className= 'label_class_50' onClick={pop_up_performovaná_stříbrná}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="50" value="perforovaná stříbrná" onClick={form50}/>
                                 <span>perforovaná stříbrná</span>      
@@ -2132,7 +2442,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_51'/>
+                            <div className= 'label_class_51' onClick={pop_up_performovaná_béžová}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="51" value="perforovaná béžová" onClick={form51}/>
                                 <span>perforovaná béžová</span>      
@@ -2142,7 +2452,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_52'/>
+                            <div className= 'label_class_52' onClick={pop_up_performovaná_šedá}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="52" value="perforovaná šedá" onClick={form52}/>
                                 <span>perforovaná šedá</span>      
@@ -2152,7 +2462,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_53'/>
+                            <div className= 'label_class_53' onClick={pop_up_performovaná_slonová_kost}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="53" value="perforovaná slonová kost" onClick={form53}/>
                                 <span>perforovaná slonová kost</span>      
@@ -2202,7 +2512,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_58'/>
+                            <div className= 'label_class_58' onClick={pop_up_tělová_matná}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="58" value="matná tělová" onClick={form58}/>
                                 <span>matná tělová</span>      
@@ -2232,7 +2542,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 
                     <div>                        
 			            <label>
-                            <div className= 'label_class_61'/>
+                            <div className= 'label_class_61' onClick={pop_up_šedá_matná}/>
                             <div className= 'hh'>
                                 <input type="radio" name="palleteInput" id="61" value="matná šedá" onClick={form61}/>
                                 <span>matná šedá</span>      
@@ -2508,7 +2818,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
                 </span>
                 <input type="submit" value="cart" id="btnSubmit" name="cart"/>
                 <label htmlFor="btnSubmit" className="btnSubmit">                   
-                    <span className="addToCart">VLOŽIT DO KOŠÍKU</span>
+                    <span className="addToCart" onClick={addToCartHandler_hor}>VLOŽIT DO KOŠÍKU</span>
                 </label>
                 </div>
             </div>

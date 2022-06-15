@@ -97,60 +97,41 @@ const getCartCount = () => {
         
         <div>
             <CheckoutSteps step1 step2></CheckoutSteps>
-           
-
-
-
-
 
             <div className="cartscreen">
-        <div className="cartscreen__left">
-        <div className="row top">
-                <div className="col-2">
-                    <ul>
-                        
-                            <div className="ship_info">
-                                <h2>Billing Address</h2>
-                                <p>
-                                    <span className="fullname"><strong>Name: </strong>{cart.billingAddress.fullName}</span><br />
-                                    <span className="address"><strong>Address: </strong>{cart.billingAddress.address},&nbsp;
-                                    {cart.billingAddress.city},&nbsp;{cart.billingAddress.postalCode},&nbsp;
-                                    {cart.billingAddress.country}</span>
+              <div className="cartscreen__left">
+                <div className="row top">
+                  <div className="col-2">
+                    <ul>                        
+                        <div className="ship_info">
+                          <h2>Billing Address</h2>
+                          <p>
+                            <span className="fullname"><strong>Name: </strong>{cart.billingAddress.fullName}</span><br />
+                            <span className="address"><strong>Address: </strong>{cart.billingAddress.address},&nbsp;
+                            {cart.billingAddress.city},&nbsp;{cart.billingAddress.postalCode},&nbsp;
+                            {cart.billingAddress.country}</span>
+                          </p>
+                        </div>                      
 
-                                </p>
-                            </div>
-                        
-
-                        
-                            <div className="ship_info">
-                                <h2>Shipping Address</h2>
-                                <p>
-                                    <span className="fullname"><strong>Name: </strong>{cart.shippingAddress.fullName_ship}</span><br />
-                                    <span className="address"><strong>Address: </strong>{cart.shippingAddress.address_ship},&nbsp;
-                                    {cart.shippingAddress.city_ship},&nbsp;{cart.shippingAddress.postalCode_ship},&nbsp;
-                                    {cart.shippingAddress.country_ship}</span>
-
-                                </p>
-                            </div>
+                        <div className="ship_info">
+                          <h2>Shipping Address</h2>
+                            <p>
+                              <span className="fullname"><strong>Name: </strong>{cart.shippingAddress.fullName_ship}</span><br />
+                              <span className="address"><strong>Address: </strong>{cart.shippingAddress.address_ship},&nbsp;
+                              {cart.shippingAddress.city_ship},&nbsp;{cart.shippingAddress.postalCode_ship},&nbsp;
+                              {cart.shippingAddress.country_ship}</span>
+                            </p>
+                        </div>
                        
-
-                        
-                            <div className="card card-body">
-                                <h2>Order Items</h2>
-
-
-             
-                  {cartItems.map((item) => (
-                     <CartItemOrder
-                     key={item.product}
-                     item={item}
-                   />
-                  ))}
-                
-                                
-
-
-                            </div>
+                        <div className="card card-body">
+                          <h2>Order Items</h2>             
+                          {cartItems.map((item) => (
+                          <CartItemOrder
+                            key={item.product}
+                            item={item}
+                          />
+                          ))}                     
+                        </div>
 
                             <div className="cartscreen__left_bottom">
 
@@ -175,20 +156,20 @@ const getCartCount = () => {
             </div>
         </div>
 
-        <div className="cartscreen__right">
+        <div className="placeOrderScreen_right">
           <div className="cartscreen__info">
             <p>Subtotal ({getCartCount()}) items</p>
             <p>Kč {getCartSubTotal()}</p>
           </div>
           <div>
-          <StripeCheckout 
-        stripeKey="pk_test_51KG4qlEJlYE6AglXN3kXqFDvEPL5B9PZDxeZX6JmgsXYzHtxI8olvw9rZhbVqwvWD4CUsJLn79CaH14mwenxsqSe00cd34mY1y" 
-        token= {makePayment}
-        name="Purchase Order"
-        amount={getCartSubTotal()*100}
-        >
-          <button className="btn-large blue">Pay now with Card</button>
-        </StripeCheckout>
+            <StripeCheckout 
+              stripeKey="pk_test_51KG4qlEJlYE6AglXN3kXqFDvEPL5B9PZDxeZX6JmgsXYzHtxI8olvw9rZhbVqwvWD4CUsJLn79CaH14mwenxsqSe00cd34mY1y" 
+              token= {makePayment}
+              name="Purchase Order"
+              amount={getCartSubTotal()*100}
+            >
+              <button className="btn-large blue">Pay now with Card</button>
+            </StripeCheckout>
           </div>
         </div>
       </div>

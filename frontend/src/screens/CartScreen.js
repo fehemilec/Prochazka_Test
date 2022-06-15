@@ -57,9 +57,10 @@ const CartScreen = () => {
 
   return (
     <>
-     <h2 className="shop_cart">Shopping Cart</h2>
       <div className="cartscreen">
-       
+     <h2 className="shop_cart">Shopping Cart</h2>
+      <div className="containers">
+        <div className="products_container">
         <div className="cartscreen__left">
 
           {cartItems.length === 0  && cartItems_hor.length === 0 ? (
@@ -80,8 +81,8 @@ const CartScreen = () => {
 
           )}
         </div>
-
-        <div className="cartscreen__left_bottom">
+      
+              <div className="cartscreen__left_bottom">
 
         {(
             cartItems_hor.map((item) => (
@@ -97,7 +98,7 @@ const CartScreen = () => {
           )}
 
         </div>
-
+        </div>
         <div className="cartscreen__right">
           <div className="cartscreen__info">
             <p>Subtotal ({getCartCount()}) items</p>
@@ -110,7 +111,7 @@ const CartScreen = () => {
                 </label>
           </div>
         </div>
-
+      </div>
       </div>
 
     </>

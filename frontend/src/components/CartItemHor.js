@@ -4,14 +4,20 @@ import { Link } from "react-router-dom";
 const CartItemHor = ({ item, qtyChangeHandler, removeHandler }) => {
   return (
     <div className="cartitem_hor">
-      <p>width: {item.width}</p>
-      <p>height: {item.height}</p>
+      <div className="cartItem_col">
+           
+      <div className="cartitem_hor_lamely">Barva lamely: {item.lamella_color}</div>
+      <div className="cartitem_hor_profilu">Barva profilu: {item.profile_color}</div>
+      <div className="cartitem_hor_dir">Control dir: {item.control}</div>
+      
 
-      <p className="cartitem_hor__price">Kč {item.price}</p>
-      <p className="cartitem_hor__price">Control length: {item.control_length}</p>
-      <p className="cartitem_hor__price">Control dir: {item.control}</p>
-      <p className="cartitem_hor__price">Barva lamely: {item.lamella_color}</p>
-      <p className="cartitem_hor__price">Barva profilu: {item.profile_color}</p>
+      
+      <div className= "width"> width: {item.width}</div>
+      <div className= "height"> height: {item.height}</div>
+      <div className="cartitem_hor_length">Control length: {item.control_length}</div>      
+      
+      </div>
+      <div className="cartitem_hor_price">Kč {item.price}</div>
 
 
 

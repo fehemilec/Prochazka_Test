@@ -1,4 +1,4 @@
-.ship_info, .paym_meth{
+.ship_info{
     display: flex;
     flex-direction: column;
     margin-left: 10px;
@@ -8,20 +8,21 @@
     word-break: break-all;
     justify-content: center;
     border-radius: 10px;
+    margin-bottom: 3%;
 }
 
-.paym_meth{
-    margin-top: 10px;
-}
-.ship_info > h2,
-.paym_meth >h2 {
+.ship_info > h2{
     margin-bottom: 10px;
     margin-left: 10px;
 }
 
 .card-body {
+    display: flex;
+    flex-direction: column;
     margin-left: 10px;
     width: 90%;
+    justify-content: center;
+    border-radius: 30px;
 }
 
 .card-body >h2 {
