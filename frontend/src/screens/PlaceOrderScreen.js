@@ -3,7 +3,7 @@ import CheckoutSteps from '../components/CheckoutSteps'
 import { useSelector } from 'react-redux'
 import CartItemOrder from "../components/CartItemOrder";
 import CartItemOrderHor from "../components/CartItemOrderHor";
-import "./CartScreen.css";
+import "./PlaceOrderScreen.css";
 import StripeCheckout from 'react-stripe-checkout'
 import { Link , useNavigate} from 'react-router-dom';
 
@@ -98,8 +98,8 @@ const getCartCount = () => {
         <div>
             <CheckoutSteps step1 step2></CheckoutSteps>
 
-            <div className="cartscreen">
-              <div className="cartscreen__left">
+            <div className="placeOrderScreen">
+              <div className="placeOrderScreen__left">
                 <div className="row top">
                   <div className="col-2">
                     <ul>                        
@@ -133,7 +133,7 @@ const getCartCount = () => {
                           ))}                     
                         </div>
 
-                            <div className="cartscreen__left_bottom">
+                            <div className="placeOrderScreen__left_bottom">
 
         {(
             cartItems_hor.map((item) => (
@@ -157,7 +157,7 @@ const getCartCount = () => {
         </div>
 
         <div className="placeOrderScreen_right">
-          <div className="cartscreen__info">
+          <div className="placeOrderScreen__info">
             <p>Subtotal ({getCartCount()}) items</p>
             <p>Kč {getCartSubTotal()}</p>
           </div>

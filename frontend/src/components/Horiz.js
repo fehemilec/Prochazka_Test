@@ -1791,6 +1791,10 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
   return (
 
 <div>
+<div id="myModal" className="modal">
+                <span className="close" onClick={close}>&times;</span>
+                <img id="modal-img" className="modal-content" alt='pop-up'/>  
+            </div>
 <div className='horiz-container'>   
             <div className='title'><h3>ISOLINE PRIM</h3></div>      
             <div className='blokVnitrek'>                
@@ -1933,10 +1937,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
         </div>
 
   <div className='pallete_container'>
-  <div id="myModal" className="modal">
-                <span className="close" onClick={close}>&times;</span>
-                <img id="modal-img" className="modal-content" alt='pop-up'/>  
-            </div>
+  
             <div className='pallete1' onChange={handleLamellaColor}>
                 <div className='titleBar_1'>
                 <span className="palleteTitle"> <i className='fas fa-paint-roller'></i>ZÁKLADNÍ BARVY</span> 
