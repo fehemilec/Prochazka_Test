@@ -81,14 +81,14 @@
     background: #fff;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
-    width: 33.33%;
-    height: 20vh;
-    margin-left: 30%;
+    width: 88.5%;
+    height: 18vh;
+    margin-left: 1%;
   }
   
   .placeOrderScreen > .placeOrderScreen_right  > .placeOrderScreen__info {
-    margin-left: 30%;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
+    text-align: center;
   }
   
   .placeOrderScreen > .placeOrderScreen_right > div > span > button {

@@ -124,3 +124,24 @@
     margin: 1rem;
   }
 }
+
+
+@media (max-width: 960px) {
+  .containers {
+    flex-direction: column;
+  }
+
+  .cartscreen__info > p {
+    text-align: center;
+  }
+
+  .checkout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cartscreen__right {
+    margin: 1rem;
+  }
+}
