@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Components
 import Product from "../components/Product";
-import Footer from '../components/Footer';
 
 
 //Actions

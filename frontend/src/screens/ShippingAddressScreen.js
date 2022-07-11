@@ -4,7 +4,6 @@ import  './ShippingAddressScreen.css'
 import {useDispatch, useSelector} from 'react-redux'
 import { saveBillingAddress, saveShippingAddress } from '../redux/actions/cartActions';
 import { Link, useNavigate } from "react-router-dom";
-import Footer from '../components/Footer';
 
 
 export default function ShippingAddressScreen() {
