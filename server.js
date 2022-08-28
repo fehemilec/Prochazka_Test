@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require("cors")
 
 const productRoutes = require("./backend/routes/productRoutes");
+const userRouter = require("./backend/routes/userRoutes");
 const connectDB = require("./backend/config/db");
 const stripe = require("stripe")(process.env.S_KEY);
 
@@ -16,6 +17,7 @@ connectDB();
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 app.use(cors());
 
 
@@ -128,6 +130,8 @@ app.post('/api/sendmail', (req,res) => {
 
 
 app.use("/api/products", productRoutes);
+app.use("/api/users", userRouter);
+
 
 //Pay
 

@@ -1,4 +1,15 @@
-const products = [
+var bcrypt = require('bcryptjs');
+
+const data = {
+  users:[
+    {
+      name:'Admin_Prochazka',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('Admin_Prochazka-21',8),
+      isAdmin: true,
+    }
+  ],
+  products:[
     {
       name: "FIXAČNÍ LANKO 0,8 MM (SILON)",
       imageUrl:
@@ -232,6 +243,6 @@ const products = [
       countInStock: 10,
     },
     
-  ];
+  ]};
   
-  module.exports = products;
+  module.exports = data;
