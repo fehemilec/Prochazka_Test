@@ -5,6 +5,7 @@ const cors = require("cors")
 
 const productRoutes = require("./backend/routes/productRoutes");
 const userRouter = require("./backend/routes/userRoutes");
+const orderRoutes = require("./backend/routes/orderRoutes");
 const connectDB = require("./backend/config/db");
 const stripe = require("stripe")(process.env.S_KEY);
 
@@ -37,7 +38,7 @@ app.post('/api/sendmail', (req,res) => {
       port:465,
       auth:{
           user:'fehemifemo@gmail.com',
-          pass:'uhpxynwrlzjckrlw'
+          pass:'Fehemi_usggl-96!'
       },
       tls: {
           rejectUnauthorized: false
@@ -131,6 +132,7 @@ app.post('/api/sendmail', (req,res) => {
 
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRouter);
+app.use("/api/orders", orderRoutes);
 
 
 //Pay

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import CheckoutSteps from '../components/CheckoutSteps'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import CartItemOrder from "../components/CartItemOrder";
 import CartItemOrderHor from "../components/CartItemOrderHor";
 import "./PlaceOrderScreen.css";
@@ -8,15 +8,17 @@ import StripeCheckout from 'react-stripe-checkout'
 import { Link , useNavigate} from 'react-router-dom';
 
 import  './PlaceOrderScreen.css'
+import { createOrder } from '../redux/actions/orderActions';
 
 
 export default function PlaceOrderScreen() {
 
     const cart = useSelector((state) => state.cart)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const { cartItems } = cart;
     const { cartItems_hor } = cart;
-
-    const navigate = useNavigate();
 
 
     const [ema, setEma] = useState({
@@ -26,6 +28,9 @@ export default function PlaceOrderScreen() {
 });
     const [final_price, setFinalPrice] = useState(0);
 
+const placeOrderHandler = () =>{
+  dispatch(createOrder({...cart, orderItems: cart.cartItems}))
+}
 const getCartSubTotal = () => {
 
   return Number(cartItems
@@ -68,6 +73,7 @@ const getCartCount = () => {
 
           if(status === 200){
 
+            placeOrderHandler()
             navigate('/confirmation');
             console.log("You paid fucker, Status ", status)
             console.log("Token ", token.id)
