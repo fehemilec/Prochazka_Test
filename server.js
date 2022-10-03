@@ -1,4 +1,4 @@
-require("dotenv").config({path: "./config.env"});
+require("dotenv").config({ path: "./config.env" });
 
 const express = require("express");
 const cors = require("cors")
@@ -18,38 +18,38 @@ connectDB();
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 
 
 
 //SENDING EMAIL
-app.post('/api/sendmail', (req,res) => {
+app.post('/api/sendmail', (req, res) => {
 
 
-  const {ema, cartItems,cartItems_hor,token} = req.body;
+  const { ema, cartItems, cartItems_hor, token } = req.body;
   console.log("email form token " + token.email)
 
   //console.log("PRICE PAID MAIL", cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
 
   let smtpTransport = nodemailer.createTransport({
-      service: "Gmail",
-      port:465,
-      auth:{
-          user:'fehemifemo@gmail.com',
-          pass:'Fehemi_usggl-96!'
-      },
-      tls: {
-          rejectUnauthorized: false
-      }
+    service: "Gmail",
+    port: 465,
+    auth: {
+      user: 'fehemifemo@gmail.com',
+      pass: 'fpeckcfsveiuydob'
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
   });
 
   let mailOptions = {
-      from:"fehemifemo@gmail.com",
-      to:token.email,
-      subject:"New order",
-      html:
+    from: "fehemifemo@gmail.com",
+    to: token.email,
+    subject: "New order",
+    html:
       `<h1>Thanks for shopping with us</h1>
       <p>Hi ${ema.name},</p>
       <p>We have finished processing your order.</p>
@@ -75,22 +75,22 @@ app.post('/api/sendmail', (req,res) => {
         .join('\n')}
 
         ${cartItems_hor
-          .map(
-            (item) => `
+        .map(
+          (item) => `
           <tr>
           <td>${item.name}</td>
           <td align="center">${item.qty}</td>
           <td align="right"> Kc ${item.price.toFixed(2)}</td>
           </tr>
         `
-          )
-          .join('\n')}
+        )
+        .join('\n')}
       </tbody>
       <tfoot>
       <tr>
       <td colspan="2">Items Price:</td>
       <td align="right"> Kc ${(cartItems
-        .reduce((price, item) => price + item.price * item.qty, 0) + 
+        .reduce((price, item) => price + item.price * item.qty, 0) +
         (cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0))).toFixed(2)}</td>
       </tr>
       <tr>
@@ -104,7 +104,7 @@ app.post('/api/sendmail', (req,res) => {
       <tr>
       <td colspan="2"><strong>Total Price:</strong></td>
       <td align="right"><strong> Kc ${(cartItems
-        .reduce((price, item) => price + item.price * item.qty, 0) + 
+        .reduce((price, item) => price + item.price * item.qty, 0) +
         (cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0))).toFixed(2)}</strong></td>
       </tr>
       
@@ -113,15 +113,15 @@ app.post('/api/sendmail', (req,res) => {
       `
   };
 
-  smtpTransport.sendMail(mailOptions,(error, response)=> {
+  smtpTransport.sendMail(mailOptions, (error, response) => {
 
-      if(error){
-          return console.log(error)
-      }
-      else{
+    if (error) {
+      return console.log(error)
+    }
+    else {
 
-          console.log("Mail sent")
-      }
+      console.log("Mail sent")
+    }
 
 
   })
@@ -137,9 +137,9 @@ app.use("/api/orders", orderRoutes);
 
 //Pay
 
-app.post("/payment_card", (req,res) => {
+app.post("/payment_card", (req, res) => {
 
-  const {token, cart, cartItems, cartItems_hor} = req.body;
+  const { token, cart, cartItems, cartItems_hor } = req.body;
   //console.log("PRODUCT ", product);
   console.log("PRICE", cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
 
@@ -148,50 +148,50 @@ app.post("/payment_card", (req,res) => {
   const getCartSubTotall = () => {
 
     return (cartItems
-      .reduce((price, item) => price + item.price * item.qty, 0) + 
-      (cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0))).toFixed(2) *100
+      .reduce((price, item) => price + item.price * item.qty, 0) +
+      (cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0))).toFixed(2) * 100
   };
- 
+
   return stripe.customers.create({
 
-      email: token.email,
-      source: token.id
+    email: token.email,
+    source: token.id
   }).then(customer => {
 
 
-      stripe.charges.create({
+    stripe.charges.create({
 
-          amount: getCartSubTotall(),
-          currency: 'czk',
-          customer: customer.id,
-          receipt_email: token.email,
-          shipping:{
-              name: cart.shippingAddress.fullName_ship,
-              address:{
-                  country: cart.shippingAddress.country_ship,
-                  city: cart.shippingAddress.city_ship,
-                  postal_code: cart.shippingAddress.postalCode_ship
-              }
-          }
-      })
+      amount: getCartSubTotall(),
+      currency: 'czk',
+      customer: customer.id,
+      receipt_email: token.email,
+      shipping: {
+        name: cart.shippingAddress.fullName_ship,
+        address: {
+          country: cart.shippingAddress.country_ship,
+          city: cart.shippingAddress.city_ship,
+          postal_code: cart.shippingAddress.postalCode_ship
+        }
+      }
+    })
   })
-  .then(result => res.status(200).json(result))
-  .catch(err => console.log(err))
+    .then(result => res.status(200).json(result))
+    .catch(err => console.log(err))
 })
 
 //SERVE IF IN PRODUCTION
 
-if(process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production') {
 
   app.use(express.static(path.join(__dirname, '/frontend/build')));
 
-  app.get('*', (req, res) =>{
+  app.get('*', (req, res) => {
 
-    res.sendFile(path.resolve(__dirname, 'frontend','build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
 
 
   })
-}else{
+} else {
   app.get("/", (req, res) => {
     res.json({ message: "API running..." });
   });
