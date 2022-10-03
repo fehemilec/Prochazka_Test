@@ -29,7 +29,7 @@ export default function PlaceOrderScreen() {
     const [final_price, setFinalPrice] = useState(0);
 
 const placeOrderHandler = () =>{
-  dispatch(createOrder({...cart, orderItems: cart.cartItems}))
+  dispatch(createOrder(cart))
 }
 const getCartSubTotal = () => {
 

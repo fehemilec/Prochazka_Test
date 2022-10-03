@@ -13,6 +13,19 @@ const orderSchema = new mongoose.Schema({
             required: true,
     }
     }],
+    orderItems_hor: [{
+        name: {type: String, required: true},
+        amount: {type: String, required: true},
+        price: {type: Number, required: true},
+        width: {type: Number, required: true},
+        height: {type: Number, required: true},
+        price: {type: Number, required: true},
+        control: {type: String, required: true},
+        control_length: {type: String, required: true},
+        lamella_color: {type: String, required: true},
+        profile_color: {type: String, required: true},
+       
+    }],
     shippingAddress: {
         fullName_ship: {type: String, required: true},
         address_ship: {type: String, required: true},
