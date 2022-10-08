@@ -6,7 +6,6 @@ import CartItemOrderHor from "../components/CartItemOrderHor";
 import "./PlaceOrderScreen.css";
 import StripeCheckout from 'react-stripe-checkout'
 import { Link , useNavigate} from 'react-router-dom';
-
 import  './PlaceOrderScreen.css'
 import { createOrder } from '../redux/actions/orderActions';
 
@@ -86,7 +85,10 @@ const getCartCount = () => {
       body: JSON.stringify(body_1)
         }).then(response => {
           
-          console.log(response)
+          console.log("email response", response)
+          const {status} = response;
+          console.log("email response code ", status)
+
           console.log(token.email)
         }).catch(error => console.log(error))
 
