@@ -14,8 +14,6 @@ export default function Confirmation() {
     const { cartItems } = cart;
 
 
-      
-
       useEffect(()=> {
 
         dispatch(emptyCart());
