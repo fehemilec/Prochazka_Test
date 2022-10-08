@@ -4,6 +4,7 @@ const { generateToken } = require("../utils");
 
 const getUsers = async (req, res) => {
     try {
+      console.log("USER: ",  req.body.email)
         const user = await User.findOne({email: req.body.email});
         if(user){
           if(bcrypt.compareSync(req.body.password, user.password)){

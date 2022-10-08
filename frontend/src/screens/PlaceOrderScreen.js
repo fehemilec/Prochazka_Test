@@ -81,8 +81,8 @@ const getCartCount = () => {
             return fetch('http://localhost:5000/api/sendmail' , {
 
           method: "POST",
-      headers,
-      body: JSON.stringify(body_1)
+          headers,
+          body: JSON.stringify(body_1)
         }).then(response => {
           
           console.log("email response", response)

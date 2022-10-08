@@ -1,25 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { signin } from '../redux/actions/userActions';
 import './AdminLoginScreen.css';
+
+
 export default function AdminLoginScreen() {
+
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const control_email =(e) =>{
+    const value = e.target.value;
+    setEmail(value);
+ 
+ }
+ const control_pass =(e) =>{
+  const value = e.target.value;
+  setPassword(value);
+
+}
+
+  const handleLogin = (e) =>{
+    e.preventDefault()
+    dispatch(signin(email,password))
+
+  };
     return(  
-      <div class="login">
-        <div class="loginContainer">
+      <div className="login">
+        <div className="loginContainer">
           <h2>Login</h2>
           <p>Please fill in your credentials to login.</p>       
-          <form action="" method="post">
-            <div class="form-group">
+          <form  className="login_screen" onSubmit={handleLogin}>
+            <div className="form-group">
                 <input 
                   type="text" 
-                  name="username" 
+                  name="email" 
                   autocomplete="off" 
-                  placeholder="Email address or username" />                
+                  placeholder="Email address"
+                  value={email} 
+                  onChange={control_email}/>                
             </div>    
-            <div class="form-group">
+            <div className="form-group">
                 <input 
                   type="password" 
                   name="password" 
                   autocomplete="off" 
-                  placeholder="Password" />
+                  placeholder="Password"
+                  value={password} 
+                  onChange={control_pass}/>  
             </div>
             <input type="submit" value="loginSubmit" id="btnSubmit" name="loginbutton"/>
             <label htmlFor="btnSubmit" className="btnLoginSubmit">                   
