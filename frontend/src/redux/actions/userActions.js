@@ -6,6 +6,7 @@ import {
 } from '../constants/userConstants';
 
 export const signin = (email, password) => async(dispatch) =>{
+
     dispatch({type: USER_SIGNIN_REQUEST, payload:{email, password}});
 
     console.log("email, ", email)

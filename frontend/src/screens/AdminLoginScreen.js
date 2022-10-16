@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, {useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {Link, useNavigate } from 'react-router-dom';
 import { signin } from '../redux/actions/userActions';
 import './AdminLoginScreen.css';
 
 
 export default function AdminLoginScreen() {
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const userSignin = useSelector((state) => state.userSignin)
+  const { userInfo } = userSignin;
 
   const control_email =(e) =>{
     const value = e.target.value;
@@ -24,8 +29,13 @@ export default function AdminLoginScreen() {
   const handleLogin = (e) =>{
     e.preventDefault()
     dispatch(signin(email,password))
-
   };
+
+  useEffect(() => {
+    if(userInfo){
+      navigate('/orders')
+    }
+  }, [userInfo])
     return(  
       <div className="login">
         <div className="loginContainer">

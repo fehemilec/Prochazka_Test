@@ -1,9 +1,5 @@
 import axios from "axios";
-import {
-    ORDER_CREATE_REQUEST,
-    ORDER_CREATE_SUCCESS,
-    ORDER_CREATE_FAIL
-} from '../constants/orderConstants';
+import * as actionTypes from '../constants/orderConstants';
 
 export const createOrder = (order) => async(dispatch, getState) =>{
     dispatch({type: ORDER_CREATE_REQUEST, payload: order });
@@ -22,3 +18,24 @@ export const createOrder = (order) => async(dispatch, getState) =>{
         });
     }
 }
+
+export const getOrders = () => async (dispatch) => {
+    try {
+      dispatch({ type: actionTypes.GET_ORDERS_REQUEST });
+  
+      const { data } = await axios.get("/api/orders");
+  
+      dispatch({
+        type: actionTypes.GET_ORDERS_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.GET_ORDERS_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
