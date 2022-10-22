@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import {useNavigate } from 'react-router-dom';
 import "./HomeScreen.css";
 import Order from "../components/Order";
 import { getOrders as listOrders } from "../redux/actions/orderActions";
@@ -7,12 +8,14 @@ import { getOrders as listOrders } from "../redux/actions/orderActions";
 
 export default function AdminOrderScreen() {
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const getOrders = useSelector((state) => state.getOrders);
     const { orders, loading, error } = getOrders;
   
     useEffect(() => {
-      dispatch(listOrders());
+      if(localStorage.getItem("userInfo")){
+        dispatch(listOrders());
+      }else{navigate('/admin/login')}
     }, [dispatch]);
 
     return(  
