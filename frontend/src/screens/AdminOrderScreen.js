@@ -29,7 +29,7 @@ export default function AdminOrderScreen() {
                   key={order._id}
                   //naorderItemsme={order.orderItems}
                   //orderItems_hor={order.orderItems_hor}
-                  shippingAddress={order.shippingAddress}
+                  shippingAddress={order.shippingPrice}
                   paymentMethod={order.paymentMethod}
                   //itemsPrice={order.itemsPrice}
                   //shippingPrice={order.shippingPrice}

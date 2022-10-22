@@ -32,7 +32,7 @@ export default function AdminLoginScreen() {
   };
 
   useEffect(() => {
-    if(userInfo){
+    if(localStorage.getItem("userInfo")){
       navigate('/orders')
     }
   }, [userInfo])
