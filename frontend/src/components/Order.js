@@ -1,11 +1,12 @@
 
 import "./Product.css";
 
-const Order = ({ shippingPrice, paymentMethod, user }) => {
+const Order = ({ totalPrice, shippingPrice, paymentMethod, user }) => {
   return (
     <div className="product">
 
       <div className="product__info">
+      <p className="info__name">{totalPrice}</p>
         <p className="info__name">{shippingPrice}</p>
 
         <p className="info__description">{paymentMethod}</p>

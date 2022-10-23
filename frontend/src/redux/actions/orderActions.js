@@ -5,7 +5,14 @@ export const createOrder = (order) => async(dispatch, getState) =>{
     dispatch({type: actionTypes.ORDER_CREATE_REQUEST, payload: order });
 
     try {
-        const {data} = await axios.post('api/orders/order', order);
+      const {
+        userSignin: { userInfo },
+      } = getState();
+        const {data} = await axios.post('api/orders/order', order, {
+          headers:{
+            Authorization: `Bearer ${userInfo.token}`,
+          }
+        });
         dispatch({type: actionTypes.ORDER_CREATE_SUCCESS, payload:data.order})
         //localStorage.removeItem('cartItems')
     } catch (error) {

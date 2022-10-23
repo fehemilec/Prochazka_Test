@@ -11,9 +11,12 @@ export default function AdminOrderScreen() {
     const navigate = useNavigate();
     const getOrders = useSelector((state) => state.getOrders);
     const { orders, loading, error } = getOrders;
+
+    const userSignin = useSelector((state) => state.userSignin);
+    const { userInfo } = userSignin;
   
     useEffect(() => {
-      if(localStorage.getItem("userInfo")){
+      if(userInfo){
         dispatch(listOrders());
       }else{navigate('/admin/login')}
     }, [dispatch]);
@@ -30,12 +33,13 @@ export default function AdminOrderScreen() {
             orders.map((order) => (
                 <Order
                   key={order._id}
+                  totalPrice={order.totalPrice}
+                  shippingPrice={order.shippingPrice}
                   //naorderItemsme={order.orderItems}
                   //orderItems_hor={order.orderItems_hor}
-                  shippingAddress={order.shippingPrice}
+                  //shippingAddress={order.shippingPrice}
                   paymentMethod={order.paymentMethod}
                   //itemsPrice={order.itemsPrice}
-                  //shippingPrice={order.shippingPrice}
                   //taxPrice={order.taxPrice}
                   //totalPrice={order.totalPrice}
                   user={order.user}
