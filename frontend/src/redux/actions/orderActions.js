@@ -46,3 +46,24 @@ export const getOrders = () => async (dispatch) => {
       });
     }
   };
+
+  export const getOrderDetails = (id) => async (dispatch) => {
+    try {
+      dispatch({ type: actionTypes.GET_ORDER_DETAILS_REQUEST });
+  
+      const { data } = await axios.get(`/api/orders/order/${id}`);
+  
+      dispatch({
+        type: actionTypes.GET_ORDER_DETAILS_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.GET_ORDER_DETAILS_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };

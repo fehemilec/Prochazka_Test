@@ -21,7 +21,7 @@ import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import ConfirmationScreen from './screens/ConfirmationScreen';
 import AdminOrderScreen from './screens/AdminOrderScreen';
-
+import AdminOrderDetailsScreen from './screens/AdminOrderDetailsScreen';
 
 
 function App() {
@@ -46,6 +46,7 @@ function App() {
           <Route exact path="/placeorder" element={<PlaceOrderScreen/>} />
           <Route exact path="/confirmation" element={<ConfirmationScreen/>} />
           <Route exact path="/orders" element={<AdminOrderScreen/>} />
+          <Route exact path="/order/:id" element={<AdminOrderDetailsScreen/>} />
 
         </Routes>
       <Footer/>

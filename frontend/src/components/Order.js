@@ -1,7 +1,8 @@
 
 import "./Product.css";
+import { Link } from "react-router-dom";
 
-const Order = ({ totalPrice, shippingPrice, paymentMethod, user }) => {
+const Order = ({ totalPrice, shippingPrice, paymentMethod, user, orderId }) => {
   return (
     <div className="product">
 
@@ -12,6 +13,10 @@ const Order = ({ totalPrice, shippingPrice, paymentMethod, user }) => {
         <p className="info__description">{paymentMethod}</p>
 
         <p className="info__price">{user}</p>
+
+        <Link to={`/order/${orderId}`} className="info__button">
+          View
+        </Link>
       </div>
     </div>
   );

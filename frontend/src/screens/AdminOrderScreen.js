@@ -32,7 +32,7 @@ export default function AdminOrderScreen() {
         ) : (
             orders.map((order) => (
                 <Order
-                  key={order._id}
+                  orderId={order._id}
                   totalPrice={order.totalPrice}
                   shippingPrice={order.shippingPrice}
                   //naorderItemsme={order.orderItems}

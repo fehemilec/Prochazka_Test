@@ -3,12 +3,14 @@ const orderrouter = express.Router();
 
 const {
     createOrder, 
-    getAllOrders
+    getAllOrders,
+    getOrderById,
 } = require('../controller/orderController');
 
 //@desc set order
 //@route GET /api/orders
 orderrouter.post('/order', createOrder);
+orderrouter.get('/order/:id', getOrderById);
 orderrouter.get('/', getAllOrders);
 
 
