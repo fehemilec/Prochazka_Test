@@ -12,12 +12,17 @@
     z-index: -1;
     right: 0%;
     object-fit: cover;
+    background-color: #4665E6;
+
   }
 
 .aboutPic > img{
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     object-fit: cover;
+    border-radius: 35px;
+    margin-left: 25%;
+    margin-top: 10%;
 }
 
 .aboutText{
@@ -27,11 +32,13 @@
     flex-direction: column;    
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: #4665E6;
+
 }
 .titleOne{
     font-weight: lighter;
     font-size: xx-large;
+    color: white;
     
 }
 .titleOne > h1{
@@ -40,7 +47,7 @@
 .titleTwo{
     margin-top: 2%;
     margin-bottom: 5%;
-    color: #aa2a2a;
+    color: white;
     font-size: large;
 }
 .titleTwo > h1 {
@@ -53,7 +60,7 @@ display: flex;
 .about_info > span {
     width: 60%;
     margin-left: 20%;
-    color: #aa2a2a;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
 }
 

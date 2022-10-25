@@ -13,8 +13,8 @@ function Home() {
     <HomeImage/>
     <HomeCards/>
     <HeroSection />
-    <ThreePic/>
     <AboutUs/>
+    <ThreePic/>
   </>
   );
 }
