@@ -25,18 +25,34 @@
   }
 
 
-.aboutguy > img{
+.aboutguy > .guy{
     width: 110%;
     height: 70%;
     object-fit: cover;
     border-radius: 35px;
-    margin-left: 30%;
-    margin-top: 20%;
+    margin-left: 25%;
+    margin-top: 10%;
+
+    position: absolute;
+    top: 30px;
+    left: 30px;
 }
 
-.aboutarrow{
-    background-color: red;
-}
+.aboutguy {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .arrow {
+    position: relative;
+    z-index: 1;
+    top: 25%;
+    left: 20%;
+    width: 30%;
+    height: 30%;
+  }
+
+
 .aboutText{
     width: 50%;
     height: 70vh;
@@ -54,7 +70,7 @@
     
 }
 .titleOne > h1{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Manrope';
 }
 .titleTwo{
     margin-top: 2%;
@@ -63,7 +79,7 @@
     font-size: large;
 }
 .titleTwo > h1 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Manrope';
 }
 .about_info{
 width: 100%;
@@ -73,7 +89,7 @@ display: flex;
     width: 60%;
     margin-left: 20%;
     color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+    font-family: 'Manrope';  
 }
 
 @media only screen and (max-width: 940px) { 

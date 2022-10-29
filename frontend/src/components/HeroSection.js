@@ -6,7 +6,7 @@ import './HeroSection.css';
 function HeroSection() {
   return (
     <div className='hero-container'>      
-      <h1>Proč si vybrat právě nás?</h1>
+      <h1>Proč si vybrat <a> <span>právě nás</span> <img className='line' src='/images/line.png' alt=""/> </a>?</h1>
       <div className='front_cards'>
         <div className='front_cards_1'>
           <div className='firstCard'>

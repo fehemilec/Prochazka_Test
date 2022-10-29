@@ -6,11 +6,27 @@
 }
 
 .hero-container > h1 {
-  color: #4361aa;
-  font-size: 50px;
+  color: black;
+  font-size: 36px;
   margin-bottom: 5%;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Manrope';
+  font-weight: bolder;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.hero-container > h1 > a {
+  color: #4665E6;
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-container > h1 > a > .line{
+  width: 90%;
+  height: 80%;
+  margin-left: 9%;
 }
 
 .front_cards {
@@ -96,22 +112,42 @@
 .first_div_text, .second_div_text, .third_div_text,.fourth_div_text,.fifth_div_text,.sixth_div_text{
   font-size: 22px; 
   display: flex;
-  justify-content: center;
-  text-align: center;
+  justify-content: left;
+  /*text-align: center;*/
   width: 90%;
-  height: 35%;
+  height: 20%;
   word-wrap: break-word;
-  color: rgb(160, 12, 12);
-  margin-left: 5%;
+  color: black;
+  font-weight:700;
   margin-top: 10%;
 }
 .first_div_text > span, .second_div_text > span, .third_div_text > span,.fourth_div_text > span,.fifth_div_text > span,.sixth_div_text > span{
   display: flex;
-  align-items: center;
-  justify-content: center;  
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Manrope';
   margin-bottom: 10%;
+  margin-left: 5%;
 }
+
+
+.first_div_text_2, .second_div_text_2, .third_div_text_2,.fourth_div_text_2,.fifth_div_text_2,.sixth_div_text_2{
+  font-size: 14px; 
+  display: flex;
+  justify-content: left;
+  /*text-align: center;*/
+  width: 90%;
+  height: 20%;
+  word-wrap: break-word;
+  color: #808080;
+  margin-top: 3%;
+}
+
+.first_div_text_2 > span, .second_div_text_2 > span, .third_div_text_2 > span,.fourth_div_text_2 > span,.fifth_div_text_2 > span,.sixth_div_text_2 > span{
+  display: flex;
+  font-family: 'Manrope';
+  margin-bottom: 10%;
+  margin-left: 5%;
+}
+
 
 @media screen and (max-width: 960px) {.hero-container > h1 {font-size: 55px; }}
 @media screen and (max-width: 768px) {.hero-container > h1 {font-size: 45px; }}
@@ -158,6 +194,8 @@
 @media screen and (max-width: 370px){
   .firstCard, .secondCard, .thirdCard, .fourthCard, .fifthCard, .sixthCard{ width: 85%;}
 }
+
+
 /*
 @media screen and (min-height: 550px){
   
