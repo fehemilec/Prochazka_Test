@@ -6,15 +6,17 @@ import HeroSection from '../HeroSection';
 import ThreePic from '../ThreePic';
 import AboutUs from '../AboutUs';
 import HomeImage from '../HomeImage';
+import Spocitat from '../Spocitat';
 
 function Home() {
   return (
     <>
     <HomeImage/>
     <HomeCards/>
-    <HeroSection />
-    <ThreePic/>
+    <Spocitat/>
+    <HeroSection/>
     <AboutUs/>
+    <ThreePic/>
   </>
   );
 }

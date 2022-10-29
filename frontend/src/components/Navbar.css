@@ -131,6 +131,20 @@
     border-radius: 0;
   }
 
+  .nav-menu.active .nav-home,  
+  .nav-menu.active .nav-services,  
+  .nav-menu.active .nav-contact,  
+  .nav-menu.active .nav-cart{
+    color: #fff;
+  }
+
+  .nav-menu.active .nav-home:hover,  
+  .nav-menu.active .nav-services:hover,  
+  .nav-menu.active .nav-contact:hover,  
+  .nav-menu.active .nav-cart:hover{
+    color: black;
+  }
+
   .menu-icon {
     display: flex;
     position: absolute;
@@ -143,7 +157,7 @@
     cursor: pointer;
   }
 
-  .fa-times {  color: #fff;  font-size: 2rem;  }
+  .fa-times {  color: black;  font-size: 2rem;  }
 
   .nav-links-mobile {
     display: block;

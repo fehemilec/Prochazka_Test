@@ -12,13 +12,46 @@
     z-index: -1;
     right: 0%;
     object-fit: cover;
+    background-color: #4665E6;
+
   }
 
-.aboutPic > img{
-    width: 100%;
-    height: 100%;
+.aboutguy {    
+    width: 70%;
+    height: 70vh;
+    z-index: -1;
+    right: 0%;
     object-fit: cover;
+  }
+
+
+.aboutguy > .guy{
+    width: 110%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 35px;
+    margin-left: 25%;
+    margin-top: 10%;
+
+    position: absolute;
+    top: 30px;
+    left: 30px;
 }
+
+.aboutguy {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .arrow {
+    position: relative;
+    z-index: 1;
+    top: 25%;
+    left: 20%;
+    width: 30%;
+    height: 30%;
+  }
+
 
 .aboutText{
     width: 50%;
@@ -27,24 +60,26 @@
     flex-direction: column;    
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: #4665E6;
+
 }
 .titleOne{
     font-weight: lighter;
     font-size: xx-large;
+    color: white;
     
 }
 .titleOne > h1{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Manrope';
 }
 .titleTwo{
     margin-top: 2%;
     margin-bottom: 5%;
-    color: #aa2a2a;
+    color: white;
     font-size: large;
 }
 .titleTwo > h1 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Manrope';
 }
 .about_info{
 width: 100%;
@@ -53,8 +88,8 @@ display: flex;
 .about_info > span {
     width: 60%;
     margin-left: 20%;
-    color: #aa2a2a;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+    color: white;
+    font-family: 'Manrope';  
 }
 
 @media only screen and (max-width: 940px) { 

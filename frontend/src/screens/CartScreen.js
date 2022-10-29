@@ -58,62 +58,38 @@ const CartScreen = () => {
   return (
     <>
       <div className="cartscreen">
-     <h2 className="shop_cart">Shopping Cart</h2>
-      <div className="containers">
-        <div className="products_container">
-        <div className="cartscreen__left">
-
-          {cartItems.length === 0  && cartItems_hor.length === 0 ? (
-            <div>
-              Your Cart Is Empty <Link to="/services">Go Back</Link>
+        <h2 className="shop_cart">Shopping Cart</h2>
+        <div className="containers">
+          <div className="products_container">
+            <div className="cartscreen__left">
+              { cartItems.length === 0  && cartItems_hor.length === 0 ? (<div>Your Cart Is Empty <Link to="/services">Go Back</Link></div>) : (
+                cartItems.map((item) => (
+                  <CartItem key={item.product} item={item} qtyChangeHandler={qtyChangeHandler} removeHandler={removeFromCartHandler}/>
+                )) 
+              )}
+            </div>      
+            <div className="cartscreen__left_bottom">
+              {(
+                cartItems_hor.map((item) => (
+                <CartItemHor key={item.product} item={item} qtyChangeHandler={qtyChangeHandlerHor} removeHandler={removeFromCartHandlerHor}/>
+                ))
+              )}
             </div>
-          ) : (
-
-            cartItems.map((item) => (
-              <CartItem
-                key={item.product}
-                item={item}
-                qtyChangeHandler={qtyChangeHandler}
-                removeHandler={removeFromCartHandler}
-              />
-            ))
-
-
-          )}
-        </div>
-      
-              <div className="cartscreen__left_bottom">
-
-        {(
-            cartItems_hor.map((item) => (
-              <CartItemHor
-                key={item.product}
-                item={item}
-                qtyChangeHandler={qtyChangeHandlerHor}
-                removeHandler={removeFromCartHandlerHor}
-              />
-            ))
-
-
-          )}
-
-        </div>
-        </div>
-        <div className="cartscreen__right">
-          <div className="cartscreen__info">
-            <p>Subtotal ({getCartCount()}) items</p>
-            <p>Kč {getCartSubTotal()}</p>
           </div>
-          <div className="checkout">
-          <input type="submit" value="btnCheckout" id="btnCheckout" name="cart"/>
-          <label htmlFor="btnCheckout" className="btnCheckout">                   
-                    <span className="btnCheckout" onClick={checkoutHandler}>VLOŽIT DO KOŠÍKU</span>
-                </label>
+          <div className="cartscreen__right">
+            <div className="cartscreen__info">
+              <p>Subtotal ({getCartCount()}) items</p>
+              <p>Kč {getCartSubTotal()}</p>
+            </div>
+            <div className="checkout">
+              <input type="submit" value="btnCheckout" id="btnCheckout" name="cart"/>
+              <label htmlFor="btnCheckout" className="btnCheckout">                   
+                <span className="btnCheckout" onClick={checkoutHandler}>VLOŽIT DO KOŠÍKU</span>
+              </label>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-
     </>
   );
 };

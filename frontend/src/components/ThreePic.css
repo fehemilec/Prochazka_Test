@@ -13,6 +13,8 @@
   object-fit: cover;
   width: 100%;
   height: 50vh;
+  padding: 3%;
+  border-radius: 35px;
 }
 
 .firstPic, .secondPic, .thirdPic { width: 33.3333%; }
