@@ -97,6 +97,14 @@
     background-repeat:no-repeat;
   }
 
+  .cards__item__informaci {
+    color: #4665E6;
+    margin-top: 8px;
+  }
+
+  .cards__item__informaci > i{
+    margin-left: 3%;
+  }
   .cards__item__img {
     position: absolute;
     top: 0;

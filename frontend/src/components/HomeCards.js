@@ -11,12 +11,14 @@ export default function HomeCards() {
               <CardItem1
               src='images/img_hor.jpg'
               text='Horizontální žaluzie'
+              informaci="Vice informaci"
               label='Více o produktu'
               path='/Horizontal'
               />              
               <CardItem1
               src='images/vertikalni_zaluzie.jpg'
               text='Vertikální žaluzie'
+              informaci="Vice informaci"
               label='Více o produktu'
               path='/products'
               />
@@ -25,12 +27,14 @@ export default function HomeCards() {
               <CardItem1
               src='images/latkove_rolety.jpg'
               text='Látkové rolety'
+              informaci="Vice informaci"
               label='Více o produktu'
               path='/Horizontal'
               />
               <CardItem1
               src='images/rimske_rolety.jpg'
               text='Římské rolety'
+              informaci="Vice informaci"
               label='Více o produktu'
               path='/Horizontal'
               />
@@ -41,12 +45,14 @@ export default function HomeCards() {
               <CardItem1
               src='images/rolety_noc_a_den.jpg'
               text='Rolety NOC a DEN'
+              informaci="Vice informaci"
               label='Více o produktu'
               path='/products'
               />
               <CardItem1
               src='images/plisse_zaluzie.jpg'
               text='Plissé žaluzie'
+              informaci="Vice informaci"
               label='Více o produktu'
               path='/products'
               />
@@ -55,12 +61,14 @@ export default function HomeCards() {
               <CardItem1
               src='images/venkovni_rolety.jpg'
               text='Venkovní rolety SUNROL'
+              informaci="Vice informaci"
               label='Více o produktu'
               path='/Horizontal'
               />
               <CardItem1
               src='images/img_nah.jpg'
               text='Náhradní díly'
+              informaci="Vice informaci"
               label='Více o produktu'
               path='/products'
               />

@@ -39,7 +39,7 @@ function Navbar() {
                 className='nav-services'
                 onClick={closeMobileMenu}
               >
-                Products                
+                Produkty                
               </Link>
               <div class="dropdown-content"> 
                 <a href="/#">Horizontální žaluzie</a>
@@ -53,7 +53,7 @@ function Navbar() {
                 className='nav-contact'
                 onClick={closeMobileMenu}
               >
-                Contact
+                Kontakt
               </Link>
             </li>
 
