@@ -3,9 +3,73 @@
 }
 
 .main_image > img {
+    -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%);
+    mask-image: linear-gradient(to left, transparent 25%, black 75%);
     object-fit: cover;
     width: 100%;
     height: 70vh;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+
+  .home_image_text {
+    z-index: 1;
+    position: absolute;
+    width: 60%;
+    align-items: left;
+    text-align: left;
+    top: 20%;
+    font-family: 'Manrope';
+    left: 19%;
+  }
+
+  .home_image_title > h1 {
+    display: flex;
+    align-items: left;
+    text-align: left;
+  }
+
+  .home_image_title > h1 > p {
+   font-size: 46px;
+   font-weight: bold;
+  }
+
+  .home_image_title > h1 > p > span{
+    color: #4665E6;
+  }
+
+  .home_image_title > h1 > img{
+    width: 52%;
+    height: 52%;
+    top: 13%;
+    left: 24%;
+    z-index: 10;
+    position: absolute;
+  }
+
+  .home_image_title, .home_image_subtitle, .home_image_button{
+    margin-bottom: 3%;
+    
+  }
+  .home_image_subtitle{
+    width: 40%;
+    color: #808080;
+  }
+
+  .home_image_button {
+    background-color: #4665E6;
+    color: white;
+    border-radius: 30px;
+    width: 20%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home_image_button > i{
+    margin-left: 8%;
+
   }
 
   

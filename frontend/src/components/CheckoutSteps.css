@@ -23,15 +23,15 @@
   }
 
   .checkout-steps > div.active {
-    border-top-color: #F72585;
-    color: #F72585;
+    border-top-color: #4665E6;
+    color: #4665E6;
     display: block;
 
   }
   .checkout-steps > div.active1 {
     display: block;
-    border-top-color: #F72585;
-    color: #F72585;
+    border-top-color: #4665E6;
+    color: #4665E6;
     text-align: right;
 
   }
