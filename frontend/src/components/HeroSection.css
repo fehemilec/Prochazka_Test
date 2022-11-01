@@ -112,8 +112,8 @@
 .first_div_text, .second_div_text, .third_div_text,.fourth_div_text,.fifth_div_text,.sixth_div_text{
   font-size: 22px; 
   display: flex;
-  justify-content: left;
-  /*text-align: center;*/
+  justify-content: center;
+  text-align: center;
   width: 90%;
   height: 20%;
   word-wrap: break-word;

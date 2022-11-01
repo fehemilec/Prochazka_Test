@@ -57,7 +57,7 @@ function Navbar() {
               </Link>
             </li>
 
-            <li className='nav-item'>
+            <li className='nav-item' id='cart-container'>
               <Link
                 to='/cart'
                 className='nav-cart'
