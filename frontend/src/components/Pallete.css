@@ -345,7 +345,7 @@ float: left;*/
   .addToCart, .psPrice, .psLabel, .total{font-family: Helvetica Neue,Helvetica,Arial,sans-serif;}
   .btnSubmit { display: inline-flex; align-items: center; justify-content: center;
                 cursor: pointer; border-radius: 5px; color: black; font-size: 20px;
-                overflow:hidden;  background-color: rgb(190, 227, 250); width: 200px; height: 38px; background-color:#F72585; color:white
+                overflow:hidden;  background-color: rgb(190, 227, 250); width: 200px; height: 38px; background-color:#4665E6; color:white
             }
   .btnSubmit:hover { background-color:lightskyblue; border: 1px solid cyan;}
 

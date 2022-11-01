@@ -16,7 +16,7 @@ function HeroSection() {
           </div>
           <div className='secondCard'>
             <div className='second_div_icon'><i className='fas fa-sort-amount-up'></i></div>
-            <div className='second_div_text'><span> Nejširší nabídka žaluzií, rolet, markýz a sítí </span></div>
+            <div className='second_div_text'><span> Nejširší nabídka žaluzií, rolet a sítí </span></div>
             <div className='second_div_text_2'><span> Lectus pharetra ante ut arcu nibh purus, phasellus sit gravida. Eros, lorem ipsum laoreet ullamcorper ornar. </span></div>
           </div>
           <div className='thirdCard'>

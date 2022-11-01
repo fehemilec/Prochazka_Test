@@ -14,7 +14,9 @@ export default function AboutUs() {
           <div className='titleOne'><h1> O Nás </h1></div>
           <div className='titleTwo'><h1> Žaluzie Procházka </h1></div>
           <div  className='about_info'>
-            <span> Naše firma působí na trhu již od roku 1996. Nabízí širokou škálu stínící techniky v okrese Louny. Jsme autorizovaným prodejcem společností VELUX a KASKO, které jsou na českém trhu jedny z nejsilnějších firem v oboru stínící techniky.
+            <span> 
+            Horizontální žaluzie stále představují nejrozšířenější způsob protisluneční ochrany a staly se 
+            nedílnou součástí interiéru, ochraňují nejen proti slunečním paprskům, regulují světlo v místnosti, ale chrání i vaše soukromí. Využití horizontálních žaluzií je mnohostranné a jejich barevná škála dovoluje harmonicky sladit barvy v místnosti s barevnými doplňky a vytvořit tak příjemnou atmosféru dle vašeho vkusu. Výhodou je jejich jednoduchost, rychlost montáže, minimální údržba a cenová dostupnost.
             </span>
           </div>
           </div>

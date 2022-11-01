@@ -21,6 +21,7 @@ function Cards1() {
               label='Více o produktu'
               path='/products'
             />
+            
           </ul>          
         </div>
       </div>
