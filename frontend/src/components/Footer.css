@@ -1,10 +1,12 @@
 .footer-container {
-  background-color: #4665E6; /* #A21313 */
+  background-color: #4665E6;
+  /* #A21313 */
   padding: 4rem 0 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .footer-links {
@@ -18,23 +20,41 @@
  
 }*/
 
-.footer-link-items > p {
-   display: flex;
-  margin-right: auto;
-  font-family: 'Muli', sans-serif;
-  margin-bottom: 8px;  
+
+.footer_arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+
 }
 
-.footer-link-items > p > i{ margin-right: 5px;}
+.footer-link-items>p {
+  display: flex;
+  margin-right: auto;
+  font-family: 'Manrope';
+  margin-bottom: 8px;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+}
 
- li {
-  font-family: 'Muli', sans-serif;
-list-style: none;}
+.footer-link-items>p>i {
+  margin-right: 5px;
+}
 
-li:hover{
-  color:lightgrey;}
+li {
+  font-family: 'Manrope';
+  list-style: none;
+}
+
+li:hover {
+  color: lightgrey;
+}
 
 .footer-link-items {
+  white-space: nowrap;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -44,15 +64,16 @@ li:hover{
   box-sizing: border-box;
   color: #fff;
   width: auto;
-  margin-left: 8%;  
+  margin-left: 8%;
   margin-right: 7%;
 }
+
 
 .footer-link-items h2 {
   margin-bottom: 16px;
 }
 
-.footer-link-items > h2 {
+.footer-link-items>h2 {
   color: #fff;
 }
 
@@ -131,7 +152,7 @@ li:hover{
     flex-direction: column;
   }
 
-  .footer-link-items{
+  .footer-link-items {
     text-align: center;
     margin-left: 25%;
     overflow: hidden;
@@ -141,24 +162,25 @@ li:hover{
 
 
 @media screen and (max-width: 331px) {
-  .social-logo{
+  .social-logo {
     margin-left: auto;
     font-size: 18px;
   }
 
-  .social-logo > i{
+  .social-logo>i {
     font-size: 1rem;
   }
 }
 
 @media screen and (max-width:249px) {
-  .social-icons{
+  .social-icons {
     /*display: flex;*/
-    flex-direction: column;}
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 315px) {
-  .footer-link-items{
+  .footer-link-items {
     margin-left: 20px;
   }
 }
