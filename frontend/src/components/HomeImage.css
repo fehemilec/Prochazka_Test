@@ -15,12 +15,12 @@
   .home_image_text {
     z-index: 1;
     position: absolute;
-    width: 60%;
+    width: 75%;
     align-items: left;
     text-align: left;
     top: 20%;
     font-family: 'Manrope';
-    left: 19%;
+    left: 10%;
   }
 
   .home_image_title > h1 {
@@ -30,7 +30,7 @@
   }
 
   .home_image_title > h1 > p {
-   font-size: 46px;
+   font-size: 56px;
    font-weight: bold;
   }
 
@@ -42,7 +42,7 @@
     width: 52%;
     height: 52%;
     top: 13%;
-    left: 24%;
+    left: 26%;
     z-index: 10;
     position: absolute;
   }
@@ -54,6 +54,7 @@
   .home_image_subtitle{
     width: 40%;
     color: #808080;
+    font-family: 'Manrope';
   }
 
   .home_image_button {
@@ -61,7 +62,7 @@
     color: white;
     border-radius: 30px;
     width: 20%;
-    height: 30px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;

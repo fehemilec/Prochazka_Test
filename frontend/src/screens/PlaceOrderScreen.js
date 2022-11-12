@@ -29,7 +29,7 @@ export default function PlaceOrderScreen() {
 
 const placeOrderHandler = () =>{
   dispatch(createOrder(cart))
-}
+} 
 const getCartSubTotal = () => {
 
   return Number(cartItems
