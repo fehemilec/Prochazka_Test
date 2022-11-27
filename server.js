@@ -28,7 +28,7 @@ app.use(cors());
 app.post('/api/sendmail', (req, res) => {
 
 
-  const { ema, cartItems, cartItems_hor, token } = req.body;
+  const { ema, cartItems, cartItems_hor, token, final_price } = req.body;
   console.log("email form token " + token.email)
 
   //console.log("PRICE PAID MAIL", cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
@@ -89,9 +89,7 @@ app.post('/api/sendmail', (req, res) => {
       <tfoot>
       <tr>
       <td colspan="2">Items Price:</td>
-      <td align="right"> Kc ${(cartItems
-        .reduce((price, item) => price + item.price * item.qty, 0) +
-        (cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0))).toFixed(2)}</td>
+      <td align="right"> Kc ${final_price}</td>
       </tr>
       <tr>
       <td colspan="2">Tax Price:</td>
@@ -103,9 +101,7 @@ app.post('/api/sendmail', (req, res) => {
       </tr>
       <tr>
       <td colspan="2"><strong>Total Price:</strong></td>
-      <td align="right"><strong> Kc ${(cartItems
-        .reduce((price, item) => price + item.price * item.qty, 0) +
-        (cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0))).toFixed(2)}</strong></td>
+      <td align="right"><strong> Kc ${final_price}</strong></td>
       </tr>
       
       </table>
@@ -139,18 +135,12 @@ app.use("/api/orders", orderRoutes);
 
 app.post("/payment_card", (req, res) => {
 
-  const { token, cart, cartItems, cartItems_hor, fin_sum } = req.body;
+  const { token, cart, cartItems, cartItems_hor, final_price } = req.body;
   //console.log("PRODUCT ", product);
   console.log("PRICE", cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
-  console.log("REAL PRICE", fin_sum)
+  console.log("REAL PRICE", final_price)
   //const idempotencyKey = uuid()
 
-  const getCartSubTotall = () => {
-    
-    return (cartItems
-      .reduce((price, item) => price + item.price * item.qty, 0) +
-      (cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0))).toFixed(2) * 100
-  };
 
   return stripe.customers.create({
 
@@ -161,7 +151,7 @@ app.post("/payment_card", (req, res) => {
 
     stripe.charges.create({
 
-      amount: fin_sum,
+      amount: final_price*100,
       currency: 'czk',
       customer: customer.id,
       receipt_email: token.email,

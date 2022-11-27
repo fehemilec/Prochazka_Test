@@ -15,7 +15,6 @@ export default function PlaceOrderScreen() {
   const cart = useSelector((state) => state.cart)
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [sum, setSum] = useState(0);
 
   const { cartItems } = cart;
   const { cartItems_hor } = cart;
@@ -27,7 +26,7 @@ export default function PlaceOrderScreen() {
     email: "femo@live.it",
   });
   const [final_price, setFinalPrice] = useState(0);
-  const fruits = [];
+
   useEffect(()=> {
     let reviewPromises = [];
     cartItems.map((item) => (
@@ -53,23 +52,11 @@ export default function PlaceOrderScreen() {
        
   }, []);
 
-  const fin_sum = fruits.reduce((accumulator, value) => {
-    return accumulator + value;
-    
-  }, 0);
 
   const placeOrderHandler = () => {
     dispatch(createOrder(cart))
   }
-  const getCartSubTotal = () => {
-      
-   //console.log("Item price, ", sum)
-    
-    return Number(cartItems
-      .reduce((price, item) => price + item.price * item.qty, 0)
-      .toFixed(2)) + Number(cartItems_hor
-        .reduce((price, item) => price + item.price * item.qty, 0));
-  };
+
 
   async function totalPrice(id, qty) {
 
@@ -98,12 +85,12 @@ export default function PlaceOrderScreen() {
 
     const body_1 = {
 
-      ema, cartItems, cartItems_hor, token
+      ema, cartItems, cartItems_hor, token, final_price
     }
 
     const body = {
 
-      token, cart, cartItems, cartItems_hor, fin_sum
+      token, cart, cartItems, cartItems_hor, final_price
     }
 
     const headers = {
@@ -224,7 +211,7 @@ export default function PlaceOrderScreen() {
               stripeKey="pk_test_51KG4qlEJlYE6AglXN3kXqFDvEPL5B9PZDxeZX6JmgsXYzHtxI8olvw9rZhbVqwvWD4CUsJLn79CaH14mwenxsqSe00cd34mY1y"
               token={makePayment}
               name="Purchase Order"
-              amount={getCartSubTotal() * 100}
+              amount={final_price * 100}
             >
               <button className="btn-large blue">Pay now with Card</button>
             </StripeCheckout>
