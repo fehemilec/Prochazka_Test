@@ -139,14 +139,14 @@ app.use("/api/orders", orderRoutes);
 
 app.post("/payment_card", (req, res) => {
 
-  const { token, cart, cartItems, cartItems_hor } = req.body;
+  const { token, cart, cartItems, cartItems_hor, fin_sum } = req.body;
   //console.log("PRODUCT ", product);
   console.log("PRICE", cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
-
+  console.log("REAL PRICE", fin_sum)
   //const idempotencyKey = uuid()
 
   const getCartSubTotall = () => {
-
+    
     return (cartItems
       .reduce((price, item) => price + item.price * item.qty, 0) +
       (cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0))).toFixed(2) * 100
@@ -161,7 +161,7 @@ app.post("/payment_card", (req, res) => {
 
     stripe.charges.create({
 
-      amount: getCartSubTotall(),
+      amount: fin_sum,
       currency: 'czk',
       customer: customer.id,
       receipt_email: token.email,
