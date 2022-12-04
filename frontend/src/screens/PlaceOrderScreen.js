@@ -19,6 +19,7 @@ export default function PlaceOrderScreen() {
     const { cartItems } = cart;
     const { cartItems_hor } = cart;
 
+    const name = cart.billingAddress.fullName;
 
     const [ema, setEma] = useState({
         name:"fehmi",
@@ -50,7 +51,7 @@ const getCartCount = () => {
 
         const body_1 = {
 
-            ema, cartItems, cartItems_hor, token
+            name, cartItems, cartItems_hor, token
           }
 
         const body = {
@@ -74,7 +75,7 @@ const getCartCount = () => {
 
             placeOrderHandler()
             navigate('/confirmation');
-            console.log("You paid fucker, Status ", status)
+            console.log("You paid, Status ", status)
             console.log("Token ", token.id)
             console.log("Token mail", token.email)
 

@@ -46,7 +46,7 @@ function App() {
           <Route exact path="/placeorder" element={<PlaceOrderScreen/>} />
           <Route exact path="/confirmation" element={<ConfirmationScreen/>} />
           <Route exact path="/orders" element={<AdminOrderScreen/>} />
-          <Route exact path="/order/:id" element={<AdminOrderDetailsScreen/>} />
+          <Route exact path="/orders/order/:id" element={<AdminOrderDetailsScreen/>} />
 
         </Routes>
       <Footer/>

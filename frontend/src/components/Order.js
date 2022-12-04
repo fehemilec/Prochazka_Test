@@ -14,7 +14,7 @@ const Order = ({ totalPrice, shippingPrice, paymentMethod, user, orderId }) => {
 
         <p className="info__price">{user}</p>
 
-        <Link to={`/order/${orderId}`} className="info__button">
+        <Link to={`/orders/order/${orderId}`} className="info__button">
           View
         </Link>
       </div>

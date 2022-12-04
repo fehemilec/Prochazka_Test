@@ -19,6 +19,7 @@ const AdminOrderDetailsScreen = ({ match, history }) => {
   const { id } = useParams();
 
   useEffect(() => {
+    console.log("ID:", id)
     if (order && id !== order._id) {
       dispatch(getOrderDetails(id));
     }
@@ -39,10 +40,8 @@ const AdminOrderDetailsScreen = ({ match, history }) => {
             <div className="ship_info">
               <h2>Shipping Address</h2>
                 <p>
-                  <span className="fullname"><strong>Name: </strong>{order.shippingAddress.fullName_ship}</span><br />
-                  <span className="address"><strong>Address: </strong>{order.shippingAddress.address_ship},&nbsp;
-                  {order.shippingAddress.city_ship},&nbsp;{order.shippingAddress.postalCode_ship},&nbsp;
-                  {order.shippingAddress.country_ship}</span>
+                  <span className="fullname"><strong>Name: </strong>{order._id}</span><br />
+    
                 </p>
             </div>
           
