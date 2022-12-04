@@ -28,7 +28,7 @@ app.use(cors());
 app.post('/api/sendmail', (req, res) => {
 
 
-  const { name, cartItems, cartItems_hor, token } = req.body;
+  const { name, cartItems, cartItems_hor, token, final_price } = req.body;
   console.log("email form token " + token.email)
 
   //console.log("PRICE PAID MAIL", cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
@@ -73,7 +73,6 @@ app.post('/api/sendmail', (req, res) => {
       `
         )
         .join('\n')}
-
         ${cartItems_hor
         .map(
           (item) => `
@@ -105,7 +104,6 @@ app.post('/api/sendmail', (req, res) => {
       </tr>
       
       </table>
-
       `
   };
 
@@ -151,7 +149,7 @@ app.post("/payment_card", (req, res) => {
 
     stripe.charges.create({
 
-      amount: final_price*100,
+      amount: (final_price).toFixed(2)*100,
       currency: 'czk',
       customer: customer.id,
       receipt_email: token.email,

@@ -19,7 +19,7 @@ export default function PlaceOrderScreen() {
   const { cartItems } = cart;
   const { cartItems_hor } = cart;
 
-    const name = cart.billingAddress.fullName;
+  const name = cart.billingAddress.fullName;
 
   const [ema, setEma] = useState({
     name: "fehmi",
@@ -204,7 +204,7 @@ export default function PlaceOrderScreen() {
         <div className="placeOrderScreen_right">
           <div className="placeOrderScreen__info">
             <p>Subtotal ({getCartCount()}) items</p>
-            <p>Kč {final_price}</p>
+            <p>Kč {(final_price).toFixed(2)}</p>
           </div>
           <div>
             <StripeCheckout
