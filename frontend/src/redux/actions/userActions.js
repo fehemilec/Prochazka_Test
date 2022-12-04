@@ -4,8 +4,10 @@ import {
     USER_SIGNIN_REQUEST,
     USER_SIGNIN_SUCCESS
 } from '../constants/userConstants';
+import { Link, useNavigate } from "react-router-dom";
 
 export const signin = (email, password) => async(dispatch) =>{
+
     dispatch({type: USER_SIGNIN_REQUEST, payload:{email, password}});
 
     console.log("email, ", email)
@@ -29,6 +31,7 @@ export const signin = (email, password) => async(dispatch) =>{
 
                 response.json().then(data => {
                 dispatch({type:USER_SIGNIN_SUCCESS, payload:data})
+                localStorage.setItem("userInfo", JSON.stringify(data));
                 });
 
 

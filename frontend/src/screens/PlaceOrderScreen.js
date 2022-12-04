@@ -19,6 +19,7 @@ export default function PlaceOrderScreen() {
   const { cartItems } = cart;
   const { cartItems_hor } = cart;
 
+    const name = cart.billingAddress.fullName;
 
   const [ema, setEma] = useState({
     name: "fehmi",
@@ -74,7 +75,6 @@ export default function PlaceOrderScreen() {
   }
 
 
-
   const getCartCount = () => {
     return (cartItems.reduce((qty, item) => Number(item.qty) + qty, 0) + cartItems_hor.reduce((qty, item) => Number(item.qty) + qty, 0));
   };
@@ -85,7 +85,7 @@ export default function PlaceOrderScreen() {
 
     const body_1 = {
 
-      ema, cartItems, cartItems_hor, token, final_price
+      name, cartItems, cartItems_hor, token, final_price
     }
 
     const body = {

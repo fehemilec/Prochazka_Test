@@ -28,7 +28,7 @@ app.use(cors());
 app.post('/api/sendmail', (req, res) => {
 
 
-  const { ema, cartItems, cartItems_hor, token, final_price } = req.body;
+  const { name, cartItems, cartItems_hor, token } = req.body;
   console.log("email form token " + token.email)
 
   //console.log("PRICE PAID MAIL", cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
@@ -51,7 +51,7 @@ app.post('/api/sendmail', (req, res) => {
     subject: "New order",
     html:
       `<h1>Thanks for shopping with us</h1>
-      <p>Hi ${ema.name},</p>
+      <p>Hi ${name},</p>
       <p>We have finished processing your order.</p>
       
       <table>

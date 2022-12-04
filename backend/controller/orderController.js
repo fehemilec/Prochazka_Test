@@ -1,5 +1,31 @@
 const Order = require("../models/Order");
 
+
+
+const getAllOrders = async (req, res) => {
+  try {
+    const orders = await Order.find({});
+    res.json(orders);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+};
+
+
+const getOrderById = async (req, res) => {
+
+  try {
+    const order = await Order.findById(req.params.id);
+
+    res.json(order);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+};
+
+
 const createOrder = async (req, res) => {
         if(req.body.cartItems.length === 0){
           res.status(400).send({message: 'Cart is empty'})
@@ -25,4 +51,6 @@ const createOrder = async (req, res) => {
 
 module.exports = {
     createOrder,
+    getAllOrders,
+    getOrderById
 };
