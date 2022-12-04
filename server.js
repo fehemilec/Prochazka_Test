@@ -88,7 +88,7 @@ app.post('/api/sendmail', (req, res) => {
       <tfoot>
       <tr>
       <td colspan="2">Items Price:</td>
-      <td align="right"> Kc ${final_price}</td>
+      <td align="right"> Kc ${final_price.toFixed(2)}</td>
       </tr>
       <tr>
       <td colspan="2">Tax Price:</td>
@@ -100,7 +100,7 @@ app.post('/api/sendmail', (req, res) => {
       </tr>
       <tr>
       <td colspan="2"><strong>Total Price:</strong></td>
-      <td align="right"><strong> Kc ${final_price}</strong></td>
+      <td align="right"><strong> Kc ${final_price.toFixed(2)}</strong></td>
       </tr>
       
       </table>

@@ -349,7 +349,7 @@ export default function Horiz() {
 
       const getFinalPrice = () => {
 
-        return (getPriceCount() + Number(priceProf) + Number(priceLam))*amount;
+        return (getPriceCount() + Number((((hor/1000).toFixed(2)*(ver/1000).toFixed(2))*priceProf) + Number(((hor/1000).toFixed(2)*(ver/1000).toFixed(2))*priceLam)))*amount;
      }
 
 const control_lr =(e) =>{
