@@ -13,8 +13,8 @@ export default function Horiz() {
     const [ver, setVer] = useState(1);
     const [control_len, setControllen] = useState(700);
     const [control_dir, setControl_dir] = useState("vlevo");
-    const [lamella_color, setLamellaColor] = useState();
-    const [profile_color, setProfileColor] = useState();
+    const [lamella_color, setLamellaColor] = useState("");
+    const [profile_color, setProfileColor] = useState("");
     const [priceLam, setPriceLamella] = useState(0);
     const [priceProf, setPriceProfile] = useState(0);
 
