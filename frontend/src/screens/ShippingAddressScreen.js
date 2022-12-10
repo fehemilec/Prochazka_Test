@@ -4,6 +4,7 @@ import  './ShippingAddressScreen.css'
 import {useDispatch, useSelector} from 'react-redux'
 import { saveBillingAddress, saveShippingAddress } from '../redux/actions/cartActions';
 import { Link, useNavigate } from "react-router-dom";
+import swal from 'sweetalert';
 
 
 export default function ShippingAddressScreen() {
@@ -32,17 +33,22 @@ export default function ShippingAddressScreen() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`The name you entered was: `);
+        swal("Insert all data");
       }
 
     const submitHandler = (e) => {
         e.preventDefault();
         
-        dispatch(saveBillingAddress({fullName,address,city,postalCode,country}));
-        dispatch(saveShippingAddress({fullName_ship,address_ship,city_ship,postalCode_ship,country_ship}));
+        if(fullName=="" || address=="" || city=="" || postalCode=="" || country==""
+            || fullName_ship=="" || address_ship=="" || city_ship=="" || postalCode_ship=="" || country_ship==""){
+            swal("Insert all data");
+        }else{
+            dispatch(saveBillingAddress({fullName,address,city,postalCode,country}));
+            dispatch(saveShippingAddress({fullName_ship,address_ship,city_ship,postalCode_ship,country_ship}));
 
-        navigate('/placeorder');
-        console.log(fullName);
+            navigate('/placeorder');
+            console.log(fullName);
+        }
     };
 
    

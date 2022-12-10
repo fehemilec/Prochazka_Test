@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import CheckoutSteps from '../components/CheckoutSteps'
 import { useDispatch, useSelector } from 'react-redux'
+import React, { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import { createOrder } from '../redux/actions/orderActions';
 import CartItemOrder from "../components/CartItemOrder";
 import CartItemOrderHor from "../components/CartItemOrderHor";
+
 import "./PlaceOrderScreen.css";
+import CheckoutSteps from '../components/CheckoutSteps'
 import StripeCheckout from 'react-stripe-checkout'
-import { Link, useNavigate } from 'react-router-dom';
-import './PlaceOrderScreen.css'
-import { createOrder } from '../redux/actions/orderActions';
+import swal from 'sweetalert';
+
 
 export default function PlaceOrderScreen() {
 
@@ -1441,6 +1443,9 @@ export default function PlaceOrderScreen() {
   const makePayment = token => {
 
     let tot_price = (final_price_naradni + final_priceHor).toFixed(2)
+
+    if(tot_price>=100){
+
     const body_1 = {
 
       name, cartItems, cartItems_hor, token, tot_price, shippingAddress
@@ -1492,6 +1497,9 @@ export default function PlaceOrderScreen() {
 
     })
       .catch(error => console.log(error))
+}else{
+    swal("The checkout amount is not enough to conclude the purchase, minumum required is 100 kc");
+    }
 
   }
 
