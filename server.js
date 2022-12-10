@@ -28,7 +28,7 @@ app.use(cors());
 app.post('/api/sendmail', (req, res) => {
 
 
-  const { name, cartItems, cartItems_hor, token, final_price } = req.body;
+  const { name, cartItems, cartItems_hor, token, tot_price, shippingAddress } = req.body;
   console.log("email form token " + token.email)
 
   //console.log("PRICE PAID MAIL", cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
@@ -88,7 +88,7 @@ app.post('/api/sendmail', (req, res) => {
       <tfoot>
       <tr>
       <td colspan="2">Items Price:</td>
-      <td align="right"> Kc ${final_price.toFixed(2)}</td>
+      <td align="right"> Kc ${tot_price}</td>
       </tr>
       <tr>
       <td colspan="2">Tax Price:</td>
@@ -100,7 +100,98 @@ app.post('/api/sendmail', (req, res) => {
       </tr>
       <tr>
       <td colspan="2"><strong>Total Price:</strong></td>
-      <td align="right"><strong> Kc ${final_price.toFixed(2)}</strong></td>
+      <td align="right"><strong> Kc ${tot_price}</strong></td>
+      </tr>
+      
+      </table>
+      `
+  };
+
+  let mailOptions_shop = {
+    from: "fehemifemo@gmail.com",
+    to: "fehemifemo@gmail.com",
+    subject: "New order",
+    html:
+      `<h1>New Order</h1>
+      <p>You have a new order from ${name}</p>
+      
+      <table>
+      <thead>
+      <tr>
+      <td><strong>Product</strong></td>
+      <td><strong>Quantity</strong></td>
+      <td><strong align="right">Price</strong></td>
+      </thead>
+      <tbody>
+      ${cartItems
+        .map(
+          (item) => `
+        <tr>
+        <td>${item.name}</td>
+        <td align="center">${item.qty}</td>
+        <td align="right"> Kc ${item.price.toFixed(2)}</td>
+        </tr>
+      `
+        )
+        .join('\n')}
+        ${cartItems_hor
+        .map(
+          (item) => `
+          <tr>
+          <td>${item.name}</td>
+          <td align="center">${item.qty}</td>
+          <td align="right"> Kc ${item.price.toFixed(2)}</td>
+          </tr>
+        `
+        )
+        .join('\n')}
+      </tbody>
+      <tfoot>
+      <tr>
+      <td colspan="2">Items Price:</td>
+      <td align="right"> Kc ${tot_price}</td>
+      </tr>
+      <tr>
+      <td colspan="2">Tax Price:</td>
+      <td align="right"> Kc</td>
+      </tr>
+      <tr>
+      <td colspan="2">Shipping Price:</td>
+      <td align="right"> Kc</td>
+      </tr>
+      <tr>
+      <td colspan="2"><strong>Total Price:</strong></td>
+      <td align="right"><strong> Kc ${tot_price}</strong></td>
+      </tr>
+      
+      </table>
+
+
+      <table>
+      <thead>
+      <tr>
+      <td><strong>Shipping Address</strong></td>
+      </thead>
+      <tfoot>
+      <tr>
+      <td colspan="2">Name</td>
+      <td align="right"> ${shippingAddress.fullName_ship}</td>
+      </tr>
+      <tr>
+      <td colspan="2">Street</td>
+      <td align="right"> ${shippingAddress.address_ship}</td>
+      </tr>
+      <tr>
+      <td colspan="2">City</td>
+      <td align="right"> ${shippingAddress.city_ship}</td>
+      </tr>
+      <tr>
+      <td colspan="2">Postal COde</td>
+      <td align="right"> ${shippingAddress.postalCode_ship}</td>
+      </tr>
+      <tr>
+      <td colspan="2"><strong>Country</strong></td>
+      <td align="right"><strong>${shippingAddress.country_ship}</strong></td>
       </tr>
       
       </table>
@@ -114,7 +205,20 @@ app.post('/api/sendmail', (req, res) => {
     }
     else {
 
-      console.log("Mail sent")
+      console.log("Mail to buyer sent")
+    }
+
+
+  })
+
+  smtpTransport.sendMail(mailOptions_shop, (error, response) => {
+
+    if (error) {
+      return console.log(error)
+    }
+    else {
+
+      console.log("Mail to seller sent")
     }
 
 
@@ -133,10 +237,10 @@ app.use("/api/orders", orderRoutes);
 
 app.post("/payment_card", (req, res) => {
 
-  const { token, cart, cartItems, cartItems_hor, final_price } = req.body;
+  const { token, cart, cartItems, cartItems_hor, tot_price } = req.body;
   //console.log("PRODUCT ", product);
   console.log("PRICE", cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
-  console.log("REAL PRICE", final_price)
+  console.log("REAL PRICE", tot_price)
   //const idempotencyKey = uuid()
 
 
@@ -149,7 +253,7 @@ app.post("/payment_card", (req, res) => {
 
     stripe.charges.create({
 
-      amount: (final_price).toFixed(2)*100,
+      amount: tot_price*100,
       currency: 'czk',
       customer: customer.id,
       receipt_email: token.email,

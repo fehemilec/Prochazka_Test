@@ -2815,7 +2815,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
                 <div className='ps'>
                 <span className="psLabel">CELKOVÁ CENA:</span>
                 <span className="psPrice">
-                    <span className="total" id="total"> {getFinalPrice()} </span> Kč vč. DPH
+                    <span className="total" id="total"> {getFinalPrice().toFixed(2)} </span> Kč vč. DPH
                 </span>
                 <input type="submit" value="cart" id="btnSubmit" name="cart"/>
                 <label htmlFor="btnSubmit" className="btnSubmit">                   

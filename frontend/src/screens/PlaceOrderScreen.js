@@ -8,7 +8,6 @@ import StripeCheckout from 'react-stripe-checkout'
 import { Link, useNavigate } from 'react-router-dom';
 import './PlaceOrderScreen.css'
 import { createOrder } from '../redux/actions/orderActions';
-import axios from "axios";
 
 export default function PlaceOrderScreen() {
 
@@ -18,7 +17,7 @@ export default function PlaceOrderScreen() {
 
   const { cartItems } = cart;
   const { cartItems_hor } = cart;
-
+  const { shippingAddress } = cart;
   const name = cart.billingAddress.fullName;
 
   const [ema, setEma] = useState({
@@ -26,11 +25,11 @@ export default function PlaceOrderScreen() {
     lastname: "leci",
     email: "femo@live.it",
   });
-  const [final_price, setFinalPrice] = useState(0);
-  const [priceHor, setPriceHor] = useState(0);
+  const [final_price_naradni, setFinalPriceNaradni] = useState(0);
+  const [final_priceHor, setfinal_priceHor] = useState(0);
 
   useEffect(()=> {
-    totalPriceHorizontal()
+    totalfinal_priceHorizontal()
     let reviewPromises = [];
     cartItems.map((item) => (
       
@@ -50,21 +49,21 @@ export default function PlaceOrderScreen() {
       
         console.log("Results: ", results);
         console.log("Total:", total);
-        setFinalPrice(total);
+        setFinalPriceNaradni(total);
       });
        
   }, []);
 
-  const totalPriceHorizontal=()=>{
+  const totalfinal_priceHorizontal=()=>{
     let num = 0
     cartItems_hor.map((item) => (
-      num = num + calculatePriceHor(item)
+      num = num + calculatefinal_priceHor(item)
     ) )
-    setPriceHor(num);
+    setfinal_priceHor(num);
     num = 0;
 
   }
-  const calculatePriceHor=(item)=>{
+  const calculatefinal_priceHor=(item)=>{
     let amount = item.amount
     let width = item.width
     let height = item.height
@@ -1434,22 +1433,6 @@ export default function PlaceOrderScreen() {
   }
 
 
-  async function totalPrice(id, qty) {
-
-    return await fetch(`http://localhost:5000/api/products/${id}`)
-    
-        .then((response) => { 
-          return response.json().then((data) => {
-              return data;
-          }).catch((err) => {
-              console.log(err);
-          }) 
-      });
-
-    //console.log("This price", (data.price)*qty));
-  }
-
-
   const getCartCount = () => {
     return (cartItems.reduce((qty, item) => Number(item.qty) + qty, 0) + cartItems_hor.reduce((qty, item) => Number(item.qty) + qty, 0));
   };
@@ -1457,15 +1440,15 @@ export default function PlaceOrderScreen() {
 
   const makePayment = token => {
 
-
+    let tot_price = (final_price_naradni + final_priceHor).toFixed(2)
     const body_1 = {
 
-      name, cartItems, cartItems_hor, token, final_price
+      name, cartItems, cartItems_hor, token, tot_price, shippingAddress
     }
 
     const body = {
 
-      token, cart, cartItems, cartItems_hor, final_price
+      token, cart, cartItems, cartItems_hor, tot_price
     }
 
     const headers = {
@@ -1579,14 +1562,14 @@ export default function PlaceOrderScreen() {
         <div className="placeOrderScreen_right">
           <div className="placeOrderScreen__info">
             <p>Subtotal ({getCartCount()}) items</p>
-            <p>Kč {(final_price + priceHor).toFixed(2)}</p>
+            <p>Kč {(final_price_naradni + final_priceHor).toFixed(2)}</p>
           </div>
           <div>
             <StripeCheckout
               stripeKey="pk_test_51KG4qlEJlYE6AglXN3kXqFDvEPL5B9PZDxeZX6JmgsXYzHtxI8olvw9rZhbVqwvWD4CUsJLn79CaH14mwenxsqSe00cd34mY1y"
               token={makePayment}
               name="Purchase Order"
-              amount={final_price * 100}
+              amount={(final_price_naradni+final_priceHor) * 100}
             >
               <button className="btn-large blue">Pay now with Card</button>
             </StripeCheckout>
