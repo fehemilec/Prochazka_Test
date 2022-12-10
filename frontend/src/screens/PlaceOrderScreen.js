@@ -1464,9 +1464,10 @@ export default function PlaceOrderScreen() {
     }).then(response => {
       console.log("Response ", response)
       const { status } = response;
-
       if (status === 200) {
-
+        //--------------------------
+        //EXCEPTION HANDLING NEEDED
+        //--------------------------
         placeOrderHandler()
         navigate('/confirmation');
         console.log("You paid fucker, Status ", status)
@@ -1488,6 +1489,9 @@ export default function PlaceOrderScreen() {
         }).catch(error => console.log(error))
 
 
+      }else{
+        navigate('/placeorder');
+        alert("Payment unsuccessful")
       }
 
     })
