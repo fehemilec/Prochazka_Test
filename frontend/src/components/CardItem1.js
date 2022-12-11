@@ -4,22 +4,23 @@ import { Link } from 'react-router-dom';
 function CardItem1(props) {
   return (
     <>
-      <li className='cards__item'>
-        <Link className='cards__item__link' to={props.path}>
-          <figure className='cards__item__pic-wrap'>
+      <li className='home_cards_item'>
+        <Link className='home_cards_item_link' to={props.path}>
+          <figure className='home_cards_item_pic_wrap'>
             <img
-              className='cards__item__img'
+              className='home_cards_item_img'
               alt='image'
               src={props.src}
             />
             <div class="overlay">
-          <div class="plus_icon"></div>
-           </div>
+              <div class="plus_icon"></div>
+            </div>
           </figure>
-          <div className='cards__item__info'>
-            <h3 className='cards__item__text'>{props.text}</h3>
-            <p className='cards__item__informaci'>{props.informaci}  <i class="fa-solid fa-angle-right"/></p>
-            <p className='cards__item__text1'>{props.text1}</p>
+          <div className='home_cards_item_info'>
+            <h3 className='home_cards_item_text'>{props.text}</h3>
+            <p className='home_cards_item_informaci'>
+              {props.informaci}  <i class="fa-solid fa-angle-right"/>
+            </p>
           </div>
         </Link>
       </li>

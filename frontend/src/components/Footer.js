@@ -8,7 +8,7 @@ function Footer() {
     <div className='footer-container'>
         <img className='footer_arrow' src='/images/arrow_footer.png' alt=''></img>
       <div className='footer-links'>
-        <div className='footer-link-items'>
+        <div className='footer-link-items' id='first_col'>
           <h2>CONTACT</h2>
           <p><i className="far fa-address-book"></i>  Leoš Procházka</p>
           <p><i className="fas fa-map-marker-alt"></i>  Krátká 561, Lenešice 439 23</p>
@@ -22,7 +22,7 @@ function Footer() {
           <Link to='/'><li>Complaints Procedure</li></Link>
           <Link to='/'><li>Protection and personal data</li></Link>
         </div>
-        <div className='footer-link-items'>
+        <div className='footer-link-items' id='last_col'>
           <h2>DOWNLOAD</h2>
           <Link to='/'><li>Brochure to download</li></Link>
           <Link to='/'><li>Technical details</li></Link>
