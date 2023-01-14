@@ -72,7 +72,6 @@ export default function PlaceOrderScreen() {
     let lamella_col = item.lamella_color
     let profile_col = item.profile_color
 
-    let aggreg = []
     //console.log("Amount:",amount+" Width:", width +" Height:", height+" Lamella col:", lamella_col+" Profile col:", profile_col)
 
     let price_width_heigth = getPriceCalculator(width,height)

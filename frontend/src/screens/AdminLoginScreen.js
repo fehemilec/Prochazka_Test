@@ -4,7 +4,6 @@ import {Link, useNavigate } from 'react-router-dom';
 import { signin } from '../redux/actions/userActions';
 import './AdminLoginScreen.css';
 
-
 export default function AdminLoginScreen() {
 
   const navigate = useNavigate();
@@ -31,7 +30,10 @@ export default function AdminLoginScreen() {
     dispatch(signin(email,password))
   };
 
+
   useEffect(() => {
+    let jsonTokenObj=JSON.parse(localStorage.getItem("userInfo"))
+    console.log("TOKEN USER, ", jsonTokenObj.token)
     if(localStorage.getItem("userInfo")){
       navigate('/orders')
     }
