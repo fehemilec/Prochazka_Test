@@ -1,5 +1,25 @@
 const Order = require("../models/Order");
+var jwt = require('jsonwebtoken');
 
+
+const isTokenValid = (req, res) =>{
+  const authorization = req.headers.authorization;
+  if(authorization){
+      const token = authorization.slice(7, authorization.length);
+      jwt.verify(
+          token,
+          process.env.JWT_SECRET,
+          (err, decode)=>{
+              if(err){
+                  res.status(401).send({message:'Invalid Token'});
+              }else{
+                console.log("DECODE token, ", decode);
+                res.status(200).send({message:'Valid Token'});
+              }
+          }
+      )
+  }
+}
 
 
 const getAllOrders = async (req, res) => {
@@ -52,5 +72,6 @@ const createOrder = async (req, res) => {
 module.exports = {
     createOrder,
     getAllOrders,
-    getOrderById
+    getOrderById,
+    isTokenValid,
 };
