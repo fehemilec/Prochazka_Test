@@ -9,17 +9,17 @@ function CardItem1(props) {
           <figure className='home_cards_item_pic_wrap'>
             <img
               className='home_cards_item_img'
-              alt='image'
+              alt='card'
               src={props.src}
             />
-            <div class="overlay">
-              <div class="plus_icon"></div>
+            <div className="overlay">
+              <div className="plus_icon"></div>
             </div>
           </figure>
           <div className='home_cards_item_info'>
             <h3 className='home_cards_item_text'>{props.text}</h3>
             <p className='home_cards_item_informaci'>
-              {props.informaci}  <i class="fa-solid fa-angle-right"/>
+              {props.informaci}  <i className="fa-solid fa-angle-right"/>
             </p>
           </div>
         </Link>

@@ -13,8 +13,8 @@ export default function Spocitat() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus blandit magna tristique varius pulvinar nibh. Rutrum auctor diam elementum cursus interdum. Felis volutpat pharetra at ut. Felis convallis morbi tortor nulla cursus imperdiet vitae urna.
             </span>
           </div>
-          <div className="spocitat_button" onClick={"google.com"}>
-            Spočítat si cenu <i class="fa-solid fa-angle-right"></i>
+          <div className="spocitat_button">
+            Spočítat si cenu <i className="fa-solid fa-angle-right"></i>
           </div>
         </div>
       </div>

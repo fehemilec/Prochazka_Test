@@ -15,7 +15,7 @@ function HomeImage() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit tristique quam fermentum nunc, amet, a. Egestas donec pharetra tincidunt purus.
         </div>
         <div className='home_image_button'>
-          Výběr žaluzií <i class="fa-solid fa-angle-right"></i>
+          Výběr žaluzií <i className="fa-solid fa-angle-right"></i>
         </div>
       </div>
       <img src='/images/horizontal_blind_pic.png' alt="" />
