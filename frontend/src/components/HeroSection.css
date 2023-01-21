@@ -2,13 +2,14 @@
   height: auto;
   width: 100%; 
   align-items: center;
+  margin-bottom: 5%;
   overflow: hidden;
 }
 
 .hero-container > h1 {
   color: black;
   font-size: 36px;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   font-family: 'Manrope';
   font-weight: bolder;
   text-align: center;
@@ -40,13 +41,12 @@
 
 .front_cards_1, 
 .front_cards_2 { 
-  display: flex; flex-direction: row; 
-  margin-bottom: 5%; /*
-  justify-content: center;
-  align-items: center;*/
+  display: flex; flex-direction: row;   
   align-items: stretch; /*stretches all cards same height*/
   justify-content: space-around; /*some space between cards*/
 }
+
+.front_cards_1 { margin-bottom: 5%;  }
 
 .firstCard,
 .secondCard,
@@ -54,8 +54,7 @@
 .fourthCard,
 .fifthCard,
 .sixthCard{ 
-  width: 25%;/*
-  height: 40vh;*/
+  width: 25%;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
@@ -63,27 +62,7 @@
   overflow: hidden;
 }
 
-.firstCard,.secondCard,.fourthCard,.fifthCard{margin-right: 8%;}
-
-.firstCard:hover .first_div_icon,
-.secondCard:hover .second_div_icon,
-.thirdCard:hover .third_div_icon,
-.fourthCard:hover .fourth_div_icon,
-.fifthCard:hover .fifth_div_icon,
-.sixthCard:hover .sixth_div_icon{ 
-  background: #4361aa; 
-}
-
-.firstCard:hover .fa-user-tie,
-.secondCard:hover .fa-sort-amount-up,
-.thirdCard:hover .fa-user-cog,
-.fourthCard:hover .fa-building,
-.fifthCard:hover .fa-bullseye,
-.sixthCard:hover .fa-shipping-fast{ 
-  color: white; 
-}
-
-.firstCard,.fourthCard{margin-left: 5%;}
+.firstCard,.secondCard,.fourthCard,.fifthCard{margin-right: 5%;}
 
 .first_div_icon,
 .second_div_icon,
@@ -91,69 +70,106 @@
 .fourth_div_icon,
 .fifth_div_icon,
 .sixth_div_icon{
-  width: 90px;
-  height: 90px;
-  border-radius: 50px;
-  margin: auto;
-  margin-top: 5%;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  margin-left: 10%;
+  margin-top: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(244, 244, 244);
+  background-color: #E9ECFC;
 }
 
-.fa-user-tie,
-.fa-sort-amount-up,
-.fa-user-cog,
-.fa-building,
-.fa-bullseye,
-.fa-shipping-fast {font-size: 2.5rem; color: #4361aa;}
+.firstCard:hover .first_div_icon,
+.secondCard:hover .second_div_icon,
+.thirdCard:hover .third_div_icon,
+.fourthCard:hover .fourth_div_icon,
+.fifthCard:hover .fifth_div_icon,
+.sixthCard:hover .sixth_div_icon{ 
+  background: rgb(226, 225, 226); 
+}
+
+.user_icon,
+.tag_icon,
+.wrench_icon,
+.mark_icon,
+.target_icon,
+.delivery_icon {
+  width: 32px;
+  height: 32px; color: #4665E6;}
+
+.firstCard:hover .user_icon,
+.secondCard:hover .tag_icon,
+.thirdCard:hover .wrench_icon,
+.fourthCard:hover .mark_icon,
+.fifthCard:hover .target_icon,
+.sixthCard:hover .delivery_icon { 
+  color: white; 
+}
+
+.firstCard,.fourthCard{margin-left: 5%;}
 
 .first_div_text, .second_div_text, .third_div_text,.fourth_div_text,.fifth_div_text,.sixth_div_text{
-  font-size: 22px; 
   display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 90%;
   height: 20%;
   word-wrap: break-word;
   color: black;
   font-weight:700;
-  margin-top: 10%;
+  font-size: 22px;   
+  margin-top: 5%;
+  margin-right: 4%;
+  overflow: hidden;
 }
 .first_div_text > span, .second_div_text > span, .third_div_text > span,.fourth_div_text > span,.fifth_div_text > span,.sixth_div_text > span{
   display: flex;
   font-family: 'Manrope';
-  margin-bottom: 10%;
-  margin-left: 5%;
+  margin-right: 1%;
+  margin-left: 10%;
 }
 
 
 .first_div_text_2, .second_div_text_2, .third_div_text_2,.fourth_div_text_2,.fifth_div_text_2,.sixth_div_text_2{
   font-size: 14px; 
   display: flex;
-  justify-content: left;
-  /*text-align: center;*/
-  width: 90%;
-  height: 20%;
+  width: 100%;
   word-wrap: break-word;
   color: #808080;
   margin-top: 3%;
+  margin-bottom: 15%;
+  overflow: hidden; 
 }
 
 .first_div_text_2 > span, .second_div_text_2 > span, .third_div_text_2 > span,.fourth_div_text_2 > span,.fifth_div_text_2 > span,.sixth_div_text_2 > span{
   display: flex;
   font-family: 'Manrope';
-  margin-bottom: 10%;
-  margin-left: 5%;
+  margin-right: 4%;
+  margin-left: 10%; 
 }
 
 
-@media screen and (max-width: 960px) {.hero-container > h1 {font-size: 55px; }}
-@media screen and (max-width: 768px) {.hero-container > h1 {font-size: 45px; }}
-@media screen and (max-width: 600px) {.hero-container > h1 {font-size: 35px; }}
+@media screen and (max-width: 960px) {
+  .hero-container > h1, 
+  .hero-container > h1 > a > span {font-size: 55px;  }
+  .hero-container > h1 > a { margin-left: 1%; margin-right: 1%; }
+}
+@media screen and (max-width: 768px) {
+  .hero-container > h1,
+  .hero-container > h1 > a > span {font-size: 45px; }
+}
+@media screen and (max-width: 600px) {
+  .hero-container > h1,
+  .hero-container > h1 > a > span {font-size: 35px; }
+  .hero-container > h1 > a { margin: 0%; }
+  .hero-container > h1 { margin-bottom: 10%; }
+}
+
 @media screen and (max-width: 440px) {
-  .hero-container > h1 {font-size: 25px; }
+  .hero-container > h1,
+  .hero-container > h1 > a > span { font-size: 23px; }
+  .hero-container > h1 > a > span { margin: 0;}
+  .hero-container > h1 > a { width: 32%; }
+
   .first_div_text > span, 
   .second_div_text > span, 
   .third_div_text > span,
@@ -163,19 +179,32 @@
     font-size: 18px;
   }
 }
-@media screen and (max-width: 330px) {.hero-container > h1 {font-size: 20px; }}
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 330px) {
+  .hero-container > h1,
+  .hero-container > h1 > a > span {font-size: 18px; }
+}
 
-.front_cards_1, .front_cards_2 { 
-  flex-direction: column; 
-  margin-bottom: 5%; 
-  width: 100%;
+@media screen and (max-width: 970px) {
+  .front_cards_1, .front_cards_2 { 
+    flex-direction: column; 
+    margin-bottom: 5%; 
+    width: 100%;
+}
+
+.first_div_text_2, 
+.second_div_text_2, 
+.third_div_text_2,
+.fourth_div_text_2,
+.fifth_div_text_2,
+.sixth_div_text_2 {
+  margin-top: 1.5%;
+  margin-bottom: 15%;
 }
 
 .front_cards { flex-direction: row; }  
 
-.firstCard, .secondCard, .thirdCard, .fourthCard, .fifthCard, .sixthCard{ width: 90%; margin: auto;}
+.firstCard, .secondCard, .thirdCard, .fourthCard, .fifthCard, .sixthCard{ width: 90%; height: 100%; margin: auto;}
 
 .secondCard, .fifthCard{margin-top: 5%; margin-bottom: 5%;}
 
@@ -185,10 +214,19 @@
 
   .front_cards { flex-direction: column; }  
 
-  .firstCard, .secondCard, .thirdCard, .fourthCard, .fifthCard, .sixthCard{ width: 70%; margin: auto;}
+  .firstCard, .secondCard, .thirdCard, .fourthCard, .fifthCard, .sixthCard{ width: 65%; margin: auto;}
 
   .secondCard, .fifthCard{margin-top: 5%; margin-bottom: 5%;}
 
+  .first_div_text_2, 
+  .second_div_text_2, 
+  .third_div_text_2,
+  .fourth_div_text_2,
+  .fifth_div_text_2,
+  .sixth_div_text_2 {
+    margin-top: 1.5%;
+    margin-bottom: 5%;
+  }
 }
 
 @media screen and (max-width: 370px){
@@ -196,15 +234,18 @@
 }
 
 
-/*
-@media screen and (min-height: 550px){
-  
-.firstCard,
-.secondCard,
-.thirdCard,
-.fourthCard,
-.fifthCard,
-.sixthCard{ 
-  height: 30vh;
+@media screen and (max-width: 1189px) {
+  .first_div_text > span,
+  .second_div_text > span,
+  .third_div_text > span,
+  .fourth_div_text > span,
+  .fifth_div_text > span,
+  .sixth_div_text > span { font-size: 19px; }
+
+  .first_div_text,
+  .second_div_text,
+  .third_div_text,
+  .fourth_div_text,
+  .fifth_div_text,
+  .sixth_div_text { margin-bottom: 3%; }
 }
-}*/

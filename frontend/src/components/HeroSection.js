@@ -10,34 +10,34 @@ function HeroSection() {
       <div className='front_cards'>
         <div className='front_cards_1'>
           <div className='firstCard'>
-            <div className='first_div_icon'><i className='fas fa-user-tie'></i></div>
+            <div className='first_div_icon'><img className='user_icon' src='/images/user.svg' alt=''/></div>
             <div className='first_div_text'><span> Profesionální montáž a poradenství </span></div>
             <div className='first_div_text_2'><span> Lectus pharetra ante ut arcu nibh purus, phasellus sit gravida. Eros, lorem ipsum laoreet ullamcorper ornar. </span></div>
           </div>
           <div className='secondCard'>
-            <div className='second_div_icon'><i className='fas fa-sort-amount-up'></i></div>
+            <div className='second_div_icon'><img className='tag_icon' src='/images/tag.svg' alt=''/></div>
             <div className='second_div_text'><span> Nejširší nabídka žaluzií, rolet a sítí </span></div>
             <div className='second_div_text_2'><span> Lectus pharetra ante ut arcu nibh purus, phasellus sit gravida. Eros, lorem ipsum laoreet ullamcorper ornar. </span></div>
           </div>
           <div className='thirdCard'>
-            <div className='third_div_icon'><i className='fas fa-user-cog'></i></div>
+            <div className='third_div_icon'><img className='wrench_icon' src='/images/wrench.svg' alt=''/></div>
             <div className='third_div_text'><span> Záruční a pozáruční servis </span></div>
             <div className='third_div_text_2'><span> Lectus pharetra ante ut arcu nibh purus, phasellus sit gravida. Eros, lorem ipsum laoreet ullamcorper ornar. </span></div>
           </div>
         </div>
         <div className='front_cards_2'>
           <div className='fourthCard'>
-            <div className='fourth_div_icon'><i className='fas fa-building'></i></div>
+            <div className='fourth_div_icon'><img className='mark_icon' src='/images/mark.svg' alt=''/></div>
             <div className='fourth_div_text'><span> Jsme firma s dlouholetou tradicí </span></div>
             <div className='fourth_div_text_2'><span> Lectus pharetra ante ut arcu nibh purus, phasellus sit gravida. Eros, lorem ipsum laoreet ullamcorper ornar. </span></div>
           </div>
           <div className='fifthCard'>
-            <div className='fifth_div_icon'><i className='fas fa-bullseye'></i></div>
+            <div className='fifth_div_icon'><img className='target_icon' src='/images/target.svg' alt=''/></div>
             <div className='fifth_div_text'><span> Našim cílem je spokojený zákazník </span></div>
             <div className='fifth_div_text_2'><span> Lectus pharetra ante ut arcu nibh purus, phasellus sit gravida. Eros, lorem ipsum laoreet ullamcorper ornar. </span></div>
           </div>
           <div className='sixthCard'>
-            <div className='sixth_div_icon'><i className='fas fa-shipping-fast'></i></div>
+            <div className='sixth_div_icon'><img className='delivery_icon' src='/images/delivery.svg' alt=''/></div>
             <div className='sixth_div_text'><span> Krátké dodací lhůty </span></div>
             <div className='sixth_div_text_2'><span> Lectus pharetra ante ut arcu nibh purus, phasellus sit gravida. Eros, lorem ipsum laoreet ullamcorper ornar. </span></div>
           </div>

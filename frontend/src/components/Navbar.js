@@ -30,7 +30,7 @@ function Navbar() {
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
               <Link to='/' className='nav-home' onClick={closeMobileMenu}>
-                Home
+                O nás
               </Link>
             </li>
             <li className='nav-item'>
@@ -41,7 +41,7 @@ function Navbar() {
               >
                 Produkty                
               </Link>
-              <div class="dropdown-content"> 
+              <div className="dropdown-content"> 
                 <a href="/#">Horizontální žaluzie</a>
                 <a href="/#">Náhradní díly</a>
               </div>
