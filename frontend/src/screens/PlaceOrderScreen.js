@@ -36,7 +36,7 @@ export default function PlaceOrderScreen() {
     cartItems.map((item) => (
       
       reviewPromises.push(
-        fetch(`http://localhost:5000/api/products/${item.product}`)
+        fetch(`https://infinite-headland-77957.herokuapp.com/api/products/${item.product}`)
         .then(response => response.json())
         .then(data => { return {title: item.product, price: (data.price)*item.qty}}))
       
