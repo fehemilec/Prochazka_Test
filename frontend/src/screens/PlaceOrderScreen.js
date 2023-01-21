@@ -1461,7 +1461,7 @@ export default function PlaceOrderScreen() {
 
 
 
-    return fetch('http://localhost:5000/payment_card', {
+    return fetch('https://infinite-headland-77957.herokuapp.com/payment_card', {
       method: "POST",
       headers,
       body: JSON.stringify(body)
@@ -1478,7 +1478,7 @@ export default function PlaceOrderScreen() {
         console.log("Token ", token.id)
         console.log("Token mail", token.email)
 
-        return fetch('http://localhost:5000/api/sendmail', {
+        return fetch('https://infinite-headland-77957.herokuapp.com/api/sendmail', {
 
           method: "POST",
           headers,
