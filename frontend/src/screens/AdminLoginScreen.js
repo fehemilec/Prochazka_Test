@@ -32,28 +32,31 @@ export default function AdminLoginScreen() {
 
 
   useEffect(() => {
-    let jsonTokenObj=JSON.parse(localStorage.getItem("userInfo"))
-    console.log("TOKEN USER, ", jsonTokenObj.token)
 
-    fetch('http://localhost:5000/api/orders/token', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${jsonTokenObj.token}`
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if(data.message == "Invalid Token"){
-          navigate('/admin/login')
-        }
-        else if(data.message == "Valid Token"){
-          navigate('/orders')
-        }
+    if (localStorage.getItem("userInfo") !== null) {
+      let jsonTokenObj=JSON.parse(localStorage.getItem("userInfo"))
+      console.log("TOKEN USER, ", jsonTokenObj.token)
+
+      fetch('http://localhost:5000/api/orders/token', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${jsonTokenObj.token}`
+        },
       })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+        .then((response) => response.json())
+        .then((data) => {
+          if(data.message == "Invalid Token"){
+            navigate('/admin/login')
+          }
+          else if(data.message == "Valid Token"){
+            navigate('/orders')
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      }
 
   }, [userInfo])
     return(  

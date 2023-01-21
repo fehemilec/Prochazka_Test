@@ -16,9 +16,34 @@ export default function AdminOrderScreen() {
     const { userInfo } = userSignin;
   
     useEffect(() => {
-      if(userInfo){
-        dispatch(listOrders());
-      }else{navigate('/admin/login')}
+
+      if (localStorage.getItem("userInfo") !== null) {
+        let jsonTokenObj=JSON.parse(localStorage.getItem("userInfo"))
+        console.log("TOKEN USER, ", jsonTokenObj.token)
+  
+        fetch('http://localhost:5000/api/orders/token', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${jsonTokenObj.token}`
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if(data.message == "Invalid Token"){
+              navigate('/admin/login')
+            }
+            else if(data.message == "Valid Token"){
+              dispatch(listOrders());
+            }
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+        }else{
+          navigate('/admin/login')
+        }
+
     }, [dispatch]);
 
     return(  
