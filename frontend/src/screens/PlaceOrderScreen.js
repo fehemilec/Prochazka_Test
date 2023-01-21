@@ -9,7 +9,7 @@ import "./PlaceOrderScreen.css";
 import CheckoutSteps from '../components/CheckoutSteps'
 import StripeCheckout from 'react-stripe-checkout'
 import swal from 'sweetalert';
-
+require('dotenv').config();
 
 export default function PlaceOrderScreen() {
 
@@ -36,7 +36,7 @@ export default function PlaceOrderScreen() {
     cartItems.map((item) => (
       
       reviewPromises.push(
-        fetch(`https://infinite-headland-77957.herokuapp.com/api/products/${item.product}`)
+        fetch(`${process.env.PROD_URL}/api/products/${item.product}`)
         .then(response => response.json())
         .then(data => { return {title: item.product, price: (data.price)*item.qty}}))
       
@@ -1461,7 +1461,7 @@ export default function PlaceOrderScreen() {
 
 
 
-    return fetch('https://infinite-headland-77957.herokuapp.com/payment_card', {
+    return fetch(`${process.env.PROD_URL}/payment_card`, {
       method: "POST",
       headers,
       body: JSON.stringify(body)
@@ -1478,7 +1478,7 @@ export default function PlaceOrderScreen() {
         console.log("Token ", token.id)
         console.log("Token mail", token.email)
 
-        return fetch('https://infinite-headland-77957.herokuapp.com/api/sendmail', {
+        return fetch(`${process.env.PROD_URL}/api/sendmail`, {
 
           method: "POST",
           headers,
@@ -1494,7 +1494,7 @@ export default function PlaceOrderScreen() {
 
 
       }else{
-        navigate('/placeorder');
+        navigate(`${process.env.PROD_URL}/placeorder`);
         alert("Payment unsuccessful")
       }
 
@@ -1577,7 +1577,7 @@ export default function PlaceOrderScreen() {
           </div>
           <div>
             <StripeCheckout
-              stripeKey="pk_test_51KG4qlEJlYE6AglXN3kXqFDvEPL5B9PZDxeZX6JmgsXYzHtxI8olvw9rZhbVqwvWD4CUsJLn79CaH14mwenxsqSe00cd34mY1y"
+              stripeKey={process.env.P_KEY}
               token={makePayment}
               name="Purchase Order"
               amount={(final_price_naradni+final_priceHor) * 100}
