@@ -10,6 +10,7 @@ const getUsers = async (req, res) => {
       //console.log("VAR:", process.env.REACT_APP_PROD_URL)
         const user = await User.findOne({email: req.body.email});
         if(user){
+          console.log("THE USER", user)
           if(bcrypt.compareSync(req.body.password, user.password)){
               res.json({
                   _id: user._id,
