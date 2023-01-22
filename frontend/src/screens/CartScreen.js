@@ -62,7 +62,7 @@ const CartScreen = () => {
         <div className="containers">
           <div className="products_container">
             <div className="cartscreen__left">
-              { cartItems.length === 0  && cartItems_hor.length === 0 ? (<div>Your Cart Is Empty <Link to="/services">Go Back</Link></div>) : (
+              { cartItems.length === 0  && cartItems_hor.length === 0 ? (<div className="emptyCartTextContainer"><span>Your cart is empty <Link to="/services">Go Back</Link></span></div>) : (
                 cartItems.map((item) => (
                   <CartItem key={item.product} item={item} qtyChangeHandler={qtyChangeHandler} removeHandler={removeFromCartHandler}/>
                 )) 

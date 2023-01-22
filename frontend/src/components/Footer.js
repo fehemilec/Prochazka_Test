@@ -9,23 +9,23 @@ function Footer() {
         <img className='footer_arrow' src='/images/arrow_footer.png' alt=''></img>
       <div className='footer-links'>
         <div className='footer-link-items' id='first_col'>
-          <h2>CONTACT</h2>
+          <h2>KONTAKT</h2>
           <p><i className="far fa-address-book"></i>  Leoš Procházka</p>
           <p><i className="fas fa-map-marker-alt"></i>  Krátká 561, Lenešice 439 23</p>
           <p><i className="fas fa-phone-alt"></i>  +420 605 454 093</p>
           <p><i className="fas fa-envelope"></i>  prochazka.l@seznam.cz</p>
         </div>
         <div className='footer-link-items'>
-          <h2>INFORMATION</h2>
-          <Link to='/'><li>About company</li></Link>
-          <Link to='/'><li>Terms and Conditions</li></Link>
-          <Link to='/'><li>Complaints Procedure</li></Link>
-          <Link to='/'><li>Protection and personal data</li></Link>
+          <h2>INFORMACE</h2>
+          <Link to='/'><li>O společnosti</li></Link>
+          <Link to='/'><li>Podmínky a pravidla</li></Link>
+          <Link to='/'><li>Postup pro podávání stížností</li></Link>
+          <Link to='/'><li>Ochrana a osobní údaje</li></Link>
         </div>
         <div className='footer-link-items' id='last_col'>
-          <h2>DOWNLOAD</h2>
-          <Link to='/'><li>Brochure to download</li></Link>
-          <Link to='/'><li>Technical details</li></Link>
+          <h2>STÁHNOUT</h2>
+          <Link to='/'><li>Brožura ke stažení</li></Link>
+          <Link to='/'><li>Technické detaily</li></Link>
         </div>
       </div>
       <section className='social-media'>

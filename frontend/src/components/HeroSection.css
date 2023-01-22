@@ -46,7 +46,7 @@
   justify-content: space-around; /*some space between cards*/
 }
 
-.front_cards_1 { margin-bottom: 5%;  }
+.front_cards_1 { margin-bottom: 2%;  }
 
 .firstCard,
 .secondCard,
@@ -54,7 +54,7 @@
 .fourthCard,
 .fifthCard,
 .sixthCard{ 
-  width: 25%;
+  width: 35%;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
@@ -62,7 +62,7 @@
   overflow: hidden;
 }
 
-.firstCard,.secondCard,.fourthCard,.fifthCard{margin-right: 5%;}
+.firstCard,.secondCard,.fourthCard,.fifthCard{margin-right: 2%;}
 
 .first_div_icon,
 .second_div_icon,
@@ -204,7 +204,7 @@
 
 .front_cards { flex-direction: row; }  
 
-.firstCard, .secondCard, .thirdCard, .fourthCard, .fifthCard, .sixthCard{ width: 90%; height: 100%; margin: auto;}
+.firstCard, .secondCard, .thirdCard, .fourthCard, .fifthCard, .sixthCard{ width: 95%; height: 100%; margin: auto;}
 
 .secondCard, .fifthCard{margin-top: 5%; margin-bottom: 5%;}
 
