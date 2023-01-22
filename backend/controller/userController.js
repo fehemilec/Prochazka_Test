@@ -1,10 +1,13 @@
 const User = require("../models/User");
 var bcrypt = require('bcryptjs');
 const { generateToken } = require("../utils");
+require('dotenv').config();
+
 
 const getUsers = async (req, res) => {
     try {
       console.log("USER: ",  req.body.email)
+      console.log("VAR:", process.env.REACT_APP_PROD_URL)
         const user = await User.findOne({email: req.body.email});
         if(user){
           if(bcrypt.compareSync(req.body.password, user.password)){

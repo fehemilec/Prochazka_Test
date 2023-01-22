@@ -10,9 +10,8 @@ import CheckoutSteps from '../components/CheckoutSteps'
 import StripeCheckout from 'react-stripe-checkout'
 import swal from 'sweetalert';
 
-
 export default function PlaceOrderScreen() {
-
+    
   const cart = useSelector((state) => state.cart)
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -36,7 +35,7 @@ export default function PlaceOrderScreen() {
     cartItems.map((item) => (
       
       reviewPromises.push(
-        fetch(`http://localhost:5000/api/products/${item.product}`)
+        fetch("https://infinite-headland-77957.herokuapp.com/api/products/${item.product}")
         .then(response => response.json())
         .then(data => { return {title: item.product, price: (data.price)*item.qty}}))
       
@@ -1461,7 +1460,7 @@ export default function PlaceOrderScreen() {
 
 
 
-    return fetch('http://localhost:5000/payment_card', {
+    return fetch("https://infinite-headland-77957.herokuapp.com/payment_card", {
       method: "POST",
       headers,
       body: JSON.stringify(body)
@@ -1478,7 +1477,7 @@ export default function PlaceOrderScreen() {
         console.log("Token ", token.id)
         console.log("Token mail", token.email)
 
-        return fetch('http://localhost:5000/api/sendmail', {
+        return fetch(`${process.env.REACT_APP_PROD_URL}/api/sendmail`, {
 
           method: "POST",
           headers,
@@ -1494,7 +1493,7 @@ export default function PlaceOrderScreen() {
 
 
       }else{
-        navigate('/placeorder');
+        navigate("https://infinite-headland-77957.herokuapp.com/placeorder");
         alert("Payment unsuccessful")
       }
 
@@ -1577,7 +1576,7 @@ export default function PlaceOrderScreen() {
           </div>
           <div>
             <StripeCheckout
-              stripeKey="pk_test_51KG4qlEJlYE6AglXN3kXqFDvEPL5B9PZDxeZX6JmgsXYzHtxI8olvw9rZhbVqwvWD4CUsJLn79CaH14mwenxsqSe00cd34mY1y"
+              stripeKey={process.env.P_KEY}
               token={makePayment}
               name="Purchase Order"
               amount={(final_price_naradni+final_priceHor) * 100}
