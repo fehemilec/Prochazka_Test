@@ -10,6 +10,16 @@
   place-items: center;
 }
 
+.cartitem > button {
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cartitem > select {  
+  width: 130px !important;
+}
+
 .cartitem__name {
   text-decoration: none;
   color: #171717;
@@ -44,6 +54,11 @@
   transform: scale(1.2);
 }
 
+.cartitem__price {
+  overflow: hidden;
+  width: 70px !important;
+}
+
 @media (max-width: 700px) {
   .cartitem__name {
     font-size: 0.8rem;
@@ -53,10 +68,10 @@
   .cartitem__deleteBtn {
     padding: 8px 13px;
   }
-
+/*
   .cartitem__price {
     font-size: 0.8rem;
-  }
+  }*/
 }
 
 @media (max-width: 500px) {
@@ -70,7 +85,8 @@
   }
 
   .cartitem__price {
-    font-size: 0.6rem;
+    font-size: 1rem;
+    text-align: center;
   }
 }
 @media (max-width: 500px) {

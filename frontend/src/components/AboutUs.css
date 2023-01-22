@@ -11,12 +11,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 54%;
+    width: 56%;
   }
 
 .aboutguy {    
     display: flex;
-    margin-left: 8%;
+    margin-left: 14%;
     width: 80%;
     height: 80%;
     position: relative;
@@ -42,9 +42,9 @@
 .aboutText{
     display: flex;
     flex-direction: column;   
-    width: 45%; 
+    width: 44%; 
     color: white;
-    margin-left: 1%;
+    margin-left: 1%;    
 }
 
 .titleOne{
@@ -99,4 +99,10 @@
 @media only screen and (max-width: 500px) {
     .titleOne > h1 {font-size: xx-large;}
     .titleTwo > h1 {font-size: x-large;}   
+}
+
+@media only screen and (max-width: 970px) {
+.aboutguy {    
+    margin-left: 4%;
+    }
 }

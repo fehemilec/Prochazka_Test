@@ -111,6 +111,11 @@
     height: 30%;
 }
 
+.spocitat_button_text {
+    text-decoration: none;
+    color: #4665E6;
+}
+
 @media only screen and (max-width: 912px) { 
     .spocitat_container { 
         flex-direction: column; 

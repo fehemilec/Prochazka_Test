@@ -24,13 +24,13 @@ export default function HomeCards() {
             <ul className='first_row_last_two'>
               <CardItem1
                 src='images/latkove_rolety.jpg'
-                text='Látkové rolety'
+                text='Okenní sítě proti hmyzu'
                 informaci="Vice informaci"
                 path='/Horizontal'
               />
               <CardItem1
                 src='images/rimske_rolety.jpg'
-                text='Římské rolety'
+                text='Dveřní sítě proti hmyzu'
                 informaci="Vice informaci"
                 path='/Horizontal'
               />
@@ -46,7 +46,7 @@ export default function HomeCards() {
               />
               <CardItem1
                 src='images/plisse_zaluzie.jpg'
-                text='Plissé žaluzie'
+                text='Látkové rolety'
                 informaci="Vice informaci"
                 path='/products'
               />

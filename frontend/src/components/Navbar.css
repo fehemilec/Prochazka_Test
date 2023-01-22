@@ -315,13 +315,12 @@
     word-break: break-all;
   }
 }
-
+/*
 @media screen and (min-width: 1481px) {
   .navbar-logo {
     margin-left: 15%;
   }
-}
-
+}*/
 
 @media screen and (min-width:964px) and (max-width:1010px) {
   .navbar-container>ul>#cart-container {

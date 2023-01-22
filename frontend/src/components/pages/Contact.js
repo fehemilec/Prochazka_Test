@@ -8,7 +8,7 @@ export default function Contact() {
 
     <div className="cont-div">
 
-        <h1 className='contact'>Contact</h1>;     
+        <h1 className='contact'>Kontakt</h1>     
 
     </div>
   ) 

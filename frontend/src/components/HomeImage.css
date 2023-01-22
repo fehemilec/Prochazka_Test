@@ -83,6 +83,12 @@
       }
   }*/
 
+  .home_image_button_text {
+    text-decoration: none;
+    color: white;
+    font-family: 'Manrope';
+  }
+
   @media only screen and (min-width: 1481px) {
     /*.home_image_text { left: 15%; }*/
     .home_image_subtitle { width: 35%; }    
