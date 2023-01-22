@@ -19,7 +19,6 @@ const getUsers = async (req, res) => {
                   isAdmin: user.isAdmin,
                   token: generateToken(user),
               });
-              res.status(200)
               return;
           }else{
             res.status(401).json({ message: "No user found" });
