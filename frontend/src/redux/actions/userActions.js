@@ -1,8 +1,10 @@
+import axios from "axios";
 import {
     USER_SIGNIN_FAIL,
     USER_SIGNIN_REQUEST,
     USER_SIGNIN_SUCCESS
 } from '../constants/userConstants';
+import { Link, useNavigate } from "react-router-dom";
 
 export const signin = (email, password) => async(dispatch) =>{
 
@@ -17,7 +19,7 @@ export const signin = (email, password) => async(dispatch) =>{
             "Content-Type" : "application/json"
           }
       
-          return fetch('https://infinite-headland-77957.herokuapp.com/api/users/signin', {
+          return fetch('https://infinite-headland-77957.herokuapp.com/api/users/signin' , {
             method: "POST",
             headers,
             body: JSON.stringify({
