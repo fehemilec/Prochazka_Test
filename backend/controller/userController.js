@@ -19,6 +19,8 @@ const getUsers = async (req, res) => {
                   token: generateToken(user),
               });
               return;
+          }else{
+            res.status(401).json({ message: "No user found" });
           }
         }
       } catch (error) {
