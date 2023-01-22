@@ -25,6 +25,7 @@ const getUsers = async (req, res) => {
           }
         }
       } catch (error) {
+        console.log("Error ", error)
         res.status(500).json({ message: error });
       }
     };
