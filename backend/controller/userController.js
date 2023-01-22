@@ -24,7 +24,7 @@ const getUsers = async (req, res) => {
           }
         }
       } catch (error) {
-        res.status(401).json({ message: "Invalid user email or password" });
+        res.status(401).json({ message: error });
       }
     };
 
