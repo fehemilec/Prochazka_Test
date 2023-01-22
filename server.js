@@ -39,7 +39,7 @@ app.post('/sendmail', (req, res) => {
     port: 465,
     auth: {
       user: 'fehemifemo@gmail.com',
-      pass:  process.env.EMAIL_PASS
+      pass:  'fpeckcfsveiuydob'
     },
     tls: {
       rejectUnauthorized: false
