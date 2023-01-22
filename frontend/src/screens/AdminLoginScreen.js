@@ -4,7 +4,6 @@ import {useNavigate } from 'react-router-dom';
 import { signin } from '../redux/actions/userActions';
 import './AdminLoginScreen.css';
 
-require('dotenv').config();
 
 export default function AdminLoginScreen() {
 
@@ -39,7 +38,7 @@ export default function AdminLoginScreen() {
       let jsonTokenObj=JSON.parse(localStorage.getItem("userInfo"))
       console.log("TOKEN USER, ", jsonTokenObj.token)
 
-      fetch(`${process.env.PROD_URL}/api/orders/token`, {
+      fetch(`https://infinite-headland-77957.herokuapp.com/api/orders/token`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

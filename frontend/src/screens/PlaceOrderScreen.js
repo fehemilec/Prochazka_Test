@@ -9,10 +9,9 @@ import "./PlaceOrderScreen.css";
 import CheckoutSteps from '../components/CheckoutSteps'
 import StripeCheckout from 'react-stripe-checkout'
 import swal from 'sweetalert';
-require('dotenv').config();
 
 export default function PlaceOrderScreen() {
-
+    
   const cart = useSelector((state) => state.cart)
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -36,7 +35,7 @@ export default function PlaceOrderScreen() {
     cartItems.map((item) => (
       
       reviewPromises.push(
-        fetch(`${process.env.PROD_URL}/api/products/${item.product}`)
+        fetch(`https://infinite-headland-77957.herokuapp.com/api/products/${item.product}`)
         .then(response => response.json())
         .then(data => { return {title: item.product, price: (data.price)*item.qty}}))
       
@@ -1478,7 +1477,7 @@ export default function PlaceOrderScreen() {
         console.log("Token ", token.id)
         console.log("Token mail", token.email)
 
-        return fetch(`${process.env.PROD_URL}/api/sendmail`, {
+        return fetch(`${process.env.REACT_APP_PROD_URL}/api/sendmail`, {
 
           method: "POST",
           headers,
@@ -1494,7 +1493,7 @@ export default function PlaceOrderScreen() {
 
 
       }else{
-        navigate(`${process.env.PROD_URL}/placeorder`);
+        navigate(`https://infinite-headland-77957.herokuapp.com/placeorder`);
         alert("Payment unsuccessful")
       }
 

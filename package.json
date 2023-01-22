@@ -33,11 +33,12 @@
   },
   "devDependencies": {
     "concurrently": "^6.5.1",
+    "dotenv-webpack": "^8.0.1",
     "nodemon": "^2.0.19"
   },
   "proxy": {
-    "/api/*":  {
-      "target": "http://localhost:5000"
+    "/api/*": {
+      "target": "https://infinite-headland-77957.herokuapp.com:5000"
     }
   }
 }

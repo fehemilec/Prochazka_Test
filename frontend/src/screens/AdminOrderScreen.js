@@ -4,9 +4,10 @@ import {useNavigate } from 'react-router-dom';
 import "./HomeScreen.css";
 import Order from "../components/Order";
 import { getOrders as listOrders } from "../redux/actions/orderActions";
-require('dotenv').config();
+
 
 export default function AdminOrderScreen() {
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const getOrders = useSelector((state) => state.getOrders);
@@ -21,7 +22,7 @@ export default function AdminOrderScreen() {
         let jsonTokenObj=JSON.parse(localStorage.getItem("userInfo"))
         console.log("TOKEN USER, ", jsonTokenObj.token)
   
-        fetch(`${process.env.PROD_URL}/api/orders/token`, {
+        fetch(`https://infinite-headland-77957.herokuapp.com/api/orders/token`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
