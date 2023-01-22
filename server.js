@@ -39,7 +39,7 @@ app.post('/sendmail', (req, res) => {
     port: 465,
     auth: {
       user: 'fehemifemo@gmail.com',
-      pass:  'fpeckcfsveiuydob'
+      pass:  `${process.env.PORT}`
     },
     tls: {
       rejectUnauthorized: false
@@ -230,7 +230,7 @@ app.post('/sendmail', (req, res) => {
 
 
 app.use("/api/products", productRoutes);
-app.use("/api/users", userRouter);
+app.use("/users", userRouter);
 app.use("/api/orders", orderRoutes);
 
 
