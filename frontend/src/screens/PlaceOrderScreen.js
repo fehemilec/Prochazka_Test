@@ -35,7 +35,7 @@ export default function PlaceOrderScreen() {
     cartItems.map((item) => (
       
       reviewPromises.push(
-        fetch(`https://infinite-headland-77957.herokuapp.com/api/products/${item.product}`)
+        fetch("https://infinite-headland-77957.herokuapp.com/api/products/${item.product}")
         .then(response => response.json())
         .then(data => { return {title: item.product, price: (data.price)*item.qty}}))
       
@@ -1460,7 +1460,7 @@ export default function PlaceOrderScreen() {
 
 
 
-    return fetch(`${process.env.PROD_URL}/payment_card`, {
+    return fetch("https://infinite-headland-77957.herokuapp.com/payment_card", {
       method: "POST",
       headers,
       body: JSON.stringify(body)
@@ -1493,7 +1493,7 @@ export default function PlaceOrderScreen() {
 
 
       }else{
-        navigate(`https://infinite-headland-77957.herokuapp.com/placeorder`);
+        navigate("https://infinite-headland-77957.herokuapp.com/placeorder");
         alert("Payment unsuccessful")
       }
 

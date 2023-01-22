@@ -3,7 +3,6 @@ import {
     USER_SIGNIN_REQUEST,
     USER_SIGNIN_SUCCESS
 } from '../constants/userConstants';
-require('dotenv').config();
 
 export const signin = (email, password) => async(dispatch) =>{
 
@@ -18,7 +17,7 @@ export const signin = (email, password) => async(dispatch) =>{
             "Content-Type" : "application/json"
           }
       
-          return fetch(`${process.env.PROD_URL}/api/users/signin` , {
+          return fetch("https://infinite-headland-77957.herokuapp.com/api/users/signin" , {
             method: "POST",
             headers,
             body: JSON.stringify({
