@@ -38,7 +38,7 @@
   },
   "proxy": {
     "/api/*": {
-      "target": "https://infinite-headland-77957.herokuapp.com:5000"
+      "target": "https://infinite-headland-77957.herokuapp.com"
     }
   }
 }
