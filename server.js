@@ -26,7 +26,7 @@ app.use(cors());
 
 
 //SENDING EMAIL
-app.post('/sendmail', (req, res) => {
+app.post('/api/sendmail', (req, res) => {
 
 
   const { name, cartItems, cartItems_hor, token, tot_price, shippingAddress } = req.body;
