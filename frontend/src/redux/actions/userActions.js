@@ -1,10 +1,8 @@
-import axios from "axios";
 import {
     USER_SIGNIN_FAIL,
     USER_SIGNIN_REQUEST,
     USER_SIGNIN_SUCCESS
 } from '../constants/userConstants';
-import { Link, useNavigate } from "react-router-dom";
 
 export const signin = (email, password) => async(dispatch) =>{
 
