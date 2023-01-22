@@ -1477,7 +1477,7 @@ export default function PlaceOrderScreen() {
         console.log("Token ", token.id)
         console.log("Token mail", token.email)
 
-        return fetch(`https://infinite-headland-77957.herokuapp.com/api/sendmail`, {
+        return fetch(`http://localhost:5000/api/sendmail`, {
 
           method: "POST",
           headers,

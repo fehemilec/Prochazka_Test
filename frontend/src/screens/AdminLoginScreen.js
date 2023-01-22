@@ -38,7 +38,7 @@ export default function AdminLoginScreen() {
       let jsonTokenObj=JSON.parse(localStorage.getItem("userInfo"))
       console.log("TOKEN USER, ", jsonTokenObj.token)
 
-      fetch('https://infinite-headland-77957.herokuapp.com/api/orders/token', {
+      fetch('http://localhost:5000/api/orders/token', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
