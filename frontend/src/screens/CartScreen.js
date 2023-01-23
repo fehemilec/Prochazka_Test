@@ -48,7 +48,7 @@ const CartScreen = () => {
     return Number(cartItems
       .reduce((price, item) => price + item.price * item.qty, 0)
       .toFixed(2)) + Number(cartItems_hor
-        .reduce((price, item) => price + item.price, 0));
+        .reduce((price, item) => price + item.price * item.qty, 0));
   };
 
   const checkoutHandler = () => {
