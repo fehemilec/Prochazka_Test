@@ -5,7 +5,7 @@
     flex-direction: column;
     overflow: hidden; 
     background-color: white;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: 'Manrope';
     margin-bottom: 10px;
 }
 
@@ -30,7 +30,7 @@
     margin-left: 4%;
     font-size: large;
     font-weight: bold;
-    font-family: 'Montserrat', 'Arial', 'Tahoma', 'Helvetica CE', 'Helvetica';
+    font-family: 'Manrope';
     color: white;
     word-break: break-word;
 }
@@ -38,7 +38,7 @@
 .p_title > .palleteTitle {
     font-size: large;
     font-weight: bold;
-    font-family: 'Montserrat', 'Arial', 'Tahoma', 'Helvetica CE', 'Helvetica';
+    font-family: 'Manrope';
     color: white;
     word-wrap: break-word;
 }
@@ -55,7 +55,7 @@
     margin-left: 2%;
     margin-bottom: 5%;   
     color: #0E71B8; 
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: 'Manrope';
 }
 
 .pallete2 > .chosenPallete > h3 {
@@ -79,40 +79,40 @@ overflow: hidden;
 .col > .colLabel { width: 17%;
     margin-right: 1%; 
     display: inline-flex; 
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
+    font-family: 'Manrope'; }
 
 .col > .hodnota > .colLabel {
     margin-right: 8%; 
     margin-left: 10px; 
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
+    font-family: 'Manrope'; }
 
 .col > .info{ 
     margin-left: 2%;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
+    font-family: 'Manrope'; }
 
 select {
     width:190px;
     font-size: 15px;
     height: 35px;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: 'Manrope';
     border-radius: 10px;
 }
 option{ font-size: 15px;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;}
+    font-family: 'Manrope';}
 
 .pallete1 > .subPallete2, .pallete2{margin-top: 50px;}
 /*
 .amountLabel{
     margin-right: 10%;
     margin-left: 4%;  
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: 'Manrope';
 }*/
 
 .titleBar_1 > .amount {
     margin-right: 2%;
     font-size: large;
     font-weight: bold;
-    font-family: 'Montserrat', 'Arial', 'Tahoma', 'Helvetica CE', 'Helvetica';
+    font-family: 'Manrope';
     color: white;
     display: block;
     position: absolute;
@@ -120,7 +120,7 @@ option{ font-size: 15px;
 }
 /*
 .amount > span, .amount{ 
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: 'Manrope';
     font-weight: 700;}*/
 
 .chosenPallete{
@@ -198,7 +198,7 @@ float: left;*/
     display: inline-block;
    background-size:100% 100%;
     padding: 4px 11px;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: 'Manrope';
     font-size: 10px;
     cursor: pointer;
     margin-right: 2px;
@@ -342,7 +342,7 @@ float: left;*/
   .psLabel {margin-right: 1%;}
   .psPrice {margin-right: 3%;}
   input[type='submit'] { display: none; }
-  .addToCart, .psPrice, .psLabel, .total{font-family: Helvetica Neue,Helvetica,Arial,sans-serif;}
+  .addToCart, .psPrice, .psLabel, .total{font-family: 'Manrope';}
   .btnSubmit { display: inline-flex; align-items: center; justify-content: center;
                 cursor: pointer; border-radius: 5px; color: black; font-size: 20px;
                 overflow:hidden;  background-color: rgb(190, 227, 250); width: 200px; height: 38px; background-color:#4665E6; color:white
