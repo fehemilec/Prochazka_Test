@@ -35,7 +35,7 @@ export default function PlaceOrderScreen() {
     cartItems.map((item) => (
       
       reviewPromises.push(
-        fetch("https://infinite-headland-77957.herokuapp.com/api/products/${item.product}")
+        fetch(`https://infinite-headland-77957.herokuapp.com/api/products/${item.product}`)
         .then(response => response.json())
         .then(data => { return {title: item.product, price: (data.price)*item.qty}}))
       
@@ -1477,7 +1477,7 @@ export default function PlaceOrderScreen() {
         console.log("Token ", token.id)
         console.log("Token mail", token.email)
 
-        return fetch(`${process.env.REACT_APP_PROD_URL}/api/sendmail`, {
+        return fetch("https://infinite-headland-77957.herokuapp.com/api/sendmail", {
 
           method: "POST",
           headers,
@@ -1576,7 +1576,7 @@ export default function PlaceOrderScreen() {
           </div>
           <div>
             <StripeCheckout
-              stripeKey={process.env.P_KEY}
+              stripeKey="pk_test_51KG4qlEJlYE6AglXN3kXqFDvEPL5B9PZDxeZX6JmgsXYzHtxI8olvw9rZhbVqwvWD4CUsJLn79CaH14mwenxsqSe00cd34mY1y"
               token={makePayment}
               name="Purchase Order"
               amount={(final_price_naradni+final_priceHor) * 100}
