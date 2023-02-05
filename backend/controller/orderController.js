@@ -49,7 +49,7 @@ const getOrderById = async (req, res) => {
 const createOrder = async (req, res) => {
         if(req.body.cartItems.length === 0 && req.body.cartItems_hor.length === 0){
           res.status(400).send({message: 'Cart is empty'})
-        }else if(req.body.cartItems.length === 0){
+        }else if(req.body.cartItems.length === 0 && req.body.cartItems_hor.length > 0){
             const order = new Order({
                 orderItems_hor: req.body.cartItems_hor,
                 shippingAddress: req.body.shippingAddress,
@@ -63,9 +63,24 @@ const createOrder = async (req, res) => {
             })
             const createdOrder = await order.save()
             res.status(201).send({message: 'New order created', order: createdOrder})
-        }else if(req.body.cartItems_hor.length === 0){
+        }else if(req.body.cartItems_hor.length === 0 && req.body.cartItems.length > 0){
           const order = new Order({
             orderItems: req.body.cartItems, //this info is coming from cart
+            shippingAddress: req.body.shippingAddress,
+            paymentMethod: 'card',
+            itemsPrice: 55,
+            shippingPrice: 25,
+            taxPrice: 444,
+            totalPrice: 344,
+            user: req.body.billingAddress.fullName,
+
+        })
+        const createdOrder = await order.save()
+        res.status(201).send({message: 'New order created', order: createdOrder})
+        }else if(req.body.cartItems_hor.length > 0 && req.body.cartItems.length > 0){
+          const order = new Order({
+            orderItems: req.body.cartItems,
+            orderItems_hor: req.body.cartItems_hor,
             shippingAddress: req.body.shippingAddress,
             paymentMethod: 'card',
             itemsPrice: 55,
