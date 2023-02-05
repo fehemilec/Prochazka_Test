@@ -31,6 +31,7 @@ export default function PlaceOrderScreen() {
   const [final_priceHor, setfinal_priceHor] = useState(0);
 
   useEffect(()=> {
+    console.log("URL ", config.url.API_URL)
     totalfinal_priceHorizontal()
     let reviewPromises = [];
     cartItems.map((item) => (
