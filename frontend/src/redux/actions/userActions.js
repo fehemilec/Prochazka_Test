@@ -3,6 +3,7 @@ import {
     USER_SIGNIN_REQUEST,
     USER_SIGNIN_SUCCESS
 } from '../constants/userConstants';
+import { config } from '../../environment'
 
 export const signin = (email, password) => async(dispatch) =>{
 
@@ -17,7 +18,7 @@ export const signin = (email, password) => async(dispatch) =>{
             "Content-Type" : "application/json"
           }
       
-          return fetch('https://infinite-headland-77957.herokuapp.com/api/users/signin' , {
+          return fetch(`${config.url.API_URL}/api/users/signin` , {
             method: "POST",
             headers,
             body: JSON.stringify({

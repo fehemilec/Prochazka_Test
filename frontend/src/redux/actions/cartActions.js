@@ -32,7 +32,7 @@ export const addToCart_hor = (
   dispatch({
     type: actionTypes.ADD_TO_CART_HOR,
     payload: {
-      amount:amount,
+      amount:qty,
       product: idCounter,
       name: "Horizontalni Zaluzie",
       width: hor, //syrka
@@ -52,6 +52,70 @@ export const addToCart_hor = (
 
   localStorage.setItem("cart_hor", JSON.stringify(getState().cart.cartItems_hor));
 };
+
+
+export const updateqtyItemCart_hor = (id, qty) => async (dispatch, getState) => {
+
+  let jsonTokenObj=JSON.parse(localStorage.getItem("cart_hor"))
+  let amount, product, width, height, price, control, control_length, lamella_color, profile_color=0
+  for (let i=0; i<jsonTokenObj.length;i++){
+    console.log(jsonTokenObj[i])
+    console.log(jsonTokenObj[i]["product"])
+    if(jsonTokenObj[i].product === id){
+      
+        amount = qty
+        product = id
+        width= jsonTokenObj[i].width //syrka
+        height= jsonTokenObj[i].height //vyska
+        price= jsonTokenObj[i].price
+        control= jsonTokenObj[i].control
+        control_length= jsonTokenObj[i].control_length
+        lamella_color= jsonTokenObj[i].lamella_color //barva lamely
+        profile_color= jsonTokenObj[i].profile_color  //barva profilu
+        //design: ,
+        //color: ,
+        //material window: ,
+        //washers: ,
+        qty=qty
+
+        dispatch({
+          type: actionTypes.REMOVE_FROM_CART_HOR,
+          payload: id,
+        });
+      
+        localStorage.setItem("cart_hor", JSON.stringify(getState().cart.cartItems_hor));
+
+        // -------------------
+        //   ADD NEW QUANTITY
+        // -------------------
+        dispatch({
+          type: actionTypes.ADD_TO_CART_HOR,
+          payload: {
+            amount:amount,
+            product: product,
+            name: "Horizontalni Zaluzie",
+            width: width, //syrka
+            height: height, //vyska
+            price: price,
+            control: control,
+            control_length: control_length,
+            lamella_color: lamella_color, //barva lamely
+            profile_color: profile_color , //barva profilu
+            //design: ,
+            //color: ,
+            //material window: ,
+            //washers: ,
+            qty: qty,
+            },
+          });
+      
+        localStorage.setItem("cart_hor", JSON.stringify(getState().cart.cartItems_hor));
+
+    }
+  }
+
+};
+
 
 export const removeFromCart = (id) => (dispatch, getState) => {
   dispatch({
