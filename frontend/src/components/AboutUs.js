@@ -6,7 +6,7 @@ export default function AboutUs() {
     <div className='aboutcontainer'>
       <div className='aboutPic'> 
         <div className="aboutguy">
-          <img className= "guy" src='/images/backg_1.png' alt=""/> 
+          <img className= "guy" src='/images/horizontalni_homepage.png' alt=""/> 
           <img className= "arrow" src='/images/arrow_3.png' alt=""/> 
         </div>
       </div>
