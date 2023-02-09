@@ -27,7 +27,7 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
 };
 
 export const addToCart_hor = (
-  amount, hor, ver, idCounter, price, control_dir, control_len, lamellaColor, profileColor, qty) => async (dispatch, getState) => {
+  amount, hor, ver, idCounter, price, control_dir, control_len, lamellaColor, profileColor, qty, provedeni, barva, okno, podlozky) => async (dispatch, getState) => {
 
   dispatch({
     type: actionTypes.ADD_TO_CART_HOR,
@@ -42,11 +42,11 @@ export const addToCart_hor = (
       control_length: control_len,
       lamella_color: lamellaColor, //barva lamely
       profile_color: profileColor , //barva profilu
-     //design: ,
-     //color: ,
-     //material window: ,
-     //washers: ,
-     qty,
+      provedeni: provedeni,
+      barva: barva,
+      okno: okno,
+      podlozky: podlozky,
+      qty,
     },
   });
 

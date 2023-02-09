@@ -1435,7 +1435,7 @@ export default function PlaceOrderScreen() {
   };
 
   const placeOrderHandler = () => {
-    dispatch(createOrder(cart))
+    dispatch(createOrder(cart, ((final_price_naradni + final_priceHor).toFixed(2))))
   }
 
 

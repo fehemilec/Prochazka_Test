@@ -50,13 +50,19 @@ const createOrder = async (req, res) => {
         if(req.body.cartItems.length === 0 && req.body.cartItems_hor.length === 0){
           res.status(400).send({message: 'Cart is empty'})
         }else if(req.body.cartItems.length === 0 && req.body.cartItems_hor.length > 0){
+          const cartItems_hor = req.body.cartItems_hor;
+          let price=0;
+          for (let i = 0; i < cartItems_hor.length; i++) {
+            price += cartItems_hor[i].price;
+          }
+          console.log("Order Price ", price);
             const order = new Order({
                 orderItems_hor: req.body.cartItems_hor,
                 shippingAddress: req.body.shippingAddress,
                 paymentMethod: 'card',
-                itemsPrice: 55,
+                itemsPrice: price,
                 shippingPrice: 25,
-                taxPrice: 444,
+                taxPrice: 90,
                 totalPrice: 344,
                 user: req.body.billingAddress.fullName,
 
@@ -96,7 +102,7 @@ const createOrder = async (req, res) => {
     
     };
 
-
+ 
 module.exports = {
     createOrder,
     getAllOrders,
