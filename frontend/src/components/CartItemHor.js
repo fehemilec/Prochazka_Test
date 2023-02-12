@@ -1,7 +1,7 @@
 import "./CartItemHor.css";
 import { Link } from "react-router-dom";
 
-const CartItemHor = ({ item, qtyChangeHandler, removeHandler }) => {
+const CartItemHor = ({ item, qtyChangeHandlerHor, removeHandler }) => {
   return (
     <div className="cartitem_hor">
       <div className="cartItem_col">
@@ -17,13 +17,13 @@ const CartItemHor = ({ item, qtyChangeHandler, removeHandler }) => {
       <div className="cartitem_hor_length">Control length: {item.control_length}</div>      
       
       </div>
-      <div className="cartitem_hor_price">Kč {item.price}</div>
+      <div className="cartitem_hor_price">Kč {(item.price).toFixed(2)}</div>
 
 
 
       <select
         value={item.qty}
-        onChange={(e) => qtyChangeHandler(item.product, e.target.value)}
+        onChange={(e) => qtyChangeHandlerHor(item.product, e.target.value)}
         className="cartItem_hor__select"
       >
         {[...Array(1000).keys()].map((x) => (

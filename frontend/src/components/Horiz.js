@@ -340,7 +340,7 @@ export default function Horiz() {
     const addToCartHandler_hor = () => {
 
        
-        dispatch(addToCart_hor(amount, hor, ver, increment(), getFinalPrice(), control_dir, control_len, lamella_color, profile_color,amount));
+        dispatch(addToCart_hor(amount, hor, ver, increment(), getFinalPrice()/amount, control_dir, control_len, lamella_color, profile_color,amount));
 
         console.log("Horiz: " + hor)
        //console.log("Counter: " + this.idCounter)
@@ -348,10 +348,12 @@ export default function Horiz() {
       };
 
       const getFinalPrice = () => {
-
-        return (getPriceCount() + Number((((hor/1000).toFixed(2)*(ver/1000).toFixed(2))*priceProf) + Number(((hor/1000).toFixed(2)*(ver/1000).toFixed(2))*priceLam)))*amount;
-     }
-
+        let final_price=(getPriceCount() + Number(((hor/1000).toFixed(2)*(ver/1000).toFixed(2))*priceProf) + Number(((hor/1000).toFixed(2)*(ver/1000).toFixed(2))*priceLam))*amount;
+        if(isNaN(final_price)){
+            return 0;
+        }else
+        return final_price;
+    }
 const control_lr =(e) =>{
    const value = e.target.value;
    setControl_dir(value);

@@ -2,6 +2,7 @@ import React, {useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {useNavigate } from 'react-router-dom';
 import { signin } from '../redux/actions/userActions';
+import { config } from '../environment';
 import './AdminLoginScreen.css';
 
 
@@ -38,7 +39,7 @@ export default function AdminLoginScreen() {
       let jsonTokenObj=JSON.parse(localStorage.getItem("userInfo"))
       console.log("TOKEN USER, ", jsonTokenObj.token)
 
-      fetch('https://infinite-headland-77957.herokuapp.com/api/orders/token', {
+      fetch(`${config.url.API_URL}/api/orders/token`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

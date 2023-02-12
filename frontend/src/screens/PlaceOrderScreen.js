@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { createOrder } from '../redux/actions/orderActions';
+import { config } from '../environment';
 import CartItemOrder from "../components/CartItemOrder";
 import CartItemOrderHor from "../components/CartItemOrderHor";
 
@@ -30,12 +31,13 @@ export default function PlaceOrderScreen() {
   const [final_priceHor, setfinal_priceHor] = useState(0);
 
   useEffect(()=> {
+    console.log("URL ", config.url.API_URL)
     totalfinal_priceHorizontal()
     let reviewPromises = [];
     cartItems.map((item) => (
       
       reviewPromises.push(
-        fetch(`https://infinite-headland-77957.herokuapp.com/api/products/${item.product}`)
+        fetch(`${config.url.API_URL}/api/products/${item.product}`)
         .then(response => response.json())
         .then(data => { return {title: item.product, price: (data.price)*item.qty}}))
       
@@ -79,8 +81,12 @@ export default function PlaceOrderScreen() {
     let price_lam = getPriceLamella(lamella_col)
     let price_prof = getPriceProfile(profile_col)
 
-    return (price_width_heigth + Number((((width/1000).toFixed(2)*(height/1000).toFixed(2))*price_prof) + Number(((width/1000).toFixed(2)*(height/1000).toFixed(2))*price_lam)))*amount;
-  }
+    let final_price = (price_width_heigth + Number(((width/1000).toFixed(2)*(height/1000).toFixed(2))*price_prof) + Number(((width/1000).toFixed(2)*(height/1000).toFixed(2))*price_lam))*amount;
+    //return (price_width_heigth + Number(((width/1000).toFixed(2)*(height/1000).toFixed(2))*price_prof) + Number(((width/1000).toFixed(2)*(height/1000).toFixed(2))*price_lam))*amount;
+    //let final_price=(getPriceCount() + Number(((hor/1000).toFixed(2)*(ver/1000).toFixed(2))*priceProf) + Number(((hor/1000).toFixed(2)*(ver/1000).toFixed(2))*priceLam))*amount;
+    console.log("Price HOR: ", final_price)
+    return final_price
+}
 
   const getPriceLamella=(lamella_color) =>{
     let lamella = lamella_color.substring(0, 3);
@@ -1460,7 +1466,7 @@ export default function PlaceOrderScreen() {
 
 
 
-    return fetch("https://infinite-headland-77957.herokuapp.com/payment_card", {
+    return fetch(`${config.url.API_URL}/payment_card`, {
       method: "POST",
       headers,
       body: JSON.stringify(body)
@@ -1477,7 +1483,7 @@ export default function PlaceOrderScreen() {
         console.log("Token ", token.id)
         console.log("Token mail", token.email)
 
-        return fetch("https://infinite-headland-77957.herokuapp.com/api/sendmail", {
+        return fetch(`${config.url.API_URL}/api/sendmail`, {
 
           method: "POST",
           headers,
@@ -1493,7 +1499,7 @@ export default function PlaceOrderScreen() {
 
 
       }else{
-        navigate("https://infinite-headland-77957.herokuapp.com/placeorder");
+        navigate("/placeorder");
         alert("Payment unsuccessful")
       }
 
