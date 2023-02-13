@@ -1,5 +1,4 @@
 .spocitat_container{
-    height: 84vh;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -13,6 +12,8 @@
     justify-content: center;
     align-items: center;
     width: 50%; 
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .spocitat_inner_text {    
@@ -84,6 +85,8 @@
     justify-content: center;
     align-items: center;
     width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
 
 .spocitat_sub {    
