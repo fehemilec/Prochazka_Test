@@ -49,7 +49,6 @@
 
 .nav-home,
 .nav-services,
-.nav-aboutus,
 .nav-contact,
 .nav-cart {
   color: black;
@@ -81,12 +80,17 @@
 
 .nav-home:hover,
 .nav-services:hover,
-.nav-aboutus:hover,
 .nav-contact:hover,
 .nav-cart:hover {
   border-bottom: 4px #4665E6;
   transition: all 0.2s ease-out;
   color: #4665E6;
+}
+
+.nav-home:hover,
+.nav-services:hover,
+.nav-contact:hover {
+  border-bottom: 1px solid blue;
 }
 
 .nav-cart:hover .cartlogo {
@@ -179,7 +183,6 @@
 
   .nav-home,
   .nav-services,
-  .nav-aboutus,
   .nav-contact,
   .nav-cart {
     text-align: center;
@@ -209,7 +212,6 @@
 
   .nav-home:hover,
   .nav-services:hover,
-  .nav-aboutus:hover,
   .nav-contact:hover,
   .nav-cart:hover {
     background-color: #fff;
