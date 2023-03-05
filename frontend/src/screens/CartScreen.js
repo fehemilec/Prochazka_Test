@@ -79,7 +79,7 @@ const CartScreen = () => {
           <div className="cartscreen__right">
             <div className="cartscreen__info">
               <p>Subtotal ({getCartCount()}) items</p>
-              <p>Kč {getCartSubTotal()}</p>
+              <p>Kč {getCartSubTotal().toFixed(2)}</p>
             </div>
             <div className="checkout">
               <input type="submit" value="btnCheckout" id="btnCheckout" name="cart"/>

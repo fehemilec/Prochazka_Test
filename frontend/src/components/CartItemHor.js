@@ -8,12 +8,9 @@ const CartItemHor = ({ item, qtyChangeHandlerHor, removeHandler }) => {
       <div className="cartitem_hor_lamely">Barva lamely: {item.lamella_color}</div>
       <div className="cartitem_hor_profilu">Barva profilu: {item.profile_color}</div>
       <div className="cartitem_hor_dir">Control direction: {item.control}</div>
-      
-
-      
+      <div className="cartitem_hor_length">Control length: {item.control_length} mm</div>      
       <div className= "width"> Width: {item.width} mm</div>
       <div className= "height"> Height: {item.height} mm</div>
-      <div className="cartitem_hor_length">Control length: {item.control_length} mm</div>      
       <div className="provedeni">Provedeni: {item.provedeni}</div>
       <div className="barva">Barva žebříčků: {item.barva}</div>  
       <div className="okno">Okno z materiálu: {item.okno}</div>  

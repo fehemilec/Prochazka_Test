@@ -17,7 +17,7 @@ const CartItemOrder = ({ item }) => {
         <div className="cart_okno">Okno z materiálu: {item.okno}</div>  
         <div className="cart_podlozky">Podložky: {item.podlozky}</div>  
       </div>
-      <div className="cartitem__price">{item.qty}x{item.price} = Kč {(item.price*item.qty).toFixed(2)}</div>
+      <div className="cartitem__price">{item.qty}x{(item.price).toFixed(2)} = Kč {(item.price*item.qty).toFixed(2)}</div>
     </div>
   );
 };

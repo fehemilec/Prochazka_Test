@@ -58,6 +58,8 @@ export const updateqtyItemCart_hor = (id, qty) => async (dispatch, getState) => 
 
   let jsonTokenObj=JSON.parse(localStorage.getItem("cart_hor"))
   let amount, product, width, height, price, control, control_length, lamella_color, profile_color=0
+  let provedeni, barva, okno, podlozky;
+
   for (let i=0; i<jsonTokenObj.length;i++){
     console.log(jsonTokenObj[i])
     console.log(jsonTokenObj[i]["product"])
@@ -65,17 +67,17 @@ export const updateqtyItemCart_hor = (id, qty) => async (dispatch, getState) => 
       
         amount = qty
         product = id
-        width= jsonTokenObj[i].width //syrka
-        height= jsonTokenObj[i].height //vyska
-        price= jsonTokenObj[i].price
-        control= jsonTokenObj[i].control
-        control_length= jsonTokenObj[i].control_length
-        lamella_color= jsonTokenObj[i].lamella_color //barva lamely
-        profile_color= jsonTokenObj[i].profile_color  //barva profilu
-        //design: ,
-        //color: ,
-        //material window: ,
-        //washers: ,
+        width = jsonTokenObj[i].width //syrka
+        height = jsonTokenObj[i].height //vyska
+        price = jsonTokenObj[i].price
+        control = jsonTokenObj[i].control
+        control_length = jsonTokenObj[i].control_length
+        lamella_color = jsonTokenObj[i].lamella_color //barva lamely
+        profile_color = jsonTokenObj[i].profile_color  //barva profilu
+        provedeni = jsonTokenObj[i].provedeni
+        barva = jsonTokenObj[i].barva
+        okno = jsonTokenObj[i].okno
+        podlozky = jsonTokenObj[i].podlozky
         qty=qty
 
         dispatch({
@@ -101,10 +103,10 @@ export const updateqtyItemCart_hor = (id, qty) => async (dispatch, getState) => 
             control_length: control_length,
             lamella_color: lamella_color, //barva lamely
             profile_color: profile_color , //barva profilu
-            //design: ,
-            //color: ,
-            //material window: ,
-            //washers: ,
+            provedeni: provedeni,
+            barva: barva,
+            okno: okno,
+            podlozky: podlozky,
             qty: qty,
             },
           });

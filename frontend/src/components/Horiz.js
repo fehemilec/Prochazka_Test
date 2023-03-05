@@ -17,9 +17,9 @@ export default function Horiz() {
     const [profile_color, setProfileColor] = useState("");
     const [priceLam, setPriceLamella] = useState(0);
     const [priceProf, setPriceProfile] = useState(0);
-    const [provedeni, setProvedeni] = useState("standardni")
-    const [barva, setBarva] = useState("bila")
-    const [okno, setOkno] = useState("plastove okno")
+    const [provedeni, setProvedeni] = useState("domykatelne")
+    const [barva, setBarva] = useState("shodna s barvou lamely")
+    const [okno, setOkno] = useState("plastové okno")
     const [podlozky, setPodlozky] = useState("žádné")
 
     

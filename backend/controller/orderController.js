@@ -1,7 +1,6 @@
 const Order = require("../models/Order");
 var jwt = require('jsonwebtoken');
 
-
 const isTokenValid = (req, res) =>{
   const authorization = req.headers.authorization;
   if(authorization){
@@ -37,8 +36,11 @@ const getOrderById = async (req, res) => {
 
   try {
     const order = await Order.findById(req.params.id);
-
-    res.json(order);
+    if(order){
+      res.json(order);
+    }else{
+      res.status(404).send({message: "Order not Found"})
+    }
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
