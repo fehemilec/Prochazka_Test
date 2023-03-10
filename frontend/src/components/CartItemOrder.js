@@ -1,6 +1,4 @@
 import "./CartItemOrder.css";
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 
 const CartItemOrder = ({ item }) => {
 

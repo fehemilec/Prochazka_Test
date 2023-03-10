@@ -6,6 +6,9 @@ import { Link, useParams,useNavigate } from 'react-router-dom';
 // Actions
 import { getOrderDetails as listOrderDetails } from "../redux/actions/orderActions";
 
+// Components
+import OrderDetailsHor from "../components/OrderDetailsHor";
+
 const AdminOrderDetailsScreen = ({ match, history }) => {
   const dispatch = useDispatch();
 
@@ -32,7 +35,7 @@ const AdminOrderDetailsScreen = ({ match, history }) => {
       ) : error ? (
         <h2>{error}</h2>
       ) : (
-        <>
+      
 
             <div className="placeOrderScreen">
               <div className="placeOrderScreen__left">
@@ -41,40 +44,53 @@ const AdminOrderDetailsScreen = ({ match, history }) => {
                     <ul>                                            
 
                         <div className="ship_info">
-                          <h2>Shipping Address</h2>
+                          <h1>Order Details</h1>
+                           
                             <p>
+                              <span>Shipping Details</span><br/><br/>
                               <span className="fullname"><strong>Name: </strong>{order.shippingAddress.fullName_ship}</span><br />
                               <span className="street"><strong>Street: </strong>{order.shippingAddress.address_ship}</span><br />
                               <span className="city"><strong>City: </strong>{order.shippingAddress.city_ship}</span><br />
                               <span className="post_code"><strong>Post Code: </strong>{order.shippingAddress.postalCode_ship}</span><br />
-                              <span className="country"><strong>Country: </strong>{order.shippingAddress.country_ship}</span><br />
-                              <span className="productt"><strong>Name Product: </strong>{order.orderItems_hor[0].name}</span><br />
-
-
-                
+                              <span className="country"><strong>Country: </strong>{order.shippingAddress.country_ship}</span><br />              
                             </p>
+                            
                         </div>
                     
                         
                         </ul>
-                    <div className="col-1">
 
-                    </div>
                 </div>
             </div>
             </div>
 
-            <div className="placeOrderScreen_right">
-            <div className="placeOrderScreen__info">
+            <div className="order_details">
+
+                {loading ? (
+                  <h2>Loading...</h2>
+                ) : error ? (
+                  <h2>{error}</h2>
+                ) : (
+                  order.orderItems_hor.map((ord) => (
+                    <OrderDetailsHor
+                      key={ord._id}
+                      name={ord.name}
+                      amount={ord.amount}
+                      price={ord.price}
+                      width={ord.width}
+                      height={ord.height}
+                      control={ord.control}
+                      control_length={ord.control_length}
+                      lamella_color={ord.lamella_color}
+                      profile_color={ord.profile_color}
+                    />
+                  ))
+                )}
 
             </div>
-            <div>
-              <button className="btn-large blue">Pay now with Card</button>
-            </div>
-            </div>
             </div>
 
-        </>
+
       )}
 
   
