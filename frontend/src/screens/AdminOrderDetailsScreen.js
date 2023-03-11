@@ -8,6 +8,8 @@ import { getOrderDetails as listOrderDetails } from "../redux/actions/orderActio
 
 // Components
 import OrderDetailsHor from "../components/OrderDetailsHor";
+import OrderDetailsNahradni from "../components/OrderDetailsNahradni";
+
 
 const AdminOrderDetailsScreen = ({ match, history }) => {
   const dispatch = useDispatch();
@@ -83,6 +85,21 @@ const AdminOrderDetailsScreen = ({ match, history }) => {
                       control_length={ord.control_length}
                       lamella_color={ord.lamella_color}
                       profile_color={ord.profile_color}
+                    />
+                  ))
+                )}
+
+              {loading ? (
+                  <h2>Loading...</h2>
+                ) : error ? (
+                  <h2>{error}</h2>
+                ) : (
+                  order.orderItems.map((ord) => (
+                    <OrderDetailsNahradni
+                      key={ord._id}
+                      name={ord.name}
+                      qty={ord.qty}
+                      price={ord.price}
                     />
                   ))
                 )}
