@@ -226,3 +226,32 @@
     .home_image_subtitle { font-size: 13px; }
     .home_image_button { width: 50%; font-size: small;}
   }
+
+  
+  @media only screen and (max-width: 700px) { 
+    .main_image > img {      
+      height: 60vh;
+    }
+    .home_image_text {
+      left: 12.5%;   
+    }
+  }
+
+  
+  @media only screen and (max-width: 450px) { 
+    .main_image > img {      
+      height: 53vh;
+    }
+    
+    .home_image_text {
+      display: none;  
+      top: 18%;
+      left: 5%;   
+    }
+    
+    .home_image_text {
+      display: flex;
+      justify-content: center;
+      min-width: 90%;
+    }
+  }
