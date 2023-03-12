@@ -24,6 +24,10 @@ const orderSchema = new mongoose.Schema({
         control_length: {type: String, required: true},
         lamella_color: {type: String, required: true},
         profile_color: {type: String, required: true},
+        provedeni: {type: String, required: true},
+        barva: {type: String, required: true},
+        okno: {type: String, required: true},
+        podlozky: {type: String, required: true},
        
     }],
     shippingAddress: {

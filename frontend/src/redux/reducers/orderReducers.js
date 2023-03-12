@@ -38,7 +38,7 @@ export const orderListReducer = (state = { orders: [] }, action) => {
     }
   };
 
-  export const getOrderDetailsReducer = (state = { order: {} }, action) => {
+  export const getOrderDetailsReducer = (state = { order: {}, loading: true }, action) => {
     switch (action.type) {
       case actionTypes.GET_ORDER_DETAILS_REQUEST:
         return {

@@ -17,6 +17,10 @@ export default function Horiz() {
     const [profile_color, setProfileColor] = useState("");
     const [priceLam, setPriceLamella] = useState(0);
     const [priceProf, setPriceProfile] = useState(0);
+    const [provedeni, setProvedeni] = useState("domykatelne")
+    const [barva, setBarva] = useState("shodna s barvou lamely")
+    const [okno, setOkno] = useState("plastové okno")
+    const [podlozky, setPodlozky] = useState("žádné")
 
     
     const dispatch = useDispatch();
@@ -24,6 +28,20 @@ export default function Horiz() {
 
     const cart = useSelector((state) => state.cart);
     const { cartItems_hor } = cart;
+
+    const handleChange_Provedeni = (event) => {
+          setProvedeni(event);
+    }
+
+    const handleChange_Barva = (event) => {
+        setBarva(event);
+    }
+    const handleChange_Okno = (event) => {
+        setOkno(event);
+    }
+    const handleChange_Podlozky = (event) => {
+        setPodlozky(event);
+    }
 
     function pop_up_bila_leskla() {
         var modal = document.getElementsByClassName("modal")[0];
@@ -340,7 +358,7 @@ export default function Horiz() {
     const addToCartHandler_hor = () => {
 
        
-        dispatch(addToCart_hor(amount, hor, ver, increment(), getFinalPrice()/amount, control_dir, control_len, lamella_color, profile_color,amount));
+        dispatch(addToCart_hor(amount, hor, ver, increment(), getFinalPrice()/amount, control_dir, control_len, lamella_color, profile_color, amount, provedeni, barva, okno, podlozky));
 
         console.log("Horiz: " + hor)
        //console.log("Counter: " + this.idCounter)
@@ -2773,7 +2791,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
                 <div className="formCol">
                     <div className="col">
                         <span className="colLabel">Provedení</span>
-		                <select name="sel[1]">
+		                <select onChange={(e) => handleChange_Provedeni(e.target.value)} name="sel[1]">
 			                <option value="domykatelné">domykatelné</option>
 			                <option value="standardní">standardní</option>
 		                </select>
@@ -2781,7 +2799,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 	                </div>
 	                <div className="col">
 		                <span className="colLabel">Barva žebříčků</span>
-		                <select name="sel[2]">
+		                <select onChange={(e) => handleChange_Barva(e.target.value)} name="sel[2]">
 			                <option value="shodná s barvou lamely">shodná s barvou lamely</option>
 			                <option value="bílá">bílá</option>
 		                </select>
@@ -2789,7 +2807,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 	                </div>
 	                <div className="col">
 		                <span className="colLabel">Okno z materiálu</span>
-		                <select name="sel[3]">
+		                <select onChange={(e) => handleChange_Okno(e.target.value)} name="sel[3]">
 			                <option value="plastové okno">plastové okno</option>
 			                <option value="dřevěné okno">dřevěné okno</option>
 		                </select>
@@ -2797,7 +2815,7 @@ const form89 = () => {document.getElementById('amount_2').innerText ='215'; setP
 	                </div>
 	                <div className="col">
 		                <span className="colLabel">Podložky</span>
-		                <select name="sel[4]">
+		                <select onChange={(e) => handleChange_Podlozky(e.target.value)} name="sel[4]">
 			                <option value="žádné">žádné</option>
 			                <option value="1 sada">1 sada</option>
 			                <option value="2 sady">2 sady</option>

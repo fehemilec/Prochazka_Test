@@ -81,6 +81,7 @@ export default function PlaceOrderScreen() {
     let price_lam = getPriceLamella(lamella_col)
     let price_prof = getPriceProfile(profile_col)
 
+
     let final_price = (price_width_heigth + Number(((width/1000).toFixed(2)*(height/1000).toFixed(2))*price_prof) + Number(((width/1000).toFixed(2)*(height/1000).toFixed(2))*price_lam))*amount;
     //return (price_width_heigth + Number(((width/1000).toFixed(2)*(height/1000).toFixed(2))*price_prof) + Number(((width/1000).toFixed(2)*(height/1000).toFixed(2))*price_lam))*amount;
     //let final_price=(getPriceCount() + Number(((hor/1000).toFixed(2)*(ver/1000).toFixed(2))*priceProf) + Number(((hor/1000).toFixed(2)*(ver/1000).toFixed(2))*priceLam))*amount;
@@ -1435,7 +1436,7 @@ export default function PlaceOrderScreen() {
   };
 
   const placeOrderHandler = () => {
-    dispatch(createOrder(cart))
+    dispatch(createOrder(cart, ((final_price_naradni + final_priceHor).toFixed(2))))
   }
 
 
@@ -1479,9 +1480,7 @@ export default function PlaceOrderScreen() {
         //--------------------------
         placeOrderHandler()
         navigate('/confirmation');
-        console.log("You paid fucker, Status ", status)
         console.log("Token ", token.id)
-        console.log("Token mail", token.email)
 
         return fetch(`${config.url.API_URL}/api/sendmail`, {
 
