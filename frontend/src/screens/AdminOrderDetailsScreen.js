@@ -2,7 +2,7 @@ import "./PlaceOrderScreen.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams,useNavigate } from 'react-router-dom';
-
+import { config } from '../environment';
 // Actions
 import { getOrderDetails as listOrderDetails } from "../redux/actions/orderActions";
 
@@ -22,9 +22,36 @@ const AdminOrderDetailsScreen = ({ match, history }) => {
   const { id } = useParams();
 
   useEffect(() => {
-    if (order && id !== order._id) {
-      dispatch(listOrderDetails(id));
-    }
+
+    if (localStorage.getItem("userInfo") !== null) {
+      let jsonTokenObj=JSON.parse(localStorage.getItem("userInfo"))
+      console.log("TOKEN USER, ", jsonTokenObj.token)
+
+      fetch(`${config.url.API_URL}/api/orders/token`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${jsonTokenObj.token}`
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if(data.message == "Invalid Token"){
+            navigate('/admin/login')
+          }
+          else if(data.message == "Valid Token"){
+            if (order && id !== order._id) {
+              dispatch(listOrderDetails(id));
+            }
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      }else{
+        navigate('/admin/login')
+      }
+
   }, [dispatch, match, order]);
 
 

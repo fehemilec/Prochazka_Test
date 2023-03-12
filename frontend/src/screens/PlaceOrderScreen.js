@@ -1480,9 +1480,7 @@ export default function PlaceOrderScreen() {
         //--------------------------
         placeOrderHandler()
         navigate('/confirmation');
-        console.log("You paid fucker, Status ", status)
         console.log("Token ", token.id)
-        console.log("Token mail", token.email)
 
         return fetch(`${config.url.API_URL}/api/sendmail`, {
 

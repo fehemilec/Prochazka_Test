@@ -1,13 +1,13 @@
-import "./Product.css";
+import "./OrderDetailsNahradni.css"
 
 const OrderDetailsNahradni = ({ name, qty, price}) => {
   return (
-    <div className="product">
+    <div className="product_nahradni">
 
-      <div className="product__info_narhradni">
-        <p className="info__name">Name Product: {name}</p>
-        <p className="info__quantity">Quantity: {qty}</p>
-        <p className="info__price">Kč {price}</p>
+      <div className="product__info_nahradni">
+        <p className="info__nahradni__name">Name Product: {name}</p>
+        <p className="info__nahradni__quantity">Quantity: {qty}</p>
+        <p className="info__nahradni__price">Price per item: Kč {price}</p>
       </div>
     </div>
   );
