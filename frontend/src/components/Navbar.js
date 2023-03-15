@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import {useSelector} from 'react-redux'
-import './Navbar.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import "./Navbar.css";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -9,60 +9,61 @@ function Navbar() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  const cart = useSelector(state => state.cart);
-  const { cartItems,cartItems_hor } = cart;
+  const cart = useSelector((state) => state.cart);
+  const { cartItems, cartItems_hor } = cart;
 
   const getCartCount = () => {
-    return (cartItems.reduce((qty, item) => qty + Number(item.qty), 0) + cartItems_hor.reduce((qty,item) => qty +Number(item.qty),0));
-  }
+    return (
+      cartItems.reduce((qty, item) => qty + Number(item.qty), 0) +
+      cartItems_hor.reduce((qty, item) => qty + Number(item.qty), 0)
+    );
+  };
 
   return (
     <>
-      <nav className='navbar'>
-        <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+      <nav className="navbar">
+        <div className="navbar-container">
+          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             Žaluzie Procházka
-            <i className='fab fa-typo3' />
+            <i className="fab fa-typo3" />
           </Link>
-          <div className='menu-icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+          <div className="menu-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
-          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-              <Link to='/' className='nav-home' onClick={closeMobileMenu}>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <Link to="/" className="nav-home" onClick={closeMobileMenu}>
                 O nás
               </Link>
             </li>
-            <li className='nav-item'>
+            <li className="nav-item">
               <Link
-                to='/services'
-                className='nav-services'
+                to="/services"
+                className="nav-services"
                 onClick={closeMobileMenu}
               >
-                Produkty                
+                Produkty
               </Link>
-              <div className="dropdown-content"> 
+              <div className="dropdown-content">
                 <a href="/#">Horizontální žaluzie</a>
                 <a href="/#">Náhradní díly</a>
               </div>
             </li>
 
-            <li className='nav-item'>
+            <li className="nav-item">
               <Link
-                to='/contact'
-                className='nav-contact'
+                to="/contact"
+                className="nav-contact"
                 onClick={closeMobileMenu}
               >
                 Kontakt
               </Link>
             </li>
 
-            <li className='nav-item' id='cart-container'>
-              <Link
-                to='/cart'
-                className='nav-cart'
-                onClick={closeMobileMenu}
-              ><i className='fas fa-shopping-cart' />  <span className='cartlogo'>{getCartCount()}</span>
+            <li className="nav-item" id="cart-container">
+              <Link to="/cart" className="nav-cart" onClick={closeMobileMenu}>
+                <i className="fas fa-shopping-cart" />{" "}
+                <span className="cartlogo">{getCartCount()}</span>
               </Link>
             </li>
           </ul>

@@ -27,7 +27,9 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
       }
     case actionTypes.ADD_TO_CART_HOR:
       const item_hor = action.payload;
-      const existItemHor = state.cartItems_hor.find((x) => x.product === item_hor.product);
+      const existItemHor = state.cartItems_hor.find(
+        (x) => x.product === item_hor.product
+      );
 
       if (existItemHor) {
         return {
@@ -50,21 +52,23 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
     case actionTypes.REMOVE_FROM_CART_HOR:
       return {
         ...state,
-        cartItems_hor: state.cartItems_hor.filter((x) => x.product !== action.payload),
+        cartItems_hor: state.cartItems_hor.filter(
+          (x) => x.product !== action.payload
+        ),
       };
     case actionTypes.CART_SAVE_BILLING_ADDRESS:
-        return{
-          ...state,
-          billingAddress: action.payload
-        };
-      case actionTypes.CART_SAVE_SHIPPING_ADDRESS:
-        return{
-          ...state,
-          shippingAddress: action.payload
-        };
-      case actionTypes.CART_EMPTY:
-        return { ...state, error: '', cartItems: [] , cartItems_hor: []};
-        
+      return {
+        ...state,
+        billingAddress: action.payload,
+      };
+    case actionTypes.CART_SAVE_SHIPPING_ADDRESS:
+      return {
+        ...state,
+        shippingAddress: action.payload,
+      };
+    case actionTypes.CART_EMPTY:
+      return { ...state, error: "", cartItems: [], cartItems_hor: [] };
+
     default:
       return state;
   }

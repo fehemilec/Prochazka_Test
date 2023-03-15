@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 // Components
 import Product from "../components/Product";
 
-
 //Actions
 import { getProducts as listProducts } from "../redux/actions/productActions";
 
@@ -20,7 +19,6 @@ const HomeScreen = () => {
   }, [dispatch]);
 
   return (
-    
     <div className="homescreen">
       <h2 className="homescreen__title">Nejnovější produkty náhradních dílů</h2>
       <div className="homescreen__products">
@@ -41,10 +39,7 @@ const HomeScreen = () => {
           ))
         )}
       </div>
-
     </div>
-
-
   );
 };
 

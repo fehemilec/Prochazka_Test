@@ -8,19 +8,21 @@ import CartItem from "../components/CartItem";
 import CartItemHor from "../components/CartItemHor";
 
 // Actions
-import { addToCart, addToCart_hor, removeFromCart, removeFromCart_Hor, updateqtyItemCart_hor } from "../redux/actions/cartActions";
-
+import {
+  addToCart,
+  addToCart_hor,
+  removeFromCart,
+  removeFromCart_Hor,
+  updateqtyItemCart_hor,
+} from "../redux/actions/cartActions";
 
 const CartScreen = () => {
-
-  
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const { cartItems_hor } = cart;
-
 
   useEffect(() => {}, []);
 
@@ -41,18 +43,27 @@ const CartScreen = () => {
   };
 
   const getCartCount = () => {
-    return (cartItems.reduce((qty, item) => Number(item.qty) + qty, 0) + cartItems_hor.reduce((qty,item) => Number(item.qty) + qty, 0));
+    return (
+      cartItems.reduce((qty, item) => Number(item.qty) + qty, 0) +
+      cartItems_hor.reduce((qty, item) => Number(item.qty) + qty, 0)
+    );
   };
 
   const getCartSubTotal = () => {
-    return Number(cartItems
-      .reduce((price, item) => price + item.price * item.qty, 0)
-      .toFixed(2)) + Number(cartItems_hor
-        .reduce((price, item) => price + item.price * item.qty, 0));
+    return (
+      Number(
+        cartItems
+          .reduce((price, item) => price + item.price * item.qty, 0)
+          .toFixed(2)
+      ) +
+      Number(
+        cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0)
+      )
+    );
   };
 
   const checkoutHandler = () => {
-    navigate('/shipping');
+    navigate("/shipping");
   };
 
   return (
@@ -62,18 +73,32 @@ const CartScreen = () => {
         <div className="containers">
           <div className="products_container">
             <div className="cartscreen__left">
-              { cartItems.length === 0  && cartItems_hor.length === 0 ? (<div className="emptyCartTextContainer"><span>Your cart is empty <Link to="/services">Go Back</Link></span></div>) : (
+              {cartItems.length === 0 && cartItems_hor.length === 0 ? (
+                <div className="emptyCartTextContainer">
+                  <span>
+                    Your cart is empty <Link to="/services">Go Back</Link>
+                  </span>
+                </div>
+              ) : (
                 cartItems.map((item) => (
-                  <CartItem key={item.product} item={item} qtyChangeHandler={qtyChangeHandler} removeHandler={removeFromCartHandler}/>
-                )) 
-              )}
-            </div>      
-            <div className="cartscreen__left_bottom">
-              {(
-                cartItems_hor.map((item) => (
-                <CartItemHor key={item.product} item={item} qtyChangeHandlerHor={qtyChangeHandlerHor} removeHandler={removeFromCartHandlerHor}/>
+                  <CartItem
+                    key={item.product}
+                    item={item}
+                    qtyChangeHandler={qtyChangeHandler}
+                    removeHandler={removeFromCartHandler}
+                  />
                 ))
               )}
+            </div>
+            <div className="cartscreen__left_bottom">
+              {cartItems_hor.map((item) => (
+                <CartItemHor
+                  key={item.product}
+                  item={item}
+                  qtyChangeHandlerHor={qtyChangeHandlerHor}
+                  removeHandler={removeFromCartHandlerHor}
+                />
+              ))}
             </div>
           </div>
           <div className="cartscreen__right">
@@ -82,9 +107,16 @@ const CartScreen = () => {
               <p>Kč {getCartSubTotal().toFixed(2)}</p>
             </div>
             <div className="checkout">
-              <input type="submit" value="btnCheckout" id="btnCheckout" name="cart"/>
-              <label htmlFor="btnCheckout" className="btnCheckout">                   
-                <span className="btnCheckout" onClick={checkoutHandler}>VLOŽIT DO KOŠÍKU</span>
+              <input
+                type="submit"
+                value="btnCheckout"
+                id="btnCheckout"
+                name="cart"
+              />
+              <label htmlFor="btnCheckout" className="btnCheckout">
+                <span className="btnCheckout" onClick={checkoutHandler}>
+                  VLOŽIT DO KOŠÍKU
+                </span>
               </label>
             </div>
           </div>

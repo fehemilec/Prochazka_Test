@@ -1,18 +1,17 @@
 require("dotenv").config({ path: "./env" });
 
 const express = require("express");
-const cors = require("cors")
+const cors = require("cors");
 
 const productRoutes = require("./backend/routes/productRoutes");
 const userRouter = require("./backend/routes/userRoutes");
 const orderRoutes = require("./backend/routes/orderRoutes");
-const isTokenValid = require('./backend/controller/orderController');
+const isTokenValid = require("./backend/controller/orderController");
 const connectDB = require("./backend/config/db");
 const stripe = require("stripe")(process.env.S_KEY);
 
-const nodemailer = require('nodemailer')
-const path = require('path')
-
+const nodemailer = require("nodemailer");
+const path = require("path");
 
 connectDB();
 
@@ -22,15 +21,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-
-
-
 //SENDING EMAIL
-app.post('/api/sendmail', (req, res) => {
-
-
-  const { name, cartItems, cartItems_hor, token, tot_price, shippingAddress } = req.body;
-  console.log("email form token " + token.email)
+app.post("/api/sendmail", (req, res) => {
+  const { name, cartItems, cartItems_hor, token, tot_price, shippingAddress } =
+    req.body;
+  console.log("email form token " + token.email);
 
   //console.log("PRICE PAID MAIL", cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
 
@@ -38,20 +33,19 @@ app.post('/api/sendmail', (req, res) => {
     service: "Gmail",
     port: 465,
     auth: {
-      user: 'fehemifemo@gmail.com',
-      pass:  process.env.EMAIL_PASS
+      user: "fehemifemo@gmail.com",
+      pass: process.env.EMAIL_PASS,
     },
     tls: {
-      rejectUnauthorized: false
-    }
+      rejectUnauthorized: false,
+    },
   });
 
   let mailOptions = {
     from: "fehemifemo@gmail.com",
     to: token.email,
     subject: "New order",
-    html:
-      `<h1>Thanks for shopping with us</h1>
+    html: `<h1>Thanks for shopping with us</h1>
       <p>Hi ${name},</p>
       <p>We have finished processing your order.</p>
       
@@ -73,18 +67,18 @@ app.post('/api/sendmail', (req, res) => {
         </tr>
       `
         )
-        .join('\n')}
+        .join("\n")}
         ${cartItems_hor
-        .map(
-          (item) => `
+          .map(
+            (item) => `
           <tr>
           <td>${item.name}</td>
           <td align="center">${item.qty}</td>
           <td align="right"> Kc ${item.price.toFixed(2)}</td>
           </tr>
         `
-        )
-        .join('\n')}
+          )
+          .join("\n")}
       </tbody>
       <tfoot>
       <tr>
@@ -105,15 +99,14 @@ app.post('/api/sendmail', (req, res) => {
       </tr>
       
       </table>
-      `
+      `,
   };
 
   let mailOptions_shop = {
     from: "fehemifemo@gmail.com",
     to: "fehemifemo@gmail.com",
     subject: "New order",
-    html:
-      `<h1>New Order</h1>
+    html: `<h1>New Order</h1>
       <p>You have a new order from ${name}</p>
       
       <table>
@@ -134,18 +127,18 @@ app.post('/api/sendmail', (req, res) => {
         </tr>
       `
         )
-        .join('\n')}
+        .join("\n")}
         ${cartItems_hor
-        .map(
-          (item) => `
+          .map(
+            (item) => `
           <tr>
           <td>${item.name}</td>
           <td align="center">${item.qty}</td>
           <td align="right"> Kc ${item.price.toFixed(2)}</td>
           </tr>
         `
-        )
-        .join('\n')}
+          )
+          .join("\n")}
       </tbody>
       <tfoot>
       <tr>
@@ -196,94 +189,79 @@ app.post('/api/sendmail', (req, res) => {
       </tr>
       
       </table>
-      `
+      `,
   };
 
   smtpTransport.sendMail(mailOptions, (error, response) => {
-
     if (error) {
-      return console.log(error)
+      return console.log(error);
+    } else {
+      console.log("Mail to buyer sent");
     }
-    else {
-
-      console.log("Mail to buyer sent")
-    }
-
-
-  })
+  });
 
   smtpTransport.sendMail(mailOptions_shop, (error, response) => {
-
     if (error) {
-      return console.log(error)
+      return console.log(error);
+    } else {
+      console.log("Mail to seller sent");
     }
-    else {
-
-      console.log("Mail to seller sent")
-    }
-
-
-  })
+  });
 
   smtpTransport.close();
-})
-
+});
 
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRoutes);
 
-
 //Pay
 
 app.post("/payment_card", (req, res) => {
-
   const { token, cart, cartItems, cartItems_hor, tot_price } = req.body;
   //console.log("PRODUCT ", product);
-  console.log("PRICE", cartItems_hor.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
-  console.log("REAL PRICE", tot_price)
+  console.log(
+    "PRICE",
+    cartItems_hor
+      .reduce((price, item) => price + item.price * item.qty, 0)
+      .toFixed(2)
+  );
+  console.log("REAL PRICE", tot_price);
   //const idempotencyKey = uuid()
 
-
-  return stripe.customers.create({
-
-    email: token.email,
-    source: token.id
-  }).then(customer => {
-
-
-    stripe.charges.create({
-
-      amount: tot_price*100,
-      currency: 'czk',
-      customer: customer.id,
-      receipt_email: token.email,
-      shipping: {
-        name: cart.shippingAddress.fullName_ship,
-        address: {
-          country: cart.shippingAddress.country_ship,
-          city: cart.shippingAddress.city_ship,
-          postal_code: cart.shippingAddress.postalCode_ship
-        }
-      }
+  return stripe.customers
+    .create({
+      email: token.email,
+      source: token.id,
     })
-  })
-    .then(result => res.status(200).json(result))
-    .catch(err => console.log(err))
-})
+    .then((customer) => {
+      stripe.charges.create({
+        amount: tot_price * 100,
+        currency: "czk",
+        customer: customer.id,
+        receipt_email: token.email,
+        shipping: {
+          name: cart.shippingAddress.fullName_ship,
+          address: {
+            country: cart.shippingAddress.country_ship,
+            city: cart.shippingAddress.city_ship,
+            postal_code: cart.shippingAddress.postalCode_ship,
+          },
+        },
+      });
+    })
+    .then((result) => res.status(200).json(result))
+    .catch((err) => console.log(err));
+});
 
 //SERVE IF IN PRODUCTION
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
 
-  app.use(express.static(path.join(__dirname, '/frontend/build')));
-
-  app.get('*', (req, res) => {
-
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-
-
-  })
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
 } else {
   app.get("/", (req, res) => {
     res.json({ message: "API running..." });
