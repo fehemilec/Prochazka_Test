@@ -1,63 +1,53 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Home from "./components/pages/Home";
+import Services from "./components/pages/Services";
+import Contact from "./components/pages/Contact";
+import Horizontal from "./components/pages/Horizontal";
 
-
-import Home from './components/pages/Home';
-import Services from './components/pages/Services';
-import Contact from './components/pages/Contact';
-import Horizontal from './components/pages/Horizontal';
-
-import AdminLoginScreen from './screens/AdminLoginScreen';
+import AdminLoginScreen from "./screens/AdminLoginScreen";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
-import ShippingAddressScreen from './screens/ShippingAddressScreen';
-import PlaceOrderScreen from './screens/PlaceOrderScreen';
-import ConfirmationScreen from './screens/ConfirmationScreen';
-import AdminOrderScreen from './screens/AdminOrderScreen';
-import AdminOrderDetailsScreen from './screens/AdminOrderDetailsScreen';
-
+import ShippingAddressScreen from "./screens/ShippingAddressScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import ConfirmationScreen from "./screens/ConfirmationScreen";
+import AdminOrderScreen from "./screens/AdminOrderScreen";
+import AdminOrderDetailsScreen from "./screens/AdminOrderDetailsScreen";
 
 function App() {
-
-
   return (
-  
-  
-    <Router>  
-      <Navbar/>
-      
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/services' element={<Services />} />
-          <Route path='/contact' element={<Contact/>} />
-          <Route path='/horizontal' element={<Horizontal />} />   
-          <Route path='/admin/login' element={<AdminLoginScreen />} />  
-          <Route exact path="/products" element={<HomeScreen/>} />
-          <Route exact path="/product/:id" element={<ProductScreen/>} />
-          <Route exact path="/cart" element={<CartScreen/>} />
-          <Route exact path="/shipping" element={<ShippingAddressScreen/>} />
-          <Route exact path="/placeorder" element={<PlaceOrderScreen/>} />
-          <Route exact path="/confirmation" element={<ConfirmationScreen/>} />
-          <Route exact path="/orders" element={<AdminOrderScreen/>} />
-          <Route exact path="/orders/order/:id" element={<AdminOrderDetailsScreen/>} />
+    <Router>
+      <Navbar />
 
-        </Routes>
-      <Footer/>
-
-
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/horizontal" element={<Horizontal />} />
+        <Route path="/admin/login" element={<AdminLoginScreen />} />
+        <Route exact path="/products" element={<HomeScreen />} />
+        <Route exact path="/product/:id" element={<ProductScreen />} />
+        <Route exact path="/cart" element={<CartScreen />} />
+        <Route exact path="/shipping" element={<ShippingAddressScreen />} />
+        <Route exact path="/placeorder" element={<PlaceOrderScreen />} />
+        <Route exact path="/confirmation" element={<ConfirmationScreen />} />
+        <Route exact path="/orders" element={<AdminOrderScreen />} />
+        <Route
+          exact
+          path="/orders/order/:id"
+          element={<AdminOrderDetailsScreen />}
+        />
+      </Routes>
+      <Footer />
     </Router>
-
-     
   );
 }
 
 export default App;
-
-

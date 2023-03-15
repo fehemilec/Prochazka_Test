@@ -1,9 +1,8 @@
-import "./OrderDetailsNahradni.css"
+import "./OrderDetailsNahradni.css";
 
-const OrderDetailsNahradni = ({ name, qty, price}) => {
+const OrderDetailsNahradni = ({ name, qty, price }) => {
   return (
     <div className="product_nahradni">
-
       <div className="product__info_nahradni">
         <p className="info__nahradni__name">Name Product: {name}</p>
         <p className="info__nahradni__quantity">Quantity: {qty}</p>

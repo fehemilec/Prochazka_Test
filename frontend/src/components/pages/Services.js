@@ -1,7 +1,7 @@
-import React from 'react';
-import '../../App.css';
+import React from "react";
+import "../../App.css";
 
-import Cards1 from '../Cards1';
+import Cards1 from "../Cards1";
 
 export default function Home() {
   return (
