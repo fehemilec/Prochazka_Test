@@ -1,10 +1,10 @@
-import React from 'react';
-import './Cards1.css';
-import CardItem1 from './CardItem1';
+import React from "react";
+import "./Cards1.css";
+import CardItem1 from "./CardItem1";
 
 function Cards1() {
   return (
-    <div className='product_cards'>
+    <div className="product_cards">
       <h1>Využijte naší jedinečné nabídky</h1>
       <div className='product_cards__container'>
           <div className='product_cards_wrapper_first_row'>

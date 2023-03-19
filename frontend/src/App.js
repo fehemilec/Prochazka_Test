@@ -1,17 +1,15 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-
-
-import Home from './components/pages/Home';
-import Services from './components/pages/Services';
-import Contact from './components/pages/Contact';
-import Horizontal from './components/pages/Horizontal'; 
+import Home from "./components/pages/Home";
+import Services from "./components/pages/Services";
+import Contact from "./components/pages/Contact";
+import Horizontal from "./components/pages/Horizontal";
 import Vertikalni from './components/pages/Vertikalni';
 import Rolety from './components/pages/Rolety';
 import LatkoveRolety from './components/pages/LatkoveRolety';
@@ -22,16 +20,13 @@ import AdminLoginScreen from './screens/AdminLoginScreen';
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
-import ShippingAddressScreen from './screens/ShippingAddressScreen';
-import PlaceOrderScreen from './screens/PlaceOrderScreen';
-import ConfirmationScreen from './screens/ConfirmationScreen';
-import AdminOrderScreen from './screens/AdminOrderScreen';
-import AdminOrderDetailsScreen from './screens/AdminOrderDetailsScreen';
-
+import ShippingAddressScreen from "./screens/ShippingAddressScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import ConfirmationScreen from "./screens/ConfirmationScreen";
+import AdminOrderScreen from "./screens/AdminOrderScreen";
+import AdminOrderDetailsScreen from "./screens/AdminOrderDetailsScreen";
 
 function App() {
-
-
   return (
   
   
@@ -64,11 +59,7 @@ function App() {
 
 
     </Router>
-
-     
   );
 }
 
 export default App;
-
-

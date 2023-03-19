@@ -1,25 +1,29 @@
 import "./CartItemHor.css";
-import { Link } from "react-router-dom";
 
 const CartItemHor = ({ item, qtyChangeHandlerHor, removeHandler }) => {
   return (
     <div className="cartitem_hor">
       <div className="cartItem_col">
-           
-      <div className="cartitem_hor_lamely">Barva lamely: {item.lamella_color}</div>
-      <div className="cartitem_hor_profilu">Barva profilu: {item.profile_color}</div>
-      <div className="cartitem_hor_dir">Control dir: {item.control}</div>
-      
-
-      
-      <div className= "width"> width: {item.width}</div>
-      <div className= "height"> height: {item.height}</div>
-      <div className="cartitem_hor_length">Control length: {item.control_length}</div>      
-      
+        <div className="cartitem_hor_lamely">
+          Barva lamely: {item.lamella_color}
+        </div>
+        <div className="cartitem_hor_profilu">
+          Barva profilu: {item.profile_color}
+        </div>
+        <div className="cartitem_hor_dir">
+          Control direction: {item.control}
+        </div>
+        <div className="cartitem_hor_length">
+          Control length: {item.control_length} mm
+        </div>
+        <div className="width"> Width: {item.width} mm</div>
+        <div className="height"> Height: {item.height} mm</div>
+        <div className="provedeni">Provedeni: {item.provedeni}</div>
+        <div className="barva">Barva žebříčků: {item.barva}</div>
+        <div className="okno">Okno z materiálu: {item.okno}</div>
+        <div className="podlozky">Podložky: {item.podlozky}</div>
       </div>
-      <div className="cartitem_hor_price">Kč {(item.price).toFixed(2)}</div>
-
-
+      <div className="cartitem_hor_price">Kč {item.price.toFixed(2)}</div>
 
       <select
         value={item.qty}

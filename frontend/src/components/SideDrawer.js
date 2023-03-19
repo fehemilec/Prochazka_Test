@@ -1,41 +1,38 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import "./SideDrawer.css";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
+export default function SideDrawer({ show, click }) {
+  const sideDrawerClass = ["sidedrawer"];
 
-export default function SideDrawer({show,click}) {
+  if (show) {
+    sideDrawerClass.push("show");
+  }
 
-    const sideDrawerClass = ["sidedrawer"];
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
 
-    if(show){
-        sideDrawerClass.push("show");
-    }
+  const getCartCount = () => {
+    return cartItems.reduce((qty, item) => qty + Number(item.qty), 0);
+  };
 
-    const cart = useSelector(state => state.cart);
-    const { cartItems } = cart;
-  
-    const getCartCount = () => {
-      return cartItems.reduce((qty, item) => qty + Number(item.qty), 0);
-    }
-
-    return (
-        <div className={sideDrawerClass.join(" ")}>
-            <ul className="sidedrawer__links" onClick={click}>
-                <li>
-                    <Link to="/cart">
-                    <i className="fas fa-shopping-cart"></i>
-                    <span>
-                        Cart <span className="sidedrawer__cartbadge">{getCartCount()}</span>
-                    </span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/">Shop</Link>
-                </li>
-            </ul>
-        </div>
-    )
-};
-
-
+  return (
+    <div className={sideDrawerClass.join(" ")}>
+      <ul className="sidedrawer__links" onClick={click}>
+        <li>
+          <Link to="/cart">
+            <i className="fas fa-shopping-cart"></i>
+            <span>
+              Cart{" "}
+              <span className="sidedrawer__cartbadge">{getCartCount()}</span>
+            </span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/">Shop</Link>
+        </li>
+      </ul>
+    </div>
+  );
+}

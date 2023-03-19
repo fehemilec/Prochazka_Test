@@ -1,25 +1,28 @@
-import React from 'react';
-import './AboutUs.css';
+import React from "react";
+import "./AboutUs.css";
 
 export default function AboutUs() {
   return (
-    <div className='aboutcontainer'>
-      <div className='aboutPic'> 
+    <div className="aboutcontainer">
+      <div className="aboutPic">
         <div className="aboutguy">
-          <img className= "guy" src='/images/horizontalni_homepage.png' alt=""/> 
-          <img className= "arrow" src='/images/arrow_3.png' alt=""/> 
+          <img className="guy" src="/images/horizontalni_homepage.png" alt="" />
+          <img className="arrow" src="/images/arrow_3.png" alt="" />
         </div>
       </div>
-      <div className='aboutText'> 
-        <div className='titleOne'>
+      <div className="aboutText">
+        <div className="titleOne">
           <span> O nás </span>
         </div>
-        <div className='titleTwo'>
+        <div className="titleTwo">
           <h1> Žaluzie Procházka </h1>
         </div>
-        <div  className='about_info'>
-          <span> 
-          Naše firma působí na trhu již od roku 1996. Nabízí širokou škálu stínící techniky v okrese Louny. Jsme autorizovaným prodejcem společností VELUX a KASKO, které jsou na českém trhu jedny z nejsilnějších firem v oboru stínící techniky.
+        <div className="about_info">
+          <span>
+            Naše firma působí na trhu již od roku 1996. Nabízí širokou škálu
+            stínící techniky v okrese Louny. Jsme autorizovaným prodejcem
+            společností VELUX a KASKO, které jsou na českém trhu jedny z
+            nejsilnějších firem v oboru stínící techniky.
           </span>
         </div>
       </div>
