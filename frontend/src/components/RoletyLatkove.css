@@ -1,0 +1,125 @@
+.LR_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.LR_headlines {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 3%;
+    width: 80%;
+}
+
+.LR_headlines > h1 > span,
+.LR_headlines > h2 > span{
+    display: flex;
+    width: 80%;
+    margin-top: 1%; 
+    font-family: 'Manrope';
+    font-weight: 500;
+}
+
+.LR_text_and_image__container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-self: center;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+.LR_image_container {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    width: 50%;
+}
+
+.LR_image_container > img {
+    height: 90%;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.LR_text_container {
+    display: flex;
+    width: 50%;    
+    align-items: center;
+}
+
+.LR_text {
+    display: flex;
+    width: 100%;    
+    font-family: 'Manrope';
+    word-wrap: break-word;
+    text-align: justify;
+    font-size: 17px;
+}
+
+@media only screen and (max-width: 1160px) { .LR_headlines > h2 { font-size: 21px; } }
+
+@media only screen and (max-width: 1060px) { 
+    .LR_text_and_image__container {
+        flex-direction: column;
+    }  
+    
+    .LR_image_container {
+        width: 100%;
+        justify-content: center;     
+        margin-bottom: 2%;  
+    }
+
+    .LR_image_container > img {
+        height: 70%;
+        width: 70%;
+    }
+    
+    .LR_text_container {  
+        width: 65%;    
+        align-self: center;
+    }
+
+    .LR_text {  width: 100%; margin-top: 3%; }  
+
+    .LR_headlines > h1 > span,
+    .LR_headlines > h2 > span{
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 630px) { 
+    .LR_headlines { width: 95%; }
+    
+    .LR_image_container,
+    .LR_text_container  { width: 100%; }
+    .LR_text { font-size: 15px; }
+    .LR_headlines > h1 > span,
+    .LR_headlines > h2 > span { width: 100%; }
+
+     .LR_image_container > img {
+        height: 80%;
+        width: 80%;
+        margin-top: 3%;
+        margin-bottom: 4%;
+    }
+}
+
+
+@media only screen and (max-width: 430px) { 
+    .LR_image_container > img {
+        height: 95%;
+        width: 95%;
+    }
+
+    .LR_headlines > h1 > span { font-size: x-large; }
+    .LR_headlines > h2 > span { font-size: large; }
+}
+
+@media only screen and (max-width: 320px) { 
+    .LR_headlines > h1 > span { font-size: large; }
+    .LR_headlines > h2 > span, .text { font-size: small; }
+}

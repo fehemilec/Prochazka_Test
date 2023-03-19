@@ -1,0 +1,121 @@
+.vertical_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.headlines {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 5%;
+    width: 80%;
+}
+
+.headlines > h1 > span,
+.headlines > h2 > span{
+    display: flex;
+    width: 80%;
+    margin-top: 1%; 
+    font-family: 'Manrope';
+    font-weight: 500;
+}
+.text_and_image__container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-self: center;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+.image_container {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    width: 50%;
+}
+
+.image_container > img {
+    height: 80%;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.text_container {
+    display: flex;
+    width: 50%;    
+    align-items: center;
+}
+
+.text {
+    display: flex;
+    width: 80%;    
+    font-family: 'Manrope';
+    word-wrap: break-word;
+    text-align: justify;
+}
+
+
+@media only screen and (max-width: 1060px) { 
+    .text_and_image__container {
+        flex-direction: column;
+    }    
+    
+    .image_container {
+        width: 100%;
+        justify-content: center;     
+        margin-bottom: 2%;  
+    }
+
+    .image_container > img {
+        height: 60%;
+        width: 60%;
+    }
+    
+    .text_container {  
+        width: 60%;    
+        align-self: center;
+    }
+
+    .text {  width: 100%; }  
+    
+    .headlines > h1 > span,
+    .headlines > h2 > span{
+        align-self: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 630px) { 
+    .headlines { width: 95%; }
+    .image_container,
+    .text_container  {
+        width: 100%;
+    }
+
+    .headlines > h1 > span,
+    .headlines > h2 > span{ width: 100%; }
+
+     .image_container > img {
+        height: 80%;
+        width: 80%;
+        margin-top: 3%;
+        margin-bottom: 4%;
+    }
+}
+
+@media only screen and (max-width: 430px) { 
+    .image_container > img {
+        height: 95%;
+        width: 95%;
+    }
+
+    .headlines > h1 > span { font-size: x-large; }
+    .headlines > h2 > span { font-size: large; }
+}
+
+@media only screen and (max-width: 320px) { 
+    .headlines > h1 > span { font-size: large; }
+    .headlines > h2 > span, .text { font-size: small; }
+}

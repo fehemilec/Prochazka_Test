@@ -1,0 +1,129 @@
+.rolety_main_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.rolety_headlines {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 3%;
+    width: 80%;
+}
+
+.rolety_headlines > h1 > span {
+    display: flex;
+    width: 80%;
+    margin-top: 1%; 
+    font-family: 'Manrope';
+    font-weight: 500;
+}
+
+.rolety_text_and_image {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-self: center;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+.rolety_image_container {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    width: 50%;
+}
+
+.rolety_image_container > img {
+    height: 90%;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.rolety_text_container {
+    display: flex;
+    width: 50%;    
+    align-items: center;
+}
+
+.rolety_text_container > .text {
+    display: flex;
+    width: 85%;    
+    font-family: 'Manrope';
+    font-size: large;
+    word-wrap: break-word;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 1060px) {   
+    .rolety_headlines > h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rolety_headlines > h1 > span{
+        align-self: center;
+        justify-content: center;
+    }
+
+    .rolety_text_and_image {
+        flex-direction: column;
+    } 
+
+    .rolety_image_container {
+        width: 100%;
+        justify-content: center;     
+        margin-bottom: 2%;  
+    }
+
+    .rolety_image_container > img {
+        height: 75%;
+        width: 75%;
+    }
+
+    .rolety_text_container {  
+        width: 60%;    
+        align-self: center;
+    }
+
+    .rolety_text_container > .text {  width: 100%; }
+}
+
+@media only screen and (max-width: 630px) { 
+    .rolety_headlines { width: 95%; }
+    .rolety_image_container,
+    .rolety_text_container  {
+        width: 100%;
+    }
+
+    .rolety_headlines > h1 > span { width: 100%; }
+
+     .rolety_image_container > img {
+        height: 90%;
+        width: 90%;
+        margin-top: 3%;
+        margin-bottom: 4%;
+    }
+    
+    .rolety_text_container > .text { font-size: medium; }
+}
+
+@media only screen and (max-width: 430px) { 
+    .rolety_image_container > img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .rolety_headlines > h1 > span { font-size: xx-large; }
+    .rolety_text_container > .text { font-size: 15px; }
+}
+
+@media only screen and (max-width: 320px) { 
+    .rolety_main_container { height: 60vh; justify-content: center;}
+    .rolety_headlines > h1 > span { font-size: x-large; }
+    .rolety_headlines { margin-top: 0;  margin-bottom: 3%;}
+    .rolety_text_container > .text { font-size: small; margin-top: 5%;}
+}
