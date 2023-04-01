@@ -9,7 +9,6 @@ const isTokenValid = (req, res) => {
       if (err) {
         res.status(401).send({ message: "Invalid Token" });
       } else {
-        console.log("DECODE token, ", decode);
         res.status(200).send({ message: "Valid Token" });
       }
     });

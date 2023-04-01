@@ -17,7 +17,7 @@ const OrderDetailsHor = ({
         <p className="info__name__hor">Name Product: {name}</p>
         <p className="info__description__hor">Pieces Ordered: {amount}</p>
         <p className="info__price__hor">
-          Price per piece: Kč {price.toFixed()}
+          Price per piece: <b>Kč {price.toFixed()}</b>
         </p>
         <p className="info__width__hor">Width: {width}</p>
         <p className="info__height__hor">Height: {height}</p>

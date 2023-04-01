@@ -31,7 +31,6 @@ export default function AdminLoginScreen() {
   useEffect(() => {
     if (localStorage.getItem("userInfo") !== null) {
       let jsonTokenObj = JSON.parse(localStorage.getItem("userInfo"));
-      console.log("TOKEN USER, ", jsonTokenObj.token);
 
       fetch(`${config.url.API_URL}/api/orders/token`, {
         method: "GET",
