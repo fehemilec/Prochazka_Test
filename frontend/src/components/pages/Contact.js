@@ -2,19 +2,14 @@ import React from "react";
 import "../../App.css";
 import "./Contact.css";
 
+
 export default function Contact() {
-  return (
-    <div className="cont-div">
-      <h1 className="contact">Kontakt</h1>
-      <div className="contact-form">
-        <form action="/action_page.js">
-          <label for="fname">Křestní jméno</label>
-          <input
-            type="text"
-            id="fname"
-            name="firstname"
-            placeholder="Křestní jméno"
-          />
+  return(
+    <div className="cont-div">    
+      <div className='contact-form'>
+        <form action='/action_page.js'>
+         <label for="fname">Křestní jméno</label>
+         <input type="text" id="fname" name="firstname" placeholder="Křestní jméno"/>
 
           <label for="lname">Příjmení</label>
           <input

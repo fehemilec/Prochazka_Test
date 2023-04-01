@@ -6,11 +6,6 @@
     align-items: center;
 }
 
-.cont-div > h1 {
-    margin-top: 2%;
-    font-family: 'Manrope';
-}
-
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -20,11 +15,12 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
     font-family: 'Manrope';
+    outline: none;
   }
   
   .contact-form > form > button {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #4665E6;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -35,7 +31,7 @@ input[type=text], select {
   }
   
   .contact-form > form > button:hover {
-    background-color: #45a049;
+    background-color: #3b5de7;
   }
 
   .contact-form {
@@ -45,7 +41,7 @@ input[type=text], select {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-    width: 33%;
+    width: 40%;
   }
   
   #message {
@@ -60,4 +56,23 @@ input[type=text], select {
     font-size: 13px;
     resize: none;
     font-family: 'Manrope';
+    outline: none;
+  }
+
+  @media only screen and (max-width: 1000px) { 
+    .contact-form {
+      width: 60%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) { 
+    .contact-form {
+      width: 75%;
+    }
+  }
+
+  @media only screen and (max-width: 400px) { 
+    .contact-form {
+      width: 85%;
+    }
   }
