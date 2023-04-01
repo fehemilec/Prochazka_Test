@@ -1,0 +1,64 @@
+.adminOrderDetaillScreenContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.adminOrderDetaillScreen__left { 
+    display: flex;
+    flex-direction: column;
+    width: 70%;   
+}
+
+.adminOrderDetaillScreen_ship_info { 
+    margin: 1%;
+    width: 98%;
+    background-color: #fefffc;
+    border-radius: 15px;
+}
+
+.adminOrderDetaillScreen_ship_info > h1 {
+    margin-top: 1%;    
+    margin-bottom: 1%;
+}
+
+.new1 { border-top: 1px solid rgb(158, 155, 155); }
+.clientDetails, .subHeadline {
+    margin: 1%;
+}
+
+.firstLabel {
+    display: inline-block;
+    width: 100px;
+    font-size: 18px;
+    font-weight: bold; 
+}
+
+.fullname, .street, .city, .post_code, .country { margin-bottom: .5%; }
+
+.order_details {
+    display: flex;
+    align-items: center;
+    width: 70%;   
+    flex-direction: column;
+}
+
+.orderId {
+    display: flex;
+}
+.label {
+    margin: 1%;
+    margin-left: 50%;
+}
+
+
+@media only screen and (max-width: 900px) {
+    .orderId {
+        flex-direction: column;
+    }
+    .label {
+        margin-left: 1%;
+    }
+    
+}

@@ -1,5 +1,5 @@
 .product_nahradni {
-    width: 500px;
+    width: 98%;   
     padding: 1rem;
     background: #fff;
     cursor: pointer;
@@ -8,15 +8,13 @@
     flex-direction: column;
     justify-content: space-between;
     flex-direction: column;
+    margin: 1%;
+    border-radius: 10px;
   }
   
   
   .product__info_nahradni > p {
     margin-bottom: 8px;
-  }
-  
-  .info__nahradni__price {
-    font-weight: bold;
   }
   
   .info__nahradni__name {

@@ -1,4 +1,4 @@
-import "./PlaceOrderScreen.css";
+import "./AdminOrderDetailsScreen.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams, useNavigate } from "react-router-dom";
@@ -57,46 +57,36 @@ const AdminOrderDetailsScreen = ({ match, history }) => {
       ) : error ? (
         <h2>{error}</h2>
       ) : (
-        <div className="placeOrderScreen">
-          <div className="placeOrderScreen__left">
-            <div className="row top">
-              <div className="col-2">
-                <ul>
-                  <div className="ship_info">
-                    <h1>Order Details</h1>
-
-                    <p>
-                      <span>Shipping Details</span>
-                      <br />
-                      <br />
-                      <span className="fullname">
-                        <strong>Name: </strong>
-                        {order.shippingAddress.fullName_ship}
-                      </span>
-                      <br />
-                      <span className="street">
-                        <strong>Street: </strong>
-                        {order.shippingAddress.address_ship}
-                      </span>
-                      <br />
-                      <span className="city">
-                        <strong>City: </strong>
-                        {order.shippingAddress.city_ship}
-                      </span>
-                      <br />
-                      <span className="post_code">
-                        <strong>Post Code: </strong>
-                        {order.shippingAddress.postalCode_ship}
-                      </span>
-                      <br />
-                      <span className="country">
-                        <strong>Country: </strong>
-                        {order.shippingAddress.country_ship}
-                      </span>
-                      <br />
-                    </p>
-                  </div>
-                </ul>
+        <div className="adminOrderDetaillScreenContainer">
+          <div className="adminOrderDetaillScreen__left">
+            <div className="adminOrderDetaillScreen_ship_info">
+              <h1>Order Details</h1>
+              <hr className="new1" />
+              <div className="orderId">
+                <h3 className="subHeadline">Shipping Details</h3>
+                <span className="label"><b>Order Id:</b>  {order._id}</span>
+              </div>
+              <div className="clientDetails">                
+                <div className="fullname">
+                  <span className="firstLabel">Name:  </span>
+                  <span>{order.shippingAddress.fullName_ship}</span>
+                </div>
+                <div className="street">
+                  <span className="firstLabel"> Street:  </span>
+                  <span>{order.shippingAddress.address_ship}</span>
+                </div>
+                <div className="city">
+                  <span className="firstLabel"> City:  </span>
+                  <span>{order.shippingAddress.city_ship}</span>
+                </div>
+                <div className="post_code">
+                  <span className="firstLabel"> Post Code:  </span>
+                  <span>{order.shippingAddress.postalCode_ship}</span>
+                </div>
+                <div className="country">
+                  <span className="firstLabel"> Country:  </span>
+                  <span>{order.shippingAddress.country_ship}</span>
+                </div>
               </div>
             </div>
           </div>

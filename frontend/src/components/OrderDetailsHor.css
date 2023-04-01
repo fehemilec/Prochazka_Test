@@ -1,5 +1,5 @@
 .product__hor {
-    width: 500px;
+    width: 98%;   
     padding: 1rem;
     background: #fff;
     cursor: pointer;
@@ -8,29 +8,19 @@
     flex-direction: column;
     justify-content: space-between;
     flex-direction: column;
+    margin: 1%;
+    border-radius: 10px;
   }
-  
   
   .product__info_hor > p {
     margin-bottom: 8px;
   }
-  
-  .info__price__hor {
-    font-weight: bold;
-  }
-  
-  .info__name__hor {
+    
+  .info__name__hor, .info__description__hor {
     font-size: 1rem;
     overflow: hidden;
   }
-  
-  .info__description__hor {
-    font-size: 0.8rem;
-  }
-  
-
-
-  
+    
   @media (max-width: 1232px) {
     .product__hor {
       width: 360px;
