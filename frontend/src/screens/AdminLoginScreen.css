@@ -6,7 +6,6 @@
 	display: flex;
 	justify-content: center; 
 	align-items: center;
-	border: 1px solid red;
 }
 
 .loginContainer > h2 { 	margin-bottom: 2%; }
